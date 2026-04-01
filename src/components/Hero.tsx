@@ -111,9 +111,8 @@ export function Hero() {
         loop
         playsInline
       >
-        <source src="https://cdn.coverr.co/videos/coverr-digital-binary-rain-1573/1080p.mp4" type="video/mp4" />
-        <source src="https://cdn.coverr.co/videos/coverr-circuit-board-close-up-1571/1080p.mp4" type="video/mp4" />
-        <source src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
+        <source src="https://videos.pexels.com/video-files/6963744/6963744-hd_1920_1080_25fps.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
 
