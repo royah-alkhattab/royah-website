@@ -9,6 +9,7 @@ export function Hero() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const audioRef = useRef<HTMLAudioElement>(null)
   const { t, i18n } = useTranslation()
   const isRTL = i18n.language === 'ar'
 
@@ -23,29 +24,24 @@ export function Hero() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Ensure video is muted immediately on load to prevent any audio
+  // Keep video always muted, autoplay silently
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.volume = 0
       videoRef.current.muted = true
       videoRef.current.defaultMuted = true
-
-      videoRef.current.addEventListener('play', () => {
-        if (videoRef.current) {
-          videoRef.current.muted = isMuted
-          videoRef.current.volume = isMuted ? 0 : 0.7
-        }
-      })
-
       videoRef.current.play().catch(() => {})
     }
   }, [])
 
-  // Update video mute state when isMuted changes
+  // Background music: play/pause based on mute toggle
   useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.muted = isMuted
-      videoRef.current.volume = isMuted ? 0 : 0.7
+    if (!audioRef.current) return
+    if (isMuted) {
+      audioRef.current.pause()
+    } else {
+      audioRef.current.volume = 0.4
+      audioRef.current.play().catch(() => {})
     }
   }, [isMuted])
 
@@ -98,6 +94,9 @@ export function Hero() {
         <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+
+      {/* Background Music */}
+      <audio ref={audioRef} loop preload="auto" src="/ambient-bg.mp3" />
 
       {/* Full-Width Navbar */}
       <motion.nav
