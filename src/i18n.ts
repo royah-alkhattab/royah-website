@@ -407,12 +407,53 @@ i18n
     resources,
     fallbackLng: 'en',
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      order: ['path', 'localStorage', 'navigator', 'htmlTag'],
+      lookupFromPathIndex: 0,
       caches: ['localStorage'],
     },
     interpolation: {
       escapeValue: false,
     },
   });
+
+// Update document metadata based on language
+const updateMeta = (lng: string) => {
+  const isAr = lng === 'ar';
+  document.documentElement.lang = isAr ? 'ar' : 'en';
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  document.title = isAr
+    ? 'رؤية - استشارات الاستراتيجية الرقمية والذكاء الاصطناعي'
+    : 'Royah - Digital Strategy & AI Consulting';
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc) {
+    metaDesc.setAttribute('content', isAr
+      ? 'حوّل أعمالك مع خدمات رؤية للاستشارات الرقمية وأتمتة العمليات وحلول الذكاء الاصطناعي. نخدم العملاء في منطقة الخليج.'
+      : 'Transform your business with Royah\'s digital strategy consulting, process automation, and AI integration services. Serving clients across the GCC region.');
+  }
+
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if (ogTitle) ogTitle.setAttribute('content', document.title);
+  const twTitle = document.querySelector('meta[name="twitter:title"]');
+  if (twTitle) twTitle.setAttribute('content', document.title);
+
+  const ogDesc = document.querySelector('meta[property="og:description"]');
+  const twDesc = document.querySelector('meta[name="twitter:description"]');
+  const desc = metaDesc?.getAttribute('content') || '';
+  if (ogDesc) ogDesc.setAttribute('content', desc);
+  if (twDesc) twDesc.setAttribute('content', desc);
+
+  // Update canonical URL based on language
+  const canonical = document.querySelector('link[rel="canonical"]');
+  if (!canonical) {
+    const link = document.createElement('link');
+    link.rel = 'canonical';
+    link.href = isAr ? 'https://royah.om/ar' : 'https://royah.om/';
+    document.head.appendChild(link);
+  }
+};
+
+updateMeta(i18n.language);
+i18n.on('languageChanged', updateMeta);
 
 export default i18n;

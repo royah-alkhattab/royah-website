@@ -17,9 +17,9 @@ export function LanguageSwitcher() {
     const newLanguage = i18n.language === 'en' ? 'ar' : 'en'
     i18n.changeLanguage(newLanguage)
 
-    // Update document direction for RTL support
-    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr'
-    document.documentElement.lang = newLanguage
+    // Update URL to match language
+    const newPath = newLanguage === 'ar' ? '/ar' : '/'
+    window.history.replaceState(null, '', newPath)
 
     // Add a class to body for styling purposes
     document.body.classList.toggle('rtl-mode', newLanguage === 'ar')
