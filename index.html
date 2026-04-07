@@ -53,5 +53,99 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Structured Data for Google Knowledge Panel -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Royah",
+      "alternateName": "رؤية",
+      "url": "https://www.royah.om",
+      "logo": "https://www.royah.om/royah-og-image.png",
+      "image": "https://www.royah.om/royah-og-image.png",
+      "description": "Digital Strategy & AI Consulting firm empowering businesses across the GCC with innovative digital solutions, strategic consulting, and cutting-edge AI technology.",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Muscat, Sultanate of Oman"
+      },
+      "areaServed": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 23.588,
+          "longitude": 58.3829
+        },
+        "name": "GCC Region"
+      },
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "telephone": "+968-90663136",
+          "contactType": "customer service",
+          "availableLanguage": ["English", "Arabic"]
+        }
+      ],
+      "email": "info@royah.om",
+      "sameAs": [
+        "https://www.instagram.com/royah.om"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muscat",
+        "addressCountry": "OM"
+      },
+      "knowsAbout": [
+        "Digital Strategy",
+        "AI Consulting",
+        "Process Automation",
+        "Web Development",
+        "Mobile Applications",
+        "Cloud Solutions",
+        "Technology Consulting"
+      ],
+      "slogan": "Your Partner in Digital Growth"
+    }
+    </script>
+
+    <!-- WebSite SearchAction for sitelinks search box -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Royah",
+      "alternateName": "رؤية",
+      "url": "https://www.royah.om",
+      "inLanguage": ["en", "ar"]
+    }
+    </script>
+
+    <!-- LocalBusiness for Google Maps and local search -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Royah",
+      "alternateName": "رؤية",
+      "image": "https://www.royah.om/royah-og-image.png",
+      "url": "https://www.royah.om",
+      "telephone": "+968-90663136",
+      "email": "info@royah.om",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Muscat",
+        "addressRegion": "Muscat",
+        "addressCountry": "OM"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      },
+      "priceRange": "$$",
+      "serviceType": ["Digital Strategy Consulting", "AI Solutions", "Process Automation", "Web Development", "Mobile Applications", "Cloud Solutions"]
+    }
+    </script>
   </body>
 </html>
