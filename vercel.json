@@ -8,7 +8,7 @@
           "value": "royah-website.vercel.app"
         }
       ],
-      "destination": "https://royah.om/$1",
+      "destination": "https://www.royah.om/$1",
       "permanent": true
     }
   ],

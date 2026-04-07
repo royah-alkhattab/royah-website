@@ -448,7 +448,7 @@ const updateMeta = (lng: string) => {
   if (!canonical) {
     const link = document.createElement('link');
     link.rel = 'canonical';
-    link.href = isAr ? 'https://royah.om/ar' : 'https://royah.om/';
+    link.href = isAr ? 'https://www.royah.om/ar' : 'https://www.royah.om/';
     document.head.appendChild(link);
   }
 };
