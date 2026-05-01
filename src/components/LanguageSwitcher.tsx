@@ -14,7 +14,7 @@ export function LanguageSwitcher() {
   }, [i18n.language])
 
   const toggleLanguage = () => {
-    const newLanguage = i18n.language === 'en' ? 'ar' : 'en'
+    const newLanguage = i18n.language?.startsWith('ar') ? 'en' : 'ar'
     i18n.changeLanguage(newLanguage)
 
     // Update URL to match language

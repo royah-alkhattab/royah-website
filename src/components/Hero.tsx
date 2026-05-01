@@ -88,7 +88,7 @@ export function Hero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
       >
         <source src="https://videos.pexels.com/video-files/6963744/6963744-hd_1920_1080_25fps.mp4" type="video/mp4" />
         <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
@@ -96,7 +96,7 @@ export function Hero() {
       </video>
 
       {/* Background Music */}
-      <audio ref={audioRef} loop preload="auto" src="/ambient-bg.mp3" />
+      <audio ref={audioRef} loop preload="none" src="/ambient-bg.mp3" />
 
       {/* Full-Width Navbar */}
       <motion.nav
@@ -163,11 +163,12 @@ export function Hero() {
               <div className="md:hidden relative">
                 <button
                   onClick={() => {
-                    const newLanguage = i18n.language === 'en' ? 'ar' : 'en'
+                    const newLanguage = i18n.language?.startsWith('ar') ? 'en' : 'ar'
                     i18n.changeLanguage(newLanguage)
                     document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr'
                     document.documentElement.lang = newLanguage
                     document.body.classList.toggle('rtl-mode', newLanguage === 'ar')
+                    window.history.replaceState(null, '', newLanguage === 'ar' ? '/ar' : '/')
                   }}
                   className="glass-effect p-3 rounded-full text-white hover:bg-white/20 gentle-animation cursor-pointer"
                   aria-label="Switch Language"
@@ -181,6 +182,8 @@ export function Hero() {
                 <button
                   onClick={() => setIsMuted(!isMuted)}
                   className="glass-effect p-3 rounded-full text-white hover:bg-white/20 gentle-animation cursor-pointer"
+                  aria-label={isMuted ? t('hero.controls.soundOn') : t('hero.controls.soundOff')}
+                  aria-pressed={!isMuted}
                 >
                   {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
                 </button>
@@ -211,6 +214,8 @@ export function Hero() {
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 className="md:hidden glass-effect p-3 rounded-full text-white hover:bg-white/20 active:bg-white/30 gentle-animation cursor-pointer z-[120] relative"
+                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={isMobileMenuOpen}
               >
                 {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
@@ -245,6 +250,7 @@ export function Hero() {
             <button
               onClick={() => setIsMobileMenuOpen(false)}
               className="glass-effect p-3 rounded-full text-white hover:bg-white/20 active:bg-white/30 gentle-animation cursor-pointer"
+              aria-label="Close menu"
             >
               <X className="w-5 h-5" />
             </button>

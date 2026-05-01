@@ -192,8 +192,8 @@ const resources = {
           }
         },
         contact: {
-          email: "hello@royah.om",
-          phone: "+968 99 123 456",
+          email: "info@royah.om",
+          phone: "+968 90663136",
           address: "Muscat, Sultanate of Oman"
         },
         copyright: "© 2025 Royah. All rights reserved.",
@@ -389,8 +389,8 @@ const resources = {
           }
         },
         contact: {
-          email: "hello@royah.om",
-          phone: "+968 99 123 456",
+          email: "info@royah.om",
+          phone: "+968 90663136",
           address: "مسقط، سلطنة عُمان"
         },
         copyright: "© 2025 رؤية. جميع الحقوق محفوظة.",
@@ -406,6 +406,9 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
+    supportedLngs: ['en', 'ar'],
+    nonExplicitSupportedLngs: true,
+    load: 'languageOnly',
     detection: {
       order: ['path', 'localStorage', 'navigator', 'htmlTag'],
       lookupFromPathIndex: 0,
