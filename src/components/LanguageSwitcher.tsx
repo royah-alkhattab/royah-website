@@ -33,7 +33,7 @@ export function LanguageSwitcher() {
     >
       <Globe className="w-4 h-4" />
       <span className="text-sm font-medium">
-        {i18n.language === 'en' ? 'العربية' : 'English'}
+        {i18n.language?.startsWith('ar') ? 'English' : 'العربية'}
       </span>
     </button>
   )

@@ -419,6 +419,13 @@ i18n
     },
   });
 
+// Normalize regional locale codes (e.g. en-GB → en, ar-SA → ar) so that
+// strict equality checks like `i18n.language === 'ar'` work consistently.
+const base = i18n.language?.split('-')[0];
+if (base && ['en', 'ar'].includes(base) && base !== i18n.language) {
+  i18n.changeLanguage(base);
+}
+
 // Update document metadata based on language
 const updateMeta = (lng: string) => {
   const isAr = lng === 'ar';
