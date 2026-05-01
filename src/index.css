@@ -8,18 +8,18 @@
 :root {
   --font-size: 16px;
 
-  /* Royah — Claude-inspired warm palette */
-  --background: #FAF7F2;            /* warm cream */
+  /* Royah — Clean white palette with terracotta accent */
+  --background: #FFFFFF;            /* pure white */
   --foreground: #1A1814;            /* deep warm black */
   --card: #FFFFFF;
   --card-foreground: #1A1814;
   --popover: #FFFFFF;
   --popover-foreground: #1A1814;
-  --primary: #C2410C;               /* terracotta — earthy Omani */
-  --primary-foreground: #FAF7F2;
-  --secondary: #F0EBE2;             /* soft beige */
+  --primary: #C2410C;               /* terracotta accent */
+  --primary-foreground: #FFFFFF;
+  --secondary: #F7F5F2;             /* very subtle off-white for section contrast */
   --secondary-foreground: #1A1814;
-  --muted: #F0EBE2;
+  --muted: #F7F5F2;
   --muted-foreground: #6B6358;      /* muted brown-gray */
   --accent: #2D5A3D;                /* deep sage — growth */
   --accent-foreground: #FAF7F2;
