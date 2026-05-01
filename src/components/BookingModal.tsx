@@ -2,7 +2,7 @@ import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import Cal, { getCalApi } from '@calcom/embed-react'
 
-const CAL_LINK = 'alkhattabsaif/30min'
+const CAL_LINK = 'royah/free-consultation-'
 
 export function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
