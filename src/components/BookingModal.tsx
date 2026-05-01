@@ -2,9 +2,7 @@ import { useEffect } from 'react'
 import { X } from 'lucide-react'
 import Cal, { getCalApi } from '@calcom/embed-react'
 
-// Replace with your Cal.com username + event slug.
-// Example: 'royah/discovery' if Cal username is "royah" and event is "discovery".
-const CAL_LINK = 'royah/discovery'
+const CAL_LINK = 'alkhattabsaif/30min'
 
 export function BookingModal({ open, onClose }: { open: boolean; onClose: () => void }) {
   useEffect(() => {
