@@ -31,14 +31,12 @@ export function Hero({ onBookClick }: { onBookClick: () => void }) {
 
       {/* Top navigation */}
       <nav className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6 lg:px-12">
-        <a href="/" className="flex items-center gap-3">
-          <img src="/royahicone.svg" alt="Royah" className="h-9 w-9" />
-          <span
-            className="text-xl font-semibold tracking-tight text-foreground"
-            style={{ fontFamily: isRTL ? 'var(--font-arabic-display)' : 'var(--font-english-display)' }}
-          >
-            {isRTL ? 'رؤية' : 'Royah'}
-          </span>
+        <a href="/" className="flex items-center" aria-label="Royah">
+          <img
+            src="/royah-logo-black.png"
+            alt="Royah"
+            className="h-9 w-auto"
+          />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

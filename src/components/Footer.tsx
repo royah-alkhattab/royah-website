@@ -12,17 +12,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 py-16 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-3">
           <div>
-            <div className="flex items-center gap-3">
-              <img src="/royahicone.svg" alt="Royah" className="h-9 w-9" />
-              <span
-                className="text-xl text-foreground"
-                style={{ fontFamily: displayFont, fontWeight: isRTL ? 600 : 500 }}
-              >
-                {t('footer.company')}
-              </span>
-            </div>
+            <img
+              src="/royah-logo-black.png"
+              alt="Royah Advanced Technologies"
+              className="h-10 w-auto"
+            />
             <p className="mt-4 text-sm text-muted-foreground" style={{ fontFamily: bodyFont }}>
-              {t('footer.location')}
+              {t('footer.company')}
             </p>
           </div>
 
