@@ -13,7 +13,8 @@ dist-ssr
 *.local
 lighthouse-report.json
 
-# Editor directories and files
+# Editor / tooling directories and files
+.claude/
 .vscode/*
 !.vscode/extensions.json
 .idea
