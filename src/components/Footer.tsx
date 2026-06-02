@@ -1,137 +1,98 @@
-import { MessageCircle, Phone, Mail, MapPin, ArrowRight, Instagram } from 'lucide-react'
+import { MessageCircle, Phone, Mail, MapPin, Instagram } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
+import { Logo } from './Logo'
+
+const navLinks = [
+  { to: '/', key: 'nav.home' },
+  { to: '/product', key: 'nav.product' },
+  { to: '/about', key: 'nav.about' },
+  { to: '/contact', key: 'nav.contact' },
+]
 
 export function Footer() {
   const { t, i18n } = useTranslation()
   const isRTL = i18n.language === 'ar'
 
   const handleWhatsAppClick = () => {
-    const whatsappNumber = "96890663136"
-    const whatsappMessage = isRTL
-      ? "مرحباً! زرت موقعكم للتو وأنا مهتم بخدماتكم. هل يمكنكم مساعدتي؟"
+    const whatsappNumber = '96890663136'
+    const message = isRTL
+      ? 'مرحباً! زرت موقعكم للتو وأنا مهتم بخدماتكم. هل يمكنكم مساعدتي؟'
       : "Hi! I just visited your website and I'm interested in your services. Can you help me?"
-    const url = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(whatsappMessage)}`
-    window.open(url, '_blank')
+    window.open(`https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodeURIComponent(message)}`, '_blank')
   }
 
   return (
     <footer className="relative bg-foreground text-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
+        <div className="py-14">
+          <div className={`grid grid-cols-1 lg:grid-cols-4 gap-10 ${isRTL ? 'text-right' : ''}`}>
 
-        {/* Main Footer Content */}
-        <div className="py-12">
-          <div className={`grid grid-cols-1 lg:grid-cols-4 gap-12 ${isRTL ? 'text-right' : ''}`}>
-
-            {/* Company Section */}
+            {/* Company */}
             <div className="lg:col-span-2">
-              <img
-                src="/royah-logo-real.png"
-                alt="Royah Logo"
-                className="w-24 h-24 object-contain mb-6"
-              />
-              <p className="text-background/80 text-lg leading-relaxed mb-8 max-w-md">
+              <Logo onDark className="h-11 mb-5" />
+              <p className="text-background/70 leading-relaxed mb-6 max-w-md">
                 {t('footer.description')}
               </p>
               <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                <button
-                  onClick={handleWhatsAppClick}
-                  className={`bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-3 rounded-lg gentle-animation inline-flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}
-                >
+                <button onClick={handleWhatsAppClick}
+                  className={`bg-[#059669] hover:bg-[#047857] text-white font-semibold px-5 py-2.5 rounded-lg gentle-animation inline-flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <MessageCircle className="w-5 h-5" />
-                  <span>{isRTL ? 'تواصل معنا' : 'Get in Touch'}</span>
+                  <span>{t('footer.getInTouch')}</span>
                 </button>
-                <a
-                  href="https://instagram.com/royah.om"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 bg-background/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center gentle-animation group"
-                  aria-label="Instagram"
-                >
+                <a href="https://instagram.com/royah.om" target="_blank" rel="noopener noreferrer"
+                  className="w-11 h-11 bg-background/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center gentle-animation group"
+                  aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-background/70 group-hover:text-white" />
                 </a>
               </div>
             </div>
 
-            {/* Quick Links */}
+            {/* Explore */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-6">{t('footer.sections.services.title')}</h3>
+              <h3 className="font-bold text-lg mb-5">{t('footer.nav.title')}</h3>
               <div className="space-y-3">
-                <a href="#services" className="block text-background/70 hover:text-white gentle-animation">
-                  {t('footer.sections.services.items.webDevelopment')}
-                </a>
-                <a href="#services" className="block text-background/70 hover:text-white gentle-animation">
-                  {t('footer.sections.services.items.aiIntegration')}
-                </a>
-                <a href="#services" className="block text-background/70 hover:text-white gentle-animation">
-                  {t('footer.sections.services.items.automation')}
-                </a>
-                <a href="#services" className="block text-background/70 hover:text-white gentle-animation">
-                  {t('footer.sections.services.items.consulting')}
-                </a>
+                {navLinks.map((l) => (
+                  <Link key={l.to} to={l.to}
+                    className="block text-background/70 hover:text-background gentle-animation">
+                    {t(l.key)}
+                  </Link>
+                ))}
               </div>
             </div>
 
-            {/* Contact Info */}
+            {/* Contact */}
             <div>
-              <h3 className="text-white font-bold text-lg mb-6">{t('contact.tagline')}</h3>
+              <h3 className="font-bold text-lg mb-5">{t('footer.contactTitle')}</h3>
               <div className="space-y-4">
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  {!isRTL && (
-                    <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-green-500" />
-                    </div>
-                  )}
-                  <div className={`flex flex-col ${isRTL ? 'items-end mr-4' : 'items-start'} flex-1`}>
-                    <p className="text-background/60 text-sm">{isRTL ? 'البريد الإلكتروني' : 'Email'}</p>
-                    <a href="mailto:info@royah.om" className="text-white hover:text-green-400 gentle-animation">
-                      info@royah.om
+                  <div className="w-10 h-10 shrink-0 bg-[#059669]/20 rounded-lg flex items-center justify-center">
+                    <Mail className="w-5 h-5 text-[#34d399]" />
+                  </div>
+                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                    <span className="text-background/50 text-xs">{t('footer.emailLabel')}</span>
+                    <a href="mailto:info@royah.om" className="hover:text-[#34d399] gentle-animation">info@royah.om</a>
+                  </div>
+                </div>
+                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  <div className="w-10 h-10 shrink-0 bg-[#DB4B4B]/20 rounded-lg flex items-center justify-center">
+                    <Phone className="w-5 h-5 text-[#e89090]" />
+                  </div>
+                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                    <span className="text-background/50 text-xs">{t('footer.phoneLabel')}</span>
+                    <a href="tel:+96890663136" className="hover:text-[#e89090] gentle-animation">
+                      <span dir="ltr" style={{ unicodeBidi: 'bidi-override' }}>+968 90663136</span>
                     </a>
                   </div>
-                  {isRTL && (
-                    <div className="w-10 h-10 bg-green-500/20 rounded-lg flex items-center justify-center">
-                      <Mail className="w-5 h-5 text-green-500" />
-                    </div>
-                  )}
                 </div>
-
                 <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  {!isRTL && (
-                    <div className="w-10 h-10 bg-accent-blue/20 rounded-lg flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-accent-blue" />
-                    </div>
-                  )}
-                  <div className={`flex flex-col ${isRTL ? 'items-end mr-4' : 'items-start'} flex-1`}>
-                    <p className="text-background/60 text-sm">{isRTL ? 'الهاتف' : 'Phone'}</p>
-                    <a href="tel:+96890663136" className="text-white hover:text-accent-blue gentle-animation">
-                      <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
-                        +968 90663136
-                      </span>
-                    </a>
+                  <div className="w-10 h-10 shrink-0 bg-[#8B5A7F]/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-5 h-5 text-[#c79bb8]" />
                   </div>
-                  {isRTL && (
-                    <div className="w-10 h-10 bg-accent-blue/20 rounded-lg flex items-center justify-center">
-                      <Phone className="w-5 h-5 text-accent-blue" />
-                    </div>
-                  )}
-                </div>
-
-                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
-                  {!isRTL && (
-                    <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent-purple" />
-                    </div>
-                  )}
-                  <div className={`flex flex-col ${isRTL ? 'items-end mr-4' : 'items-start'} flex-1`}>
-                    <p className="text-background/60 text-sm">{isRTL ? 'الموقع' : 'Location'}</p>
-                    <span className="text-white">
-                      {t('footer.contact.address')}
-                    </span>
+                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                    <span className="text-background/50 text-xs">{t('footer.locationLabel')}</span>
+                    <span>{t('footer.location')}</span>
                   </div>
-                  {isRTL && (
-                    <div className="w-10 h-10 bg-accent-purple/20 rounded-lg flex items-center justify-center">
-                      <MapPin className="w-5 h-5 text-accent-purple" />
-                    </div>
-                  )}
                 </div>
               </div>
             </div>
@@ -139,18 +100,12 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-background/20 py-6">
-          <div className={`flex flex-col md:flex-row justify-between items-center gap-4 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="text-background/60 text-sm">
-              {t('footer.copyright')}
-            </div>
-            <div className="text-background/60 text-sm text-center">
-              {t('footer.tagline')}
-            </div>
+        <div className="border-t border-background/15 py-6">
+          <div className={`flex flex-col md:flex-row justify-between items-center gap-3 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+            <div className="text-background/60 text-sm">{t('footer.copyright')}</div>
+            <div className="text-background/60 text-sm">{t('footer.tagline')}</div>
           </div>
         </div>
-
       </div>
     </footer>
   )

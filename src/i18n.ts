@@ -8,97 +8,154 @@ const resources = {
     translation: {
       // Navigation
       nav: {
-        services: "Services",
-        process: "Process",
-        whyUs: "Why Us",
+        home: "Home",
+        product: "Product",
         about: "About",
         contact: "Contact"
       },
-      // Hero Section
-      hero: {
-        tagline: "Digital Strategy & Technology Consulting",
-        headline: "Your Partner in Digital Growth",
-        subheadline: "We help you plan your digital journey, automate your processes, and build AI solutions that grow with your business.",
-        cta: {
-          primary: "Start a Project",
-          secondary: "See Our Services"
+      // Inner page headers
+      pages: {
+        product: {
+          eyebrow: "Our flagship product",
+          title: "Royah Property",
+          subtitle: "Property & building management software that takes owners off paper — bilingual, automated, and already running in real businesses."
         },
-        stats: {
-          projects: "Projects",
-          satisfaction: "Satisfaction",
-          support: "Support"
-        },
-        controls: {
-          soundOn: "Sound On",
-          soundOff: "Sound Off"
+        about: {
+          eyebrow: "About Royah",
+          title: "We turn paper into software.",
+          subtitle: "Royah is a software company on a mission: to take businesses off paper and into the age of AI — built by an engineer who specializes in artificial intelligence, and aligned with Oman Vision 2040."
         }
       },
-      // Services Section
-      services: {
-        title: "Technology that Solves Real Problems",
-        subtitle: "We help businesses plan their digital journey, automate processes, and build smart AI solutions that grow with your business.",
-        coreService: "Core Service",
-        learnMore: "Learn More",
-        items: {
-          digitalStrategy: {
-            title: "Digital Strategy",
-            description: "Not sure where to start? We help you create a clear digital roadmap. What to build, when to build it, and how.",
-            features: ["Digital Roadmap", "Tech Assessment", "System Planning", "Growth Strategy"]
+      // Home product teaser
+      productTeaser: {
+        tag: "Our flagship product",
+        title: "Meet Royah Property",
+        desc: "The bilingual app that runs property and rent management end to end — tenants, contracts, payments, and reminders. Already live in real businesses.",
+        cta: "Explore the product"
+      },
+      // Final call to action
+      finalCta: {
+        title: "Ready to get off paper?",
+        desc: "Tell us about your business and we'll show you exactly how Royah can help.",
+        button: "Talk to us"
+      },
+      // Hero Section
+      hero: {
+        badge: "Aligned with Oman Vision 2040",
+        headline: "We take businesses off paper —",
+        headlineAccent: "and into the age of AI.",
+        subheadline: "Royah builds the software that runs real businesses: billing, tenants, payments and operations — bilingual, reliable, and AI-ready.",
+        ctaPrimary: "See our product",
+        ctaSecondary: "Talk to us",
+        trust: "Running in live production today"
+      },
+      // Problem Section
+      problem: {
+        tag: "The reality on the ground",
+        title: "Most businesses still run on paper.",
+        subtitle: "Notebooks, WhatsApp messages, and scattered Excel sheets. It works — until it doesn't.",
+        points: {
+          paper: {
+            title: "Data lives on paper",
+            description: "Records in notebooks and chats get lost, forgotten, or duplicated."
           },
-          automation: {
-            title: "Process Automation",
-            description: "Stop wasting time on repetitive tasks. We automate your workflows so your team can focus on real work.",
-            features: ["Workflow Automation", "App Integration", "Auto Reports", "Custom Tools"]
+          manual: {
+            title: "Billing is manual",
+            description: "Invoices and payments tracked by hand cost hours and invite mistakes."
+          },
+          blind: {
+            title: "No clear picture",
+            description: "Without a system, owners can't see income, debts, or what's really happening."
+          }
+        }
+      },
+      // What We Do
+      whatWeDo: {
+        tag: "What we do",
+        title: "Software built for how businesses actually work.",
+        subtitle: "We focus on the operational software small and medium businesses need — and make it smart with AI.",
+        items: {
+          software: {
+            title: "Business Software",
+            description: "Custom systems for the work that runs your business — billing, tenants, payments, orders and reporting.",
+            features: ["Billing & invoicing", "Tenant & customer records", "Payments & reminders", "Dashboards & reports"]
           },
           ai: {
             title: "AI Solutions",
-            description: "AI that actually works for your business. Chatbots, smart search, data insights, and more.",
-            features: ["AI Chatbots", "Data Analysis", "Smart Search", "Predictions"]
-          }
-        }
-      },
-      // Process Section
-      process: {
-        title: "How We Build Solutions",
-        subtitle: "Watch our proven process unfold step by step",
-        steps: {
-          discovery: {
-            title: "Discovery & Analysis",
-            description: "Deep dive into your business goals and technical needs"
+            description: "Practical AI that saves real time — Arabic chatbots, document and data automation, and smart insights.",
+            features: ["Arabic & English chatbots", "Document automation", "Data insights", "Smart assistants"]
           },
           strategy: {
-            title: "Strategy & Planning",
-            description: "Create detailed roadmap and project specifications"
-          },
-          development: {
-            title: "Development & Build",
-            description: "Build solutions using proven technologies and frameworks"
-          },
-          testing: {
-            title: "Testing & Integration",
-            description: "Quality assurance and seamless system integration"
-          },
-          launch: {
-            title: "Launch & Support",
-            description: "Go-live with ongoing maintenance and optimization"
+            title: "Digital Strategy",
+            description: "We help you plan the move from paper to digital — what to build, in what order, and how it pays off.",
+            features: ["Digital roadmap", "Process review", "System design", "Vision 2040 alignment"]
           }
-        },
-        controls: {
-          methodology: "Proven Methodology",
-          timeline: "1-2 Weeks",
-          quality: "Enterprise Grade"
         }
       },
-      // Team/Testimonials Section
-      team: {
-        title: "What Our Clients Say About Us",
-        subtitle: "Real results from real businesses across the region"
+      // Flagship Product
+      product: {
+        tag: "Our flagship product",
+        name: "Royah Property",
+        tagline: "Property & building management, done right.",
+        description: "Everything a property owner needs in one bilingual app: track units and tenants, generate rent schedules automatically, record payments, flag overdue rent, and see your income at a glance — with one-tap WhatsApp reminders.",
+        cta: "Request a demo",
+        live: "Live & in use",
+        features: {
+          units: { title: "Units & tenants", description: "Track every shop or apartment, its rent, and who occupies it." },
+          contracts: { title: "Smart contracts", description: "Save a contract and the full payment schedule is generated for you." },
+          payments: { title: "Payments & reminders", description: "Record payments, auto-flag overdue rent, send WhatsApp reminders in one tap." },
+          dashboard: { title: "Owner dashboard", description: "Expected income, collected, outstanding, occupancy — all in one view." }
+        }
       },
-      // Contact Section
+      // Impact / metrics
+      impact: {
+        tag: "Real results, not promises",
+        title: "Already working in real businesses.",
+        subtitle: "We don't just talk about digital transformation — we ship it.",
+        stats: {
+          customers: { value: "350+", label: "customers billed in live production" },
+          production: { value: "100%", label: "bilingual — Arabic & English, by default" },
+          paper: { value: "0", label: "paper notebooks needed" },
+          uptime: { value: "24/7", label: "systems running in real businesses" }
+        }
+      },
+      // Why Royah
+      why: {
+        tag: "Why Royah",
+        title: "Built by an engineer who specializes in AI.",
+        description: "Royah is led by a software engineer with a Master's degree in Artificial Intelligence. That means the software you get isn't just functional — it's built to be intelligent, reliable, and ready for what's next.",
+        points: {
+          ai: { title: "AI expertise", description: "A Master's in AI — rare in the region — built into every product we make." },
+          oman: { title: "Made for Oman", description: "Bilingual, RTL-first, and shaped around how local businesses really operate." },
+          lasting: { title: "Built to last", description: "Production-grade engineering: secure, maintainable, and ready to grow with you." }
+        }
+      },
+      // Vision 2040
+      vision: {
+        tag: "Our bigger purpose",
+        title: "Oman Vision 2040 starts on the ground.",
+        body: "Oman aims to grow its digital economy from about 2% to 10% of GDP. That doesn't happen in boardrooms alone — it happens one business at a time, as each one moves from paper to software. That's the work we do, every day.",
+        stat: "2% → 10%",
+        statLabel: "target share of the digital economy in Oman's GDP by 2040",
+        note: "Every business we digitize is a step toward that national goal."
+      },
+      // Process
+      process: {
+        tag: "How we work",
+        title: "A simple path from paper to product.",
+        subtitle: "Clear steps, no jargon, real results.",
+        steps: {
+          understand: { title: "Understand", description: "We learn how your business actually runs today." },
+          build: { title: "Build", description: "We design and build a system that fits — bilingual and clean." },
+          launch: { title: "Launch", description: "We get it live in your business, with your real data." },
+          support: { title: "Support", description: "We stay with you — improving, fixing, and growing the system." }
+        }
+      },
+      // Contact Section (kept compatible with Contact.tsx)
       contact: {
         tagline: "Start Your Digital Journey",
-        title: "Ready to Transform Your Business?",
-        subtitle: "Connect with us to discuss your digital strategy and discover how we can help you achieve your business goals",
+        title: "Ready to get off paper?",
+        subtitle: "Tell us about your business and we'll show you exactly how Royah can help.",
         whatsapp: "Chat on WhatsApp",
         whatsappDesc: "Get instant responses to your questions. We're available during business hours.",
         whatsappResponse: "Usually responds instantly",
@@ -110,7 +167,7 @@ const resources = {
         bookCallDesc: "Schedule a free consultation to discuss your project in detail.",
         bookCallResponse: "30-minute free consultation",
         hours: "Business Hours",
-        location: "Our Location",
+        location: "Where We Are",
         businessHours: {
           weekdays: "Sunday - Thursday:",
           weekdaysTime: "9:00 AM - 6:00 PM",
@@ -119,85 +176,35 @@ const resources = {
           timezone: "GMT+4 (Oman Time)"
         },
         locationDetails: {
-          city: "Muscat, Sultanate of Oman",
-          region: "Serving clients across the GCC",
+          city: "Based in Oman",
+          region: "Building for businesses everywhere",
           remote: "Remote consultations available"
         },
         cta: {
-          title: "Ready to Start Your Digital Transformation?",
-          description: "Join hundreds of businesses who have trusted Royah to deliver exceptional digital solutions. Let's discuss your project today.",
+          title: "Ready to start your digital transformation?",
+          description: "Let's turn the way your business runs today into clean, reliable software. Message us and we'll take it from there.",
           button: "Start WhatsApp Conversation"
-        }
-      },
-      // Extended Services
-      extendedServices: {
-        title: "Technology Solutions",
-        subtitle: "Built with expertise, delivered with excellence",
-        description: "Every solution is carefully crafted in our development lab, ensuring each detail delivers the performance and reliability your business demands.",
-        items: {
-          webDevelopment: {
-            title: "Web Development",
-            description: "Custom websites and web applications built with modern technologies for maximum performance."
-          },
-          aiIntegration: {
-            title: "AI Integration",
-            description: "Smart AI solutions including chatbots, data analysis, and predictive systems for your business."
-          },
-          automation: {
-            title: "Process Automation",
-            description: "Streamline your workflows with custom automation tools that save time and reduce errors."
-          },
-          consulting: {
-            title: "Technology Consulting",
-            description: "Strategic guidance on digital transformation, technology stack selection, and system architecture."
-          },
-          mobileApps: {
-            title: "Mobile Applications",
-            description: "Native and cross-platform mobile apps that deliver exceptional user experiences."
-          },
-          cloudSolutions: {
-            title: "Cloud Solutions",
-            description: "Scalable cloud infrastructure and migration services for modern, efficient operations."
-          }
         }
       },
       // Footer Section
       footer: {
-        company: "Royah",
-        description: "Empowering businesses across the GCC with innovative digital solutions, strategic consulting, and cutting-edge AI technology.",
-        sections: {
-          services: {
-            title: "Services",
-            items: {
-              webDevelopment: "Web Development",
-              aiIntegration: "AI Solutions",
-              automation: "Process Automation",
-              consulting: "Digital Strategy",
-              mobileApps: "Mobile Apps",
-              cloudSolutions: "Cloud Solutions"
-            }
-          },
-          company: {
-            title: "Company",
-            items: {
-              about: "About Us",
-              process: "Our Process",
-              contact: "Contact",
-              careers: "Careers"
-            }
-          },
-          technologies: {
-            title: "Technologies We Use",
-            description: "We leverage cutting-edge technologies and frameworks to deliver robust, scalable solutions for modern businesses."
-          }
+        description: "Royah builds the software that takes Omani businesses off paper and into the age of AI — bilingual, reliable, and aligned with Oman Vision 2040.",
+        nav: {
+          title: "Explore",
+          whatWeDo: "What We Do",
+          product: "Product",
+          vision: "Vision 2040",
+          contact: "Contact"
         },
-        contact: {
-          email: "info@royah.om",
-          phone: "+968 90663136",
-          address: "Muscat, Sultanate of Oman"
-        },
-        copyright: "© 2025 Royah. All rights reserved.",
-        tagline: "Building the future of business technology in the GCC"
+        contactTitle: "Get in touch",
+        getInTouch: "Get in Touch",
+        emailLabel: "Email",
+        phoneLabel: "Phone",
+        locationLabel: "Location",
+        location: "Sultanate of Oman",
+        legalName: "Royah Advanced Technologies",
+        copyright: "© 2026 Royah Advanced Technologies. All rights reserved.",
+        tagline: "Digitizing Oman's businesses, one at a time."
       }
     }
   },
@@ -205,97 +212,154 @@ const resources = {
     translation: {
       // Navigation
       nav: {
-        services: "الخدمات",
-        process: "العملية",
-        whyUs: "لماذا نحن",
+        home: "الرئيسية",
+        product: "المنتج",
         about: "من نحن",
-        contact: "اتصل بنا"
+        contact: "تواصل معنا"
+      },
+      // Inner page headers
+      pages: {
+        product: {
+          eyebrow: "منتجنا الرئيسي",
+          title: "رؤية العقار",
+          subtitle: "برنامج لإدارة العقارات والمباني ينقل الملّاك من الورق — بلغتين، ومؤتمت، ويعمل فعلاً في أعمال حقيقية."
+        },
+        about: {
+          eyebrow: "عن رؤية",
+          title: "نحوّل الورق إلى برمجيات.",
+          subtitle: "رؤية شركة برمجيات برسالة واضحة: نقل الأعمال من الورق إلى عصر الذكاء الاصطناعي — بناءً على يد مهندس متخصص في الذكاء الاصطناعي، وبانسجام مع رؤية عُمان ٢٠٤٠."
+        }
+      },
+      // Home product teaser
+      productTeaser: {
+        tag: "منتجنا الرئيسي",
+        title: "تعرّف على رؤية العقار",
+        desc: "التطبيق ثنائي اللغة الذي يُدير العقارات والإيجارات من البداية إلى النهاية — المستأجرون والعقود والمدفوعات والتذكيرات. يعمل فعلاً في أعمال حقيقية.",
+        cta: "استكشف المنتج"
+      },
+      // Final call to action
+      finalCta: {
+        title: "مستعد لترك الورق؟",
+        desc: "أخبرنا عن عملك وسنُريك بالضبط كيف يمكن لرؤية أن تساعدك.",
+        button: "تحدّث معنا"
       },
       // Hero Section
       hero: {
-        tagline: "استراتيجية رقمية واستشارات تقنية",
-        headline: "شريكك في النمو الرقمي",
-        subheadline: "نساعدك في تخطيط رحلتك الرقمية، وأتمتة عملياتك، وبناء حلول الذكاء الاصطناعي التي تنمو مع عملك.",
-        cta: {
-          primary: "ابدأ مشروعاً",
-          secondary: "اطلع على خدماتنا"
-        },
-        stats: {
-          projects: "المشاريع",
-          satisfaction: "الرضا",
-          support: "الدعم"
-        },
-        controls: {
-          soundOn: "تشغيل الصوت",
-          soundOff: "إيقاف الصوت"
+        badge: "منسجمون مع رؤية عُمان ٢٠٤٠",
+        headline: "ننقل الأعمال من الورق —",
+        headlineAccent: "إلى عصر الذكاء الاصطناعي.",
+        subheadline: "تبني رؤية البرمجيات التي تُدير الأعمال الحقيقية: الفوترة والمستأجرين والمدفوعات والعمليات — بلغتين، بموثوقية، وجاهزة للذكاء الاصطناعي.",
+        ctaPrimary: "شاهد منتجنا",
+        ctaSecondary: "تحدّث معنا",
+        trust: "يعمل فعلياً في بيئة إنتاج حقيقية"
+      },
+      // Problem Section
+      problem: {
+        tag: "الواقع على الأرض",
+        title: "معظم الأعمال لا تزال تُدار بالورق.",
+        subtitle: "دفاتر، ورسائل واتساب، وجداول إكسل متفرقة. تنجح الأمور… حتى تتعطّل.",
+        points: {
+          paper: {
+            title: "البيانات على الورق",
+            description: "السجلات في الدفاتر والمحادثات تضيع أو تُنسى أو تتكرّر."
+          },
+          manual: {
+            title: "الفوترة يدوية",
+            description: "تتبّع الفواتير والمدفوعات يدوياً يكلّف ساعات ويفتح باب الأخطاء."
+          },
+          blind: {
+            title: "لا صورة واضحة",
+            description: "بلا نظام، لا يستطيع صاحب العمل رؤية الدخل أو الديون أو ما يجري فعلاً."
+          }
         }
       },
-      // Services Section
-      services: {
-        title: "تقنية تحل المشاكل الحقيقية",
-        subtitle: "نساعد الشركات في تخطيط رحلتها الرقمية، وأتمتة العمليات، وبناء حلول ذكية تنمو مع أعمالها.",
-        coreService: "خدمة أساسية",
-        learnMore: "اعرف المزيد",
+      // What We Do
+      whatWeDo: {
+        tag: "ماذا نقدّم",
+        title: "برمجيات مصمّمة لطريقة عمل الأعمال فعلاً.",
+        subtitle: "نركّز على البرمجيات التشغيلية التي تحتاجها الأعمال الصغيرة والمتوسطة — ونجعلها ذكية بالذكاء الاصطناعي.",
         items: {
-          digitalStrategy: {
-            title: "الاستراتيجية الرقمية",
-            description: "لست متأكداً من أين تبدأ؟ نساعدك في إنشاء خارطة طريق رقمية واضحة. ما تبنيه، ومتى تبنيه، وكيف.",
-            features: ["خارطة طريق رقمية", "تقييم تقني", "تخطيط الأنظمة", "استراتيجية النمو"]
-          },
-          automation: {
-            title: "أتمتة العمليات",
-            description: "توقف عن إضاعة الوقت في المهام المتكررة. نقوم بأتمتة سير عملك حتى يتمكن فريقك من التركيز على العمل الحقيقي.",
-            features: ["أتمتة سير العمل", "تكامل التطبيقات", "تقارير تلقائية", "أدوات مخصصة"]
+          software: {
+            title: "برمجيات الأعمال",
+            description: "أنظمة مخصصة للعمل الذي يُدير نشاطك — الفوترة والمستأجرون والمدفوعات والطلبات والتقارير.",
+            features: ["الفوترة والإيصالات", "سجلات المستأجرين والعملاء", "المدفوعات والتذكيرات", "لوحات ومعلومات وتقارير"]
           },
           ai: {
             title: "حلول الذكاء الاصطناعي",
-            description: "ذكاء اصطناعي يعمل حقاً لعملك. روبوتات المحادثة، البحث الذكي، رؤى البيانات، والمزيد.",
-            features: ["روبوتات المحادثة", "تحليل البيانات", "البحث الذكي", "التنبؤات"]
-          }
-        }
-      },
-      // Process Section
-      process: {
-        title: "كيف نبني الحلول",
-        subtitle: "شاهد عمليتنا المجربة تتكشف خطوة بخطوة",
-        steps: {
-          discovery: {
-            title: "الاكتشاف والتحليل",
-            description: "غوص عميق في أهداف عملك واحتياجاتك التقنية"
+            description: "ذكاء اصطناعي عملي يوفّر وقتاً حقيقياً — روبوتات محادثة عربية، وأتمتة المستندات والبيانات، ورؤى ذكية.",
+            features: ["روبوتات محادثة عربية وإنجليزية", "أتمتة المستندات", "رؤى من البيانات", "مساعدون أذكياء"]
           },
           strategy: {
-            title: "الاستراتيجية والتخطيط",
-            description: "إنشاء خارطة طريق مفصلة ومواصفات المشروع"
-          },
-          development: {
-            title: "التطوير والبناء",
-            description: "بناء الحلول باستخدام تقنيات وأطر عمل مجربة"
-          },
-          testing: {
-            title: "الاختبار والتكامل",
-            description: "ضمان الجودة والتكامل السلس للأنظمة"
-          },
-          launch: {
-            title: "الإطلاق والدعم",
-            description: "البدء مع الصيانة المستمرة والتحسين"
+            title: "الاستراتيجية الرقمية",
+            description: "نساعدك في التخطيط للانتقال من الورق إلى الرقمنة — ماذا تبني، وبأي ترتيب، وكيف يعود عليك بالنفع.",
+            features: ["خارطة طريق رقمية", "مراجعة العمليات", "تصميم الأنظمة", "الانسجام مع رؤية ٢٠٤٠"]
           }
-        },
-        controls: {
-          methodology: "منهجية مجربة",
-          timeline: "1-2 أسبوع",
-          quality: "جودة عالمية"
         }
       },
-      // Team/Testimonials Section
-      team: {
-        title: "ماذا يقول عملاؤنا عنا",
-        subtitle: "نتائج حقيقية من شركات حقيقية في المنطقة"
+      // Flagship Product
+      product: {
+        tag: "منتجنا الرئيسي",
+        name: "رؤية العقار",
+        tagline: "إدارة العقارات والمباني… كما ينبغي.",
+        description: "كل ما يحتاجه مالك العقار ضمن تطبيق واحد بلغتين: تتبّع الوحدات والمستأجرين، توليد جداول الإيجار تلقائياً، تسجيل المدفوعات، تنبيه المتأخرات، ورؤية دخلك بنظرة واحدة — مع تذكيرات واتساب بضغطة واحدة.",
+        cta: "اطلب عرضاً توضيحياً",
+        live: "يعمل وقيد الاستخدام",
+        features: {
+          units: { title: "الوحدات والمستأجرون", description: "تتبّع كل محل أو شقة، وإيجارها، ومن يشغلها." },
+          contracts: { title: "عقود ذكية", description: "احفظ العقد ليُولَّد لك جدول المدفوعات كاملاً." },
+          payments: { title: "المدفوعات والتذكيرات", description: "سجّل المدفوعات، ونبّه المتأخرات تلقائياً، وأرسل تذكير واتساب بضغطة." },
+          dashboard: { title: "لوحة المالك", description: "الدخل المتوقع، والمحصّل، والمتبقّي، ونسبة الإشغال — في شاشة واحدة." }
+        }
+      },
+      // Impact / metrics
+      impact: {
+        tag: "نتائج حقيقية، لا وعود",
+        title: "تعمل بالفعل في أعمال حقيقية.",
+        subtitle: "نحن لا نتحدّث عن التحوّل الرقمي فحسب — بل ننفّذه.",
+        stats: {
+          customers: { value: "+٣٥٠", label: "عميل تُحتسب فواتيرهم في بيئة إنتاج فعلية" },
+          production: { value: "١٠٠٪", label: "بالعربية والإنجليزية، تلقائياً" },
+          paper: { value: "٠", label: "دفاتر ورقية مطلوبة" },
+          uptime: { value: "٢٤/٧", label: "أنظمة تعمل في أعمال حقيقية" }
+        }
+      },
+      // Why Royah
+      why: {
+        tag: "لماذا رؤية",
+        title: "بناء مهندس متخصّص في الذكاء الاصطناعي.",
+        description: "تقود رؤيةَ مهندسُ برمجيات حاصل على ماجستير في الذكاء الاصطناعي. هذا يعني أن البرمجيات التي تحصل عليها ليست وظيفية فحسب — بل مبنية لتكون ذكية وموثوقة وجاهزة للمستقبل.",
+        points: {
+          ai: { title: "خبرة في الذكاء الاصطناعي", description: "ماجستير في الذكاء الاصطناعي — نادر في المنطقة — في صميم كل منتج نصنعه." },
+          oman: { title: "مصمَّمة لعُمان", description: "بلغتين، وبأولوية للكتابة من اليمين، ومبنية حول طريقة عمل الأعمال المحلية." },
+          lasting: { title: "مبنية لتدوم", description: "هندسة بمستوى الإنتاج: آمنة، وقابلة للصيانة، وجاهزة للنمو معك." }
+        }
+      },
+      // Vision 2040
+      vision: {
+        tag: "غايتنا الأكبر",
+        title: "رؤية عُمان ٢٠٤٠ تبدأ من الأرض.",
+        body: "تستهدف عُمان رفع مساهمة الاقتصاد الرقمي من نحو ٢٪ إلى ١٠٪ من الناتج المحلي. وهذا لا يحدث في قاعات الاجتماعات وحدها — بل عملاً تلو الآخر، مع انتقال كلٍّ منها من الورق إلى البرمجيات. هذا ما نفعله كل يوم.",
+        stat: "٢٪ ← ١٠٪",
+        statLabel: "حصة الاقتصاد الرقمي المستهدفة من الناتج المحلي بحلول ٢٠٤٠",
+        note: "كل عمل نُرقمنه خطوة نحو هذا الهدف الوطني."
+      },
+      // Process
+      process: {
+        tag: "كيف نعمل",
+        title: "مسار بسيط من الورق إلى المنتج.",
+        subtitle: "خطوات واضحة، بلا تعقيد، ونتائج حقيقية.",
+        steps: {
+          understand: { title: "نفهم", description: "نتعرّف على طريقة إدارة عملك اليوم فعلاً." },
+          build: { title: "نبني", description: "نصمّم ونبني نظاماً يناسبك — بلغتين وبتصميم نظيف." },
+          launch: { title: "نُطلق", description: "نُشغّله في عملك ببياناتك الحقيقية." },
+          support: { title: "ندعم", description: "نبقى معك — تحسيناً وإصلاحاً وتطويراً للنظام." }
+        }
       },
       // Contact Section
       contact: {
         tagline: "ابدأ رحلتك الرقمية",
-        title: "هل أنت مستعد لتحويل عملك؟",
-        subtitle: "تواصل معنا لمناقشة استراتيجيتك الرقمية واكتشاف كيف يمكننا مساعدتك في تحقيق أهداف عملك",
+        title: "هل أنت مستعد لترك الورق؟",
+        subtitle: "أخبرنا عن عملك وسنُريك بالضبط كيف يمكن لرؤية أن تساعدك.",
         whatsapp: "تحدث عبر واتساب",
         whatsappDesc: "احصل على ردود فورية لأسئلتك. نحن متاحون خلال ساعات العمل.",
         whatsappResponse: "يرد عادة فوراً",
@@ -307,7 +371,7 @@ const resources = {
         bookCallDesc: "احجز استشارة مجانية لمناقشة مشروعك بالتفصيل.",
         bookCallResponse: "استشارة مجانية لمدة 30 دقيقة",
         hours: "ساعات العمل",
-        location: "موقعنا",
+        location: "أين نحن",
         businessHours: {
           weekdays: "الأحد - الخميس:",
           weekdaysTime: "9:00 ص - 6:00 م",
@@ -316,85 +380,35 @@ const resources = {
           timezone: "GMT+4 (توقيت عُمان)"
         },
         locationDetails: {
-          city: "مسقط، سلطنة عُمان",
-          region: "نخدم العملاء في جميع أنحاء دول الخليج",
+          city: "مقرّنا في عُمان",
+          region: "نبني لأعمال في كل مكان",
           remote: "الاستشارات عن بُعد متاحة"
         },
         cta: {
-          title: "مستعد لبدء تحولك الرقمي؟",
-          description: "انضم إلى مئات الشركات التي وثقت بـرؤية لتقديم حلول رقمية استثنائية. دعنا نناقش مشروعك اليوم.",
+          title: "مستعد لبدء تحوّلك الرقمي؟",
+          description: "لنحوّل طريقة إدارة عملك اليوم إلى برمجيات نظيفة وموثوقة. راسلنا وسنتولّى الباقي.",
           button: "ابدأ محادثة واتساب"
-        }
-      },
-      // Extended Services
-      extendedServices: {
-        title: "الحلول التقنية",
-        subtitle: "مبنية بخبرة، مُسلمة بتميز",
-        description: "كل حل يُصمم بعناية في مختبر التطوير لدينا، مما يضمن أن كل تفصيلة تقدم الأداء والموثوقية التي يتطلبها عملك.",
-        items: {
-          webDevelopment: {
-            title: "تطوير الويب",
-            description: "مواقع ويب وتطبيقات مخصصة مبنية بتقنيات حديثة للحصول على أقصى أداء."
-          },
-          aiIntegration: {
-            title: "تكامل الذكاء الاصطناعي",
-            description: "حلول ذكية تشمل روبوتات المحادثة وتحليل البيانات والأنظمة التنبؤية لعملك."
-          },
-          automation: {
-            title: "أتمتة العمليات",
-            description: "تبسيط سير العمل بأدوات أتمتة مخصصة توفر الوقت وتقلل الأخطاء."
-          },
-          consulting: {
-            title: "استشارات تقنية",
-            description: "إرشاد استراتيجي حول التحول الرقمي واختيار المجموعة التقنية وهيكلة الأنظمة."
-          },
-          mobileApps: {
-            title: "تطبيقات الجوال",
-            description: "تطبيقات جوال أصلية ومتعددة المنصات تقدم تجارب استثنائية للمستخدمين."
-          },
-          cloudSolutions: {
-            title: "حلول سحابية",
-            description: "بنية تحتية سحابية قابلة للتوسع وخدمات هجرة للعمليات الحديثة والفعالة."
-          }
         }
       },
       // Footer Section
       footer: {
-        company: "رؤية",
-        description: "تمكين الأعمال في دول مجلس التعاون الخليجي بحلول رقمية مبتكرة واستشارات استراتيجية وتقنيات الذكاء الاصطناعي المتطورة.",
-        sections: {
-          services: {
-            title: "الخدمات",
-            items: {
-              webDevelopment: "تطوير الويب",
-              aiIntegration: "حلول الذكاء الاصطناعي",
-              automation: "أتمتة العمليات",
-              consulting: "الاستراتيجية الرقمية",
-              mobileApps: "تطبيقات الجوال",
-              cloudSolutions: "الحلول السحابية"
-            }
-          },
-          company: {
-            title: "الشركة",
-            items: {
-              about: "من نحن",
-              process: "عمليتنا",
-              contact: "اتصل بنا",
-              careers: "الوظائف"
-            }
-          },
-          technologies: {
-            title: "التقنيات التي نستخدمها",
-            description: "نستخدم أحدث التقنيات والأطر لتقديم حلول قوية وقابلة للتوسع للأعمال الحديثة."
-          }
+        description: "تبني رؤية البرمجيات التي تنقل الأعمال العُمانية من الورق إلى عصر الذكاء الاصطناعي — بلغتين، وبموثوقية، وبانسجام مع رؤية عُمان ٢٠٤٠.",
+        nav: {
+          title: "استكشف",
+          whatWeDo: "ماذا نقدّم",
+          product: "المنتج",
+          vision: "رؤية ٢٠٤٠",
+          contact: "تواصل معنا"
         },
-        contact: {
-          email: "info@royah.om",
-          phone: "+968 90663136",
-          address: "مسقط، سلطنة عُمان"
-        },
-        copyright: "© 2025 رؤية. جميع الحقوق محفوظة.",
-        tagline: "بناء مستقبل تكنولوجيا الأعمال في دول الخليج"
+        contactTitle: "تواصل معنا",
+        getInTouch: "تواصل معنا",
+        emailLabel: "البريد الإلكتروني",
+        phoneLabel: "الهاتف",
+        locationLabel: "الموقع",
+        location: "سلطنة عُمان",
+        legalName: "رؤية للتقنيات المتقدمة",
+        copyright: "© ٢٠٢٦ رؤية للتقنيات المتقدمة. جميع الحقوق محفوظة.",
+        tagline: "نُرقمن أعمال عُمان… عملاً تلو الآخر."
       }
     }
   }
@@ -410,8 +424,10 @@ i18n
     nonExplicitSupportedLngs: true,
     load: 'languageOnly',
     detection: {
-      order: ['path', 'localStorage', 'navigator', 'htmlTag'],
-      lookupFromPathIndex: 0,
+      // 'path' is intentionally omitted: with client-side routing the first path
+      // segment is a page (e.g. /product), not a language. The /ar SEO entry is
+      // handled explicitly in App via the router.
+      order: ['localStorage', 'navigator', 'htmlTag'],
       caches: ['localStorage'],
     },
     interpolation: {
@@ -432,14 +448,14 @@ const updateMeta = (lng: string) => {
   document.documentElement.lang = isAr ? 'ar' : 'en';
   document.documentElement.dir = isAr ? 'rtl' : 'ltr';
   document.title = isAr
-    ? 'رؤية - استشارات الاستراتيجية الرقمية والذكاء الاصطناعي'
-    : 'Royah - Digital Strategy & AI Consulting';
+    ? 'رؤية - برمجيات وحلول ذكاء اصطناعي للأعمال العُمانية'
+    : 'Royah - Software & AI for Omani Businesses';
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.setAttribute('content', isAr
-      ? 'حوّل أعمالك مع خدمات رؤية للاستشارات الرقمية وأتمتة العمليات وحلول الذكاء الاصطناعي. نخدم العملاء في منطقة الخليج.'
-      : 'Transform your business with Royah\'s digital strategy consulting, process automation, and AI integration services. Serving clients across the GCC region.');
+      ? 'تبني رؤية البرمجيات التي تنقل الأعمال العُمانية من الورق إلى عصر الذكاء الاصطناعي: الفوترة وإدارة العقارات والمدفوعات — بلغتين ومنسجمة مع رؤية عُمان ٢٠٤٠.'
+      : 'Royah builds the software that takes Omani businesses off paper and into the age of AI: billing, property management, and payments — bilingual and aligned with Oman Vision 2040.');
   }
 
   const ogTitle = document.querySelector('meta[property="og:title"]');

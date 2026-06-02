@@ -1,339 +1,106 @@
 import { motion } from 'framer-motion'
-import { Volume2, VolumeX, Menu, X, Globe } from 'lucide-react'
-import { useState, useRef, useEffect } from 'react'
+import { ArrowRight } from 'lucide-react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
-import { LanguageSwitcher } from './LanguageSwitcher'
+import { useNavigate } from 'react-router-dom'
+
+// Plug-and-play hero video: drop `hero.mp4` (and optionally `hero-poster.jpg`)
+// into /public and the hero switches from the gradient to the video automatically
+// — no code change needed. Until then, the clean brand gradient shows.
+const HERO_VIDEO = '/hero.mp4'
+const HERO_POSTER = '/hero-poster.jpg'
 
 export function Hero() {
-  const [isMuted, setIsMuted] = useState(true)
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const audioRef = useRef<HTMLAudioElement>(null)
-  const { t, i18n } = useTranslation()
-  const isRTL = i18n.language === 'ar'
+  const { t } = useTranslation()
+  const navigate = useNavigate()
+  const [hasVideo, setHasVideo] = useState(false)
 
-  // Scroll detection
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY
-      setIsScrolled(scrollTop > 50) // Show background after 50px scroll
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    let cancelled = false
+    // Detect whether a real video file exists. A content-type check avoids false
+    // positives from the SPA fallback (which would serve index.html for a missing file).
+    fetch(HERO_VIDEO, { method: 'HEAD' })
+      .then((res) => {
+        const type = res.headers.get('content-type') || ''
+        if (!cancelled && res.ok && type.includes('video')) setHasVideo(true)
+      })
+      .catch(() => {})
+    return () => { cancelled = true }
   }, [])
-
-  // Keep video always muted, autoplay silently
-  useEffect(() => {
-    if (videoRef.current) {
-      videoRef.current.volume = 0
-      videoRef.current.muted = true
-      videoRef.current.defaultMuted = true
-      videoRef.current.play().catch(() => {})
-    }
-  }, [])
-
-  // Background music: play/pause based on mute toggle
-  useEffect(() => {
-    if (!audioRef.current) return
-    if (isMuted) {
-      audioRef.current.pause()
-    } else {
-      audioRef.current.volume = 0.4
-      audioRef.current.play().catch(() => {})
-    }
-  }, [isMuted])
-
-  // Handle body scroll lock when mobile menu is open
-  useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'unset'
-    }
-
-    // Cleanup on unmount
-    return () => {
-      document.body.style.overflow = 'unset'
-    }
-  }, [isMobileMenuOpen])
-
-  // Close mobile menu on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMobileMenuOpen) {
-        setIsMobileMenuOpen(false)
-      }
-    }
-
-    if (isMobileMenuOpen) {
-      window.addEventListener('scroll', handleScroll)
-    }
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [isMobileMenuOpen])
-
-
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
-      {/* MASSIVE VIDEO - Takes up 95% of space */}
-      <video
-        ref={videoRef}
-        className="absolute inset-0 w-full h-full object-cover scale-110"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-      >
-        <source src="https://videos.pexels.com/video-files/6963744/6963744-hd_1920_1080_25fps.mp4" type="video/mp4" />
-        <source src="https://videos.pexels.com/video-files/3130284/3130284-uhd_2560_1440_30fps.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-
-      {/* Background Music */}
-      <audio ref={audioRef} loop preload="none" src="/ambient-bg.mp3" />
-
-      {/* Full-Width Navbar */}
-      <motion.nav
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="fixed top-0 left-0 right-0 w-full z-[110]"
-      >
-        <div
-          className={`w-full px-6 sm:px-8 lg:px-12 py-2 transition-all duration-300 ease-out ${
-            isScrolled
-              ? 'bg-black/80 backdrop-blur-xl border-b border-white/10'
-              : 'bg-transparent'
-          }`}
-        >
-          <div className="flex items-center justify-between">
-            {/* Logo */}
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="flex items-center cursor-pointer"
-              onClick={() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' })
-              }}
-            >
-              <img
-                src="/royah-logo-real.png"
-                alt="Royah Logo"
-                className="w-24 h-14 object-contain"
-              />
-            </motion.div>
-
-            {/* Navigation Menu */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a
-                href="#services"
-                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
-              >
-                {t('nav.services')}
-              </a>
-              <a
-                href="#about"
-                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
-              >
-                {t('nav.process')}
-              </a>
-              <a
-                href="#portfolio"
-                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
-              >
-                {t('nav.whyUs')}
-              </a>
-              <a
-                href="#contact"
-                className="text-white hover:text-white/80 font-medium gentle-animation hover:scale-105"
-              >
-                {t('nav.contact')}
-              </a>
-              <LanguageSwitcher />
-            </div>
-
-            {/* Right Side - Video Controls + Language Switcher + CTA + Mobile Menu */}
-            <div className="flex items-center space-x-3 relative">
-              {/* Mobile Language Switcher - Only show on mobile */}
-              <div className="md:hidden relative">
-                <button
-                  onClick={() => {
-                    const newLanguage = i18n.language?.startsWith('ar') ? 'en' : 'ar'
-                    i18n.changeLanguage(newLanguage)
-                    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr'
-                    document.documentElement.lang = newLanguage
-                    document.body.classList.toggle('rtl-mode', newLanguage === 'ar')
-                    window.history.replaceState(null, '', newLanguage === 'ar' ? '/ar' : '/')
-                  }}
-                  className="glass-effect p-3 rounded-full text-white hover:bg-white/20 gentle-animation cursor-pointer"
-                  aria-label="Switch Language"
-                >
-                  <Globe className="w-4 h-4" />
-                </button>
-              </div>
-
-              {/* Video Controls with Sound On indicator */}
-              <div className="relative">
-                <button
-                  onClick={() => setIsMuted(!isMuted)}
-                  className="glass-effect p-3 rounded-full text-white hover:bg-white/20 gentle-animation cursor-pointer"
-                  aria-label={isMuted ? t('hero.controls.soundOn') : t('hero.controls.soundOff')}
-                  aria-pressed={!isMuted}
-                >
-                  {isMuted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}
-                </button>
-
-                {/* Sound On indicator - only show when muted */}
-                {isMuted && (
-                  <div className="absolute -bottom-10 right-0 flex items-center text-white/80">
-                    <span className="whitespace-nowrap font-medium text-sm mr-2">{t('hero.controls.soundOn')}</span>
-                    <span className="text-lg">↗</span>
-                  </div>
-                )}
-              </div>
-              
-              {/* CTA Button - Hidden on mobile */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  contactSection?.scrollIntoView({ behavior: 'smooth' })
-                }}
-                className="hidden sm:block bg-red-600 backdrop-blur-sm text-white font-semibold px-6 py-3 rounded-md hover:bg-red-700 gentle-animation ml-4 cursor-pointer"
-              >
-                {t('hero.cta.primary')}
-              </motion.button>
-
-              {/* Mobile Hamburger Menu Button */}
-              <button
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden glass-effect p-3 rounded-full text-white hover:bg-white/20 active:bg-white/30 gentle-animation cursor-pointer z-[120] relative"
-                aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={isMobileMenuOpen}
-              >
-                {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
-          </div>
+    <div className="relative min-h-screen w-full overflow-hidden bg-[#0a0a0a] text-white">
+      {/* Background: cinematic video if present, else ambient brand gradient */}
+      {hasVideo ? (
+        <div className="absolute inset-0">
+          <video
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay muted loop playsInline preload="metadata"
+            poster={HERO_POSTER}
+          >
+            <source src={HERO_VIDEO} type="video/mp4" />
+          </video>
+          {/* Dark overlays keep the headline readable over the video */}
+          <div className="absolute inset-0 bg-black/55" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-[#0a0a0a]/70" />
         </div>
-      </motion.nav>
-
-      {/* Mobile Menu Overlay */}
-      {isMobileMenuOpen && (
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="md:hidden fixed inset-0 bg-black/50 backdrop-blur-md z-[80] cursor-pointer"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
+      ) : (
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -top-1/4 left-1/2 h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-[#DB4B4B]/20 blur-[140px]" />
+          <div className="absolute bottom-0 right-0 h-[400px] w-[400px] rounded-full bg-[#8B5A7F]/15 blur-[120px]" />
+          <div className="absolute inset-0 opacity-[0.04]" style={{
+            backgroundImage: 'radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)',
+            backgroundSize: '32px 32px'
+          }} />
+        </div>
       )}
 
-      {/* Mobile Menu Panel */}
-      <motion.div
-        initial={{ x: '100%' }}
-        animate={{ x: isMobileMenuOpen ? '0%' : '100%' }}
-        transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="md:hidden fixed top-0 right-0 h-full w-72 max-w-[85vw] bg-black/90 backdrop-blur-xl border-l border-white/10 z-[90] mobile-menu-panel pointer-events-auto"
-        onClick={(e) => e.stopPropagation()}
-      >
-        <div className="flex flex-col h-full">
-          {/* Close Button at the top */}
-          <div className="flex justify-end p-4">
-            <button
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="glass-effect p-3 rounded-full text-white hover:bg-white/20 active:bg-white/30 gentle-animation cursor-pointer"
-              aria-label="Close menu"
-            >
-              <X className="w-5 h-5" />
-            </button>
-          </div>
-          
-          <div className="flex flex-col px-6 pb-6 h-full">
-            {/* Mobile Navigation Links */}
-            <div className="flex flex-col space-y-4 text-white">
-              <a
-                href="#services"
-                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.services')}
-              </a>
-              <a
-                href="#about"
-                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.process')}
-              </a>
-              <a
-                href="#portfolio"
-                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.whyUs')}
-              </a>
-              <a
-                href="#contact"
-                className="mobile-menu-link px-4 py-3 hover:text-white/80 hover:bg-white/10 rounded-lg gentle-animation font-medium text-lg active:bg-white/20"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {t('nav.contact')}
-              </a>
-              <div className="mt-4 px-4">
-                <LanguageSwitcher />
-              </div>
-            </div>
+      <div className="relative z-10 flex min-h-screen items-center">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-32">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 mb-8">
+              <span className="h-2 w-2 rounded-full bg-[#059669] animate-pulse" />
+              {t('hero.badge')}
+            </motion.div>
 
-            {/* Mobile CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const contactSection = document.getElementById('contact')
-                contactSection?.scrollIntoView({ behavior: 'smooth' })
-                setIsMobileMenuOpen(false)
-              }}
-              className="bg-red-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-red-700 active:bg-red-800 gentle-animation mt-8 cursor-pointer"
-            >
-              {t('hero.cta.primary')}
-            </motion.button>
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+              className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight">
+              {t('hero.headline')}{' '}
+              <span className="text-[#DB4B4B]">{t('hero.headlineAccent')}</span>
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
+              className="mt-8 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+              {t('hero.subheadline')}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
+              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              <button onClick={() => navigate('/product')}
+                className="group inline-flex items-center gap-2 bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
+                {t('hero.ctaPrimary')}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 gentle-animation rtl:rotate-180" />
+              </button>
+              <button onClick={() => navigate('/contact')}
+                className="inline-flex items-center gap-2 border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
+                {t('hero.ctaSecondary')}
+              </button>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.7 }}
+              className="mt-8 inline-flex items-center gap-2 text-sm text-white/50">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#059669] animate-pulse" />
+              {t('hero.trust')}
+            </motion.div>
           </div>
         </div>
-      </motion.div>
-
-
-
-      {/* Big Studio Title - Lower Left */}
-      <motion.div
-        initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 1.5 }}
-        className={`absolute bottom-12 z-40 ${isRTL ? 'right-6 sm:right-8 lg:right-12' : 'left-6 sm:left-8 lg:left-12'}`}
-      >
-        <div className="max-w-2xl">
-          <h1 className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black leading-tight text-white ${isRTL ? 'text-right hero-title' : 'text-left'}`}>
-            {t('hero.tagline')}
-          </h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 2 }}
-            className={`text-lg sm:text-xl text-white/90 mt-6 max-w-xl leading-relaxed ${isRTL ? 'text-right hero-subtitle' : 'text-left'}`}
-          >
-            {t('hero.subheadline')}
-          </motion.p>
-        </div>
-      </motion.div>
-
-
+      </div>
     </div>
   )
 }
