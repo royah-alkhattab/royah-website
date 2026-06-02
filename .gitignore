@@ -24,3 +24,4 @@ lighthouse-report.json
 *.njsproj
 *.sln
 *.sw?
+.vercel
