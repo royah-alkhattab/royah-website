@@ -41,10 +41,10 @@ const resources = {
       },
       // Hero Section
       hero: {
-        badge: "Aligned with Oman Vision 2040",
-        headline: "We take businesses off paper —",
-        headlineAccent: "and into the age of AI.",
-        subheadline: "Royah builds the software that runs real businesses: billing, tenants, payments and operations — bilingual, reliable, and AI-ready.",
+        badge: "Smart software & AI",
+        headline: "Smart software and AI,",
+        headlineAccent: "built to serve people.",
+        subheadline: "Royah designs intelligent, connected software and AI that make work and everyday life simpler, smarter, and ready for what's next.",
         ctaPrimary: "See our product",
         ctaSecondary: "Talk to us",
         trust: "Running in live production today"
@@ -188,7 +188,7 @@ const resources = {
       },
       // Footer Section
       footer: {
-        description: "Royah builds the software that takes Omani businesses off paper and into the age of AI — bilingual, reliable, and aligned with Oman Vision 2040.",
+        description: "Royah designs intelligent, connected software and AI that make work and everyday life simpler, smarter, and ready for what's next.",
         nav: {
           title: "Explore",
           whatWeDo: "What We Do",
@@ -245,10 +245,10 @@ const resources = {
       },
       // Hero Section
       hero: {
-        badge: "منسجمون مع رؤية عُمان ٢٠٤٠",
-        headline: "ننقل الأعمال من الورق —",
-        headlineAccent: "إلى عصر الذكاء الاصطناعي.",
-        subheadline: "تبني رؤية البرمجيات التي تُدير الأعمال الحقيقية: الفوترة والمستأجرين والمدفوعات والعمليات — بلغتين، بموثوقية، وجاهزة للذكاء الاصطناعي.",
+        badge: "برمجيات وذكاء اصطناعي",
+        headline: "برمجيات وذكاء اصطناعي",
+        headlineAccent: "في خدمة الإنسان.",
+        subheadline: "تصمّم رؤية برمجياتٍ وذكاءً اصطناعياً متصلاً وذكياً يجعل العمل والحياة اليومية أبسط وأذكى وأكثر جاهزية للمستقبل.",
         ctaPrimary: "شاهد منتجنا",
         ctaSecondary: "تحدّث معنا",
         trust: "يعمل فعلياً في بيئة إنتاج حقيقية"
@@ -392,7 +392,7 @@ const resources = {
       },
       // Footer Section
       footer: {
-        description: "تبني رؤية البرمجيات التي تنقل الأعمال العُمانية من الورق إلى عصر الذكاء الاصطناعي — بلغتين، وبموثوقية، وبانسجام مع رؤية عُمان ٢٠٤٠.",
+        description: "تصمّم رؤية برمجيات وذكاءً اصطناعياً متصلاً يجعل العمل والحياة اليومية أبسط وأذكى وأكثر جاهزية للمستقبل.",
         nav: {
           title: "استكشف",
           whatWeDo: "ماذا نقدّم",
@@ -448,14 +448,14 @@ const updateMeta = (lng: string) => {
   document.documentElement.lang = isAr ? 'ar' : 'en';
   document.documentElement.dir = isAr ? 'rtl' : 'ltr';
   document.title = isAr
-    ? 'رؤية - برمجيات وحلول ذكاء اصطناعي للأعمال العُمانية'
-    : 'Royah - Software & AI for Omani Businesses';
+    ? 'رؤية — برمجيات وذكاء اصطناعي في خدمة الإنسان'
+    : 'Royah — Smart Software & AI, built to serve people';
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.setAttribute('content', isAr
-      ? 'تبني رؤية البرمجيات التي تنقل الأعمال العُمانية من الورق إلى عصر الذكاء الاصطناعي: الفوترة وإدارة العقارات والمدفوعات — بلغتين ومنسجمة مع رؤية عُمان ٢٠٤٠.'
-      : 'Royah builds the software that takes Omani businesses off paper and into the age of AI: billing, property management, and payments — bilingual and aligned with Oman Vision 2040.');
+      ? 'تصمّم رؤية برمجيات وذكاءً اصطناعياً متصلاً وذكياً يجعل العمل والحياة اليومية أبسط وأذكى وأكثر جاهزية للمستقبل.'
+      : 'Royah designs intelligent, connected software and AI that make work and everyday life simpler, smarter, and ready for what\'s next.');
   }
 
   const ogTitle = document.querySelector('meta[property="og:title"]');
