@@ -35,8 +35,8 @@ const resources = {
       },
       // Final call to action
       finalCta: {
-        title: "Ready to get off paper?",
-        desc: "Tell us about your business and we'll show you exactly how Royah can help.",
+        title: "Ready to work smarter?",
+        desc: "Tell us what you're building, and we'll show you how Royah's software and AI can help.",
         button: "Talk to us"
       },
       // Hero Section
@@ -51,29 +51,29 @@ const resources = {
       },
       // Problem Section
       problem: {
-        tag: "The reality on the ground",
-        title: "Most businesses still run on paper.",
-        subtitle: "Notebooks, WhatsApp messages, and scattered Excel sheets. It works — until it doesn't.",
+        tag: "What we believe",
+        title: "Technology should serve people.",
+        subtitle: "Great software gets out of your way — making the work simpler, the decisions smarter, and the day easier.",
         points: {
           paper: {
-            title: "Data lives on paper",
-            description: "Records in notebooks and chats get lost, forgotten, or duplicated."
+            title: "Simple by design",
+            description: "Powerful underneath, effortless on top — no clutter, no manuals, no friction."
           },
           manual: {
-            title: "Billing is manual",
-            description: "Invoices and payments tracked by hand cost hours and invite mistakes."
+            title: "Smart by default",
+            description: "AI does the heavy lifting — surfacing insights and saving you real time."
           },
           blind: {
-            title: "No clear picture",
-            description: "Without a system, owners can't see income, debts, or what's really happening."
+            title: "Connected as one",
+            description: "Your tools, your data, and your people working together in one clear place."
           }
         }
       },
       // What We Do
       whatWeDo: {
         tag: "What we do",
-        title: "Software built for how businesses actually work.",
-        subtitle: "We focus on the operational software small and medium businesses need — and make it smart with AI.",
+        title: "Software built for the way you work.",
+        subtitle: "We design the everyday tools people and teams rely on — and make them smart with AI.",
         items: {
           software: {
             title: "Business Software",
@@ -115,7 +115,7 @@ const resources = {
         stats: {
           customers: { value: "350+", label: "customers billed in live production" },
           production: { value: "100%", label: "bilingual — Arabic & English, by default" },
-          paper: { value: "0", label: "paper notebooks needed" },
+          paper: { value: "AI", label: "built into everything we make" },
           uptime: { value: "24/7", label: "systems running in real businesses" }
         }
       },
@@ -126,23 +126,23 @@ const resources = {
         description: "Royah is led by a software engineer with a Master's degree in Artificial Intelligence. That means the software you get isn't just functional — it's built to be intelligent, reliable, and ready for what's next.",
         points: {
           ai: { title: "AI expertise", description: "A Master's in AI — rare in the region — built into every product we make." },
-          oman: { title: "Made for Oman", description: "Bilingual, RTL-first, and shaped around how local businesses really operate." },
+          oman: { title: "Bilingual by design", description: "Arabic-first and English, RTL-ready, shaped around how people really work." },
           lasting: { title: "Built to last", description: "Production-grade engineering: secure, maintainable, and ready to grow with you." }
         }
       },
       // Vision 2040
       vision: {
         tag: "Our bigger purpose",
-        title: "Oman Vision 2040 starts on the ground.",
-        body: "Oman aims to grow its digital economy from about 2% to 10% of GDP. That doesn't happen in boardrooms alone — it happens one business at a time, as each one moves from paper to software. That's the work we do, every day.",
-        stat: "2% → 10%",
-        statLabel: "target share of the digital economy in Oman's GDP by 2040",
-        note: "Every business we digitize is a step toward that national goal."
+        title: "Technology in the service of people.",
+        body: "We build because we believe technology should lift people up — making work and everyday life simpler, fairer, and full of possibility. Proud to call Oman home, and building for the world.",
+        stat: "People first",
+        statLabel: "the principle behind everything we design and build",
+        note: "Every product we make is a step toward that."
       },
       // Process
       process: {
         tag: "How we work",
-        title: "A simple path from paper to product.",
+        title: "A simple path from idea to live.",
         subtitle: "Clear steps, no jargon, real results.",
         steps: {
           understand: { title: "Understand", description: "We learn how your business actually runs today." },
@@ -154,8 +154,8 @@ const resources = {
       // Contact Section (kept compatible with Contact.tsx)
       contact: {
         tagline: "Start Your Digital Journey",
-        title: "Ready to get off paper?",
-        subtitle: "Tell us about your business and we'll show you exactly how Royah can help.",
+        title: "Ready to work smarter?",
+        subtitle: "Tell us what you're working on — we'll show you how Royah can help.",
         whatsapp: "Chat on WhatsApp",
         whatsappDesc: "Get instant responses to your questions. We're available during business hours.",
         whatsappResponse: "Usually responds instantly",
@@ -239,8 +239,8 @@ const resources = {
       },
       // Final call to action
       finalCta: {
-        title: "مستعد لترك الورق؟",
-        desc: "أخبرنا عن عملك وسنُريك بالضبط كيف يمكن لرؤية أن تساعدك.",
+        title: "مستعد للعمل بذكاء أكبر؟",
+        desc: "أخبرنا بما تبنيه، وسنُريك كيف يمكن لبرمجيات رؤية وذكائها الاصطناعي أن تساعدك.",
         button: "تحدّث معنا"
       },
       // Hero Section
@@ -255,29 +255,29 @@ const resources = {
       },
       // Problem Section
       problem: {
-        tag: "الواقع على الأرض",
-        title: "معظم الأعمال لا تزال تُدار بالورق.",
-        subtitle: "دفاتر، ورسائل واتساب، وجداول إكسل متفرقة. تنجح الأمور… حتى تتعطّل.",
+        tag: "ما نؤمن به",
+        title: "التقنية يجب أن تخدم الإنسان.",
+        subtitle: "البرمجيات الرائعة تبتعد عن طريقك — تجعل العمل أبسط، والقرارات أذكى، واليوم أسهل.",
         points: {
           paper: {
-            title: "البيانات على الورق",
-            description: "السجلات في الدفاتر والمحادثات تضيع أو تُنسى أو تتكرّر."
+            title: "بساطة في التصميم",
+            description: "قوة في العمق، وسهولة في الاستخدام — بلا تعقيد ولا أدلّة ولا عوائق."
           },
           manual: {
-            title: "الفوترة يدوية",
-            description: "تتبّع الفواتير والمدفوعات يدوياً يكلّف ساعات ويفتح باب الأخطاء."
+            title: "ذكاء بشكل افتراضي",
+            description: "الذكاء الاصطناعي يتولّى المهام الثقيلة — يكشف الرؤى ويوفّر وقتك الحقيقي."
           },
           blind: {
-            title: "لا صورة واضحة",
-            description: "بلا نظام، لا يستطيع صاحب العمل رؤية الدخل أو الديون أو ما يجري فعلاً."
+            title: "متصل كوحدة واحدة",
+            description: "أدواتك وبياناتك وفريقك يعملون معاً في مكان واحد واضح."
           }
         }
       },
       // What We Do
       whatWeDo: {
         tag: "ماذا نقدّم",
-        title: "برمجيات مصمّمة لطريقة عمل الأعمال فعلاً.",
-        subtitle: "نركّز على البرمجيات التشغيلية التي تحتاجها الأعمال الصغيرة والمتوسطة — ونجعلها ذكية بالذكاء الاصطناعي.",
+        title: "برمجيات مصمّمة لطريقة عملك.",
+        subtitle: "نصمّم الأدوات اليومية التي يعتمد عليها الناس والفرق — ونجعلها ذكية بالذكاء الاصطناعي.",
         items: {
           software: {
             title: "برمجيات الأعمال",
@@ -319,7 +319,7 @@ const resources = {
         stats: {
           customers: { value: "+٣٥٠", label: "عميل تُحتسب فواتيرهم في بيئة إنتاج فعلية" },
           production: { value: "١٠٠٪", label: "بالعربية والإنجليزية، تلقائياً" },
-          paper: { value: "٠", label: "دفاتر ورقية مطلوبة" },
+          paper: { value: "ذكاء", label: "مدمج في كل ما نصنعه" },
           uptime: { value: "٢٤/٧", label: "أنظمة تعمل في أعمال حقيقية" }
         }
       },
@@ -330,23 +330,23 @@ const resources = {
         description: "تقود رؤيةَ مهندسُ برمجيات حاصل على ماجستير في الذكاء الاصطناعي. هذا يعني أن البرمجيات التي تحصل عليها ليست وظيفية فحسب — بل مبنية لتكون ذكية وموثوقة وجاهزة للمستقبل.",
         points: {
           ai: { title: "خبرة في الذكاء الاصطناعي", description: "ماجستير في الذكاء الاصطناعي — نادر في المنطقة — في صميم كل منتج نصنعه." },
-          oman: { title: "مصمَّمة لعُمان", description: "بلغتين، وبأولوية للكتابة من اليمين، ومبنية حول طريقة عمل الأعمال المحلية." },
+          oman: { title: "ثنائية اللغة بالتصميم", description: "عربية أولاً وإنجليزية، جاهزة للكتابة من اليمين، ومبنية حول طريقة عمل الناس فعلاً." },
           lasting: { title: "مبنية لتدوم", description: "هندسة بمستوى الإنتاج: آمنة، وقابلة للصيانة، وجاهزة للنمو معك." }
         }
       },
       // Vision 2040
       vision: {
         tag: "غايتنا الأكبر",
-        title: "رؤية عُمان ٢٠٤٠ تبدأ من الأرض.",
-        body: "تستهدف عُمان رفع مساهمة الاقتصاد الرقمي من نحو ٢٪ إلى ١٠٪ من الناتج المحلي. وهذا لا يحدث في قاعات الاجتماعات وحدها — بل عملاً تلو الآخر، مع انتقال كلٍّ منها من الورق إلى البرمجيات. هذا ما نفعله كل يوم.",
-        stat: "٢٪ ← ١٠٪",
-        statLabel: "حصة الاقتصاد الرقمي المستهدفة من الناتج المحلي بحلول ٢٠٤٠",
-        note: "كل عمل نُرقمنه خطوة نحو هذا الهدف الوطني."
+        title: "التقنية في خدمة الإنسان.",
+        body: "نبني لأننا نؤمن أن التقنية يجب أن ترتقي بالإنسان — تجعل العمل والحياة اليومية أبسط وأعدل وأكثر رحابة بالفرص. نفخر بأن عُمان وطننا، وأن نبني للعالم.",
+        stat: "الإنسان أولاً",
+        statLabel: "المبدأ الذي يقف خلف كل ما نصمّمه ونبنيه",
+        note: "كل منتج نصنعه خطوة نحو ذلك."
       },
       // Process
       process: {
         tag: "كيف نعمل",
-        title: "مسار بسيط من الورق إلى المنتج.",
+        title: "مسار بسيط من الفكرة إلى الإطلاق.",
         subtitle: "خطوات واضحة، بلا تعقيد، ونتائج حقيقية.",
         steps: {
           understand: { title: "نفهم", description: "نتعرّف على طريقة إدارة عملك اليوم فعلاً." },
@@ -358,8 +358,8 @@ const resources = {
       // Contact Section
       contact: {
         tagline: "ابدأ رحلتك الرقمية",
-        title: "هل أنت مستعد لترك الورق؟",
-        subtitle: "أخبرنا عن عملك وسنُريك بالضبط كيف يمكن لرؤية أن تساعدك.",
+        title: "مستعد للعمل بذكاء أكبر؟",
+        subtitle: "أخبرنا بما تعمل عليه — وسنُريك كيف يمكن لرؤية أن تساعدك.",
         whatsapp: "تحدث عبر واتساب",
         whatsappDesc: "احصل على ردود فورية لأسئلتك. نحن متاحون خلال ساعات العمل.",
         whatsappResponse: "يرد عادة فوراً",

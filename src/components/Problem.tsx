@@ -1,11 +1,11 @@
-import { FileText, Receipt, EyeOff } from 'lucide-react'
+import { Feather, Sparkles, Network } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
 const points = [
-  { icon: FileText, key: 'paper' },
-  { icon: Receipt, key: 'manual' },
-  { icon: EyeOff, key: 'blind' },
+  { icon: Feather, key: 'paper' },
+  { icon: Sparkles, key: 'manual' },
+  { icon: Network, key: 'blind' },
 ]
 
 export function Problem() {
