@@ -18,12 +18,12 @@ const resources = {
         product: {
           eyebrow: "Our flagship product",
           title: "Royah Property",
-          subtitle: "Property & building management software that takes owners off paper — bilingual, automated, and already running in real businesses."
+          subtitle: "Smart property & building management software — bilingual, automated, and already running in real businesses."
         },
         about: {
           eyebrow: "About Royah",
-          title: "We turn paper into software.",
-          subtitle: "Royah is a software company on a mission: to take businesses off paper and into the age of AI — built by an engineer who specializes in artificial intelligence, and aligned with Oman Vision 2040."
+          title: "We build software that serves people.",
+          subtitle: "Royah is a software company on a mission: to put intelligent, connected technology in the service of people — built by an engineer who specializes in artificial intelligence."
         }
       },
       // Home product teaser
@@ -87,7 +87,7 @@ const resources = {
           },
           strategy: {
             title: "Digital Strategy",
-            description: "We help you plan the move from paper to digital — what to build, in what order, and how it pays off.",
+            description: "We help you plan your digital roadmap — what to build, in what order, and how it pays off.",
             features: ["Digital roadmap", "Process review", "System design", "Vision 2040 alignment"]
           }
         }
@@ -222,12 +222,12 @@ const resources = {
         product: {
           eyebrow: "منتجنا الرئيسي",
           title: "رؤية العقار",
-          subtitle: "برنامج لإدارة العقارات والمباني ينقل الملّاك من الورق — بلغتين، ومؤتمت، ويعمل فعلاً في أعمال حقيقية."
+          subtitle: "برنامج ذكي لإدارة العقارات والمباني — بلغتين، ومؤتمت، ويعمل فعلاً في أعمال حقيقية."
         },
         about: {
           eyebrow: "عن رؤية",
-          title: "نحوّل الورق إلى برمجيات.",
-          subtitle: "رؤية شركة برمجيات برسالة واضحة: نقل الأعمال من الورق إلى عصر الذكاء الاصطناعي — بناءً على يد مهندس متخصص في الذكاء الاصطناعي، وبانسجام مع رؤية عُمان ٢٠٤٠."
+          title: "نبني برمجيات تخدم الإنسان.",
+          subtitle: "رؤية شركة برمجيات برسالة واضحة: أن نضع تقنية ذكية ومتصلة في خدمة الإنسان — بناءً على يد مهندس متخصص في الذكاء الاصطناعي."
         }
       },
       // Home product teaser
@@ -291,7 +291,7 @@ const resources = {
           },
           strategy: {
             title: "الاستراتيجية الرقمية",
-            description: "نساعدك في التخطيط للانتقال من الورق إلى الرقمنة — ماذا تبني، وبأي ترتيب، وكيف يعود عليك بالنفع.",
+            description: "نساعدك في رسم خارطة طريقك الرقمية — ماذا تبني، وبأي ترتيب، وكيف يعود عليك بالنفع.",
             features: ["خارطة طريق رقمية", "مراجعة العمليات", "تصميم الأنظمة", "الانسجام مع رؤية ٢٠٤٠"]
           }
         }
