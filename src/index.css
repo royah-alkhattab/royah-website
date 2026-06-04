@@ -161,7 +161,8 @@
   [dir="rtl"] .text-center h3,
   [dir="rtl"] .text-center h4,
   [dir="rtl"] .text-center p,
-  [dir="rtl"] .text-center span {
+  [dir="rtl"] .text-center span,
+  [dir="rtl"] .text-center div {
     text-align: center;
     direction: rtl;
     unicode-bidi: embed;
