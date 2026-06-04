@@ -73,7 +73,7 @@ const resources = {
       whatWeDo: {
         tag: "What we do",
         title: "Software built for the way you work.",
-        subtitle: "We design the everyday tools people and teams rely on — and make them smart with AI.",
+        subtitle: "Custom business software, practical AI, and a clear digital strategy — the essentials to run and grow.",
         items: {
           software: {
             title: "Business Software",
@@ -277,7 +277,7 @@ const resources = {
       whatWeDo: {
         tag: "ماذا نقدّم",
         title: "برمجيات مصمّمة لطريقة عملك.",
-        subtitle: "نصمّم الأدوات اليومية التي يعتمد عليها الناس والفرق — ونجعلها ذكية بالذكاء الاصطناعي.",
+        subtitle: "برمجيات أعمال مخصّصة، وذكاء اصطناعي عملي، واستراتيجية رقمية واضحة — كل ما تحتاجه لإدارة عملك ونموّه.",
         items: {
           software: {
             title: "برمجيات الأعمال",
