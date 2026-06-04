@@ -36,8 +36,8 @@ export function WhatWeDo() {
           </div>
           {/* fade the video into the card */}
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-background to-transparent" />
-          {/* icon badge straddling the edge */}
-          <div className="absolute -bottom-5 left-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
+          {/* icon badge straddling the edge (flips to the right in RTL) */}
+          <div className="absolute -bottom-5 left-6 rtl:left-auto rtl:right-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
             style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)`, boxShadow: `0 10px 24px -8px ${item.color}cc` }}>
             <Icon className="h-6 w-6 text-white" />
           </div>
