@@ -4,7 +4,7 @@ import { Reveal } from './Reveal'
 export function Vision2040() {
   const { t } = useTranslation()
   return (
-    <section id="vision" className="relative py-24 lg:py-32 bg-[#0a0a0a] text-white overflow-hidden scroll-mt-20">
+    <section id="vision" className="relative py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] text-white overflow-hidden scroll-mt-20">
       {/* Ambient glow */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute top-0 left-1/4 h-[400px] w-[400px] rounded-full bg-[#DB4B4B]/20 blur-[130px]" />

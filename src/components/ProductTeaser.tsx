@@ -6,7 +6,7 @@ import { Reveal, SectionTag } from './Reveal'
 export function ProductTeaser() {
   const { t } = useTranslation()
   return (
-    <section className="relative py-24 lg:py-32 bg-background">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <Reveal>
           <div className="relative overflow-hidden rounded-3xl bg-[#0f0f0f] text-white px-8 py-14 lg:px-16 lg:py-20">

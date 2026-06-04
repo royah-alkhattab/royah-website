@@ -11,7 +11,7 @@ const points = [
 export function WhyRoyah() {
   const { t } = useTranslation()
   return (
-    <section className="relative py-24 lg:py-32 bg-background">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal>

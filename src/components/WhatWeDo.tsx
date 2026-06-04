@@ -11,7 +11,7 @@ const items = [
 export function WhatWeDo() {
   const { t } = useTranslation()
   return (
-    <section id="what" className="relative py-24 lg:py-32 bg-card/40 scroll-mt-20">
+    <section id="what" className="relative py-16 sm:py-24 lg:py-32 bg-card/40 scroll-mt-20">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
@@ -25,18 +25,18 @@ export function WhatWeDo() {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-14">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto mt-10 sm:mt-14">
           {items.map((item, i) => {
             const Icon = item.icon
             const features = t(`whatWeDo.items.${item.key}.features`, { returnObjects: true }) as string[]
             return (
               <Reveal key={item.key} delay={i * 0.1}>
-                <div className="h-full bg-background clean-border rounded-3xl p-8 elevated-shadow hover:-translate-y-1 gentle-animation">
-                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                <div className="h-full bg-background clean-border rounded-3xl p-6 sm:p-8 elevated-shadow hover:-translate-y-1 gentle-animation">
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center mb-5 sm:mb-6"
                     style={{ backgroundColor: `${item.color}1a` }}>
-                    <Icon className="w-7 h-7" style={{ color: item.color }} />
+                    <Icon className="w-6 h-6 sm:w-7 sm:h-7" style={{ color: item.color }} />
                   </div>
-                  <h3 className="text-2xl font-bold mb-3 card-title">{t(`whatWeDo.items.${item.key}.title`)}</h3>
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 card-title">{t(`whatWeDo.items.${item.key}.title`)}</h3>
                   <p className="text-muted-foreground leading-relaxed mb-6 card-description">
                     {t(`whatWeDo.items.${item.key}.description`)}
                   </p>

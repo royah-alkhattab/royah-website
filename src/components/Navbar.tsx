@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Menu, X } from 'lucide-react'
+import { Menu, X, ChevronRight, Phone, Mail, Instagram } from 'lucide-react'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link, NavLink, useLocation } from 'react-router-dom'
@@ -66,7 +66,7 @@ export function Navbar() {
             <div className="flex items-center gap-2 md:hidden">
               <LanguageSwitcher light={overlay} />
               <button onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}
-                className={`p-2.5 rounded-full gentle-animation ${overlay ? 'glass-effect text-white' : 'border border-border'}`}>
+                className={`p-2.5 rounded-full gentle-animation ${overlay && !open ? 'glass-effect text-white' : 'border border-border bg-background text-foreground'}`}>
                 {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>
@@ -80,21 +80,49 @@ export function Navbar() {
           className="md:hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
       )}
       <motion.div initial={false} animate={{ x: open ? '0%' : '100%' }}
-        transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-        className="md:hidden fixed top-0 right-0 z-[105] h-full w-72 max-w-[85vw] bg-background border-l border-border pt-20 px-6">
-        <div className="flex flex-col gap-1">
+        transition={{ type: 'spring', damping: 28, stiffness: 240 }}
+        className="md:hidden fixed top-0 right-0 z-[105] flex h-full w-80 max-w-[86vw] flex-col bg-background border-l border-border pt-24 pb-8 px-5 rtl:right-auto rtl:left-0 rtl:border-l-0 rtl:border-r">
+        <nav className="flex flex-col gap-1.5">
           {links.map((l) => (
             <NavLink key={l.to} to={l.to} end={l.to === '/'} onClick={() => setOpen(false)}
               className={({ isActive }) =>
-                `px-4 py-3 rounded-lg font-medium text-lg gentle-animation ${isActive ? 'bg-card text-foreground' : 'text-muted-foreground hover:bg-card'}`
+                `group flex items-center justify-between rounded-2xl px-4 py-3.5 text-lg font-semibold gentle-animation ${
+                  isActive ? 'bg-[#DB4B4B]/10 text-[#DB4B4B]' : 'text-foreground hover:bg-card'
+                }`
               }>
-              {t(l.key)}
+              <span>{t(l.key)}</span>
+              <ChevronRight className="w-5 h-5 opacity-40 group-hover:opacity-70 gentle-animation rtl:rotate-180" />
             </NavLink>
           ))}
-          <Link to="/contact" onClick={() => setOpen(false)}
-            className="mt-4 text-center bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-6 py-3 rounded-lg gentle-animation">
-            {t('nav.contact')}
-          </Link>
+        </nav>
+
+        <Link to="/contact" onClick={() => setOpen(false)}
+          className="mt-5 text-center bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-6 py-3.5 rounded-xl gentle-animation">
+          {t('nav.contact')}
+        </Link>
+
+        <div className="mt-auto pt-6 border-t border-border flex flex-col gap-3">
+          <a href="tel:+96890663136"
+            className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground gentle-animation rtl:flex-row-reverse rtl:text-right">
+            <span className="w-9 h-9 shrink-0 rounded-lg bg-[#DB4B4B]/10 flex items-center justify-center">
+              <Phone className="w-4 h-4 text-[#DB4B4B]" />
+            </span>
+            <span dir="ltr">+968 90663136</span>
+          </a>
+          <a href="mailto:info@royah.om"
+            className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground gentle-animation rtl:flex-row-reverse rtl:text-right">
+            <span className="w-9 h-9 shrink-0 rounded-lg bg-[#059669]/10 flex items-center justify-center">
+              <Mail className="w-4 h-4 text-[#059669]" />
+            </span>
+            <span>info@royah.om</span>
+          </a>
+          <a href="https://instagram.com/royah.om" target="_blank" rel="noopener noreferrer"
+            className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground gentle-animation rtl:flex-row-reverse rtl:text-right">
+            <span className="w-9 h-9 shrink-0 rounded-lg bg-[#8B5A7F]/10 flex items-center justify-center">
+              <Instagram className="w-4 h-4 text-[#8B5A7F]" />
+            </span>
+            <span>@royah.om</span>
+          </a>
         </div>
       </motion.div>
     </>

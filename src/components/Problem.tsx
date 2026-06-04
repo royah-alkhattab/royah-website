@@ -11,7 +11,7 @@ const points = [
 export function Problem() {
   const { t } = useTranslation()
   return (
-    <section className="relative py-24 lg:py-32 bg-background">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
@@ -25,12 +25,12 @@ export function Problem() {
           </Reveal>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mt-14">
+        <div className="grid md:grid-cols-3 gap-5 sm:gap-6 max-w-5xl mx-auto mt-10 sm:mt-14">
           {points.map((p, i) => {
             const Icon = p.icon
             return (
               <Reveal key={p.key} delay={i * 0.1}>
-                <div className="h-full bg-card clean-border rounded-2xl p-8 subtle-shadow">
+                <div className="h-full bg-card clean-border rounded-2xl p-6 sm:p-8 subtle-shadow">
                   <div className="w-12 h-12 rounded-xl bg-[#DB4B4B]/10 flex items-center justify-center mb-5">
                     <Icon className="w-6 h-6 text-[#DB4B4B]" />
                   </div>

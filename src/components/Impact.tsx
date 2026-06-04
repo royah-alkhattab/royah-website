@@ -6,7 +6,7 @@ const keys = ['customers', 'production', 'paper', 'uptime'] as const
 export function Impact() {
   const { t } = useTranslation()
   return (
-    <section id="impact" className="relative py-24 lg:py-32 bg-card/40 scroll-mt-20">
+    <section id="impact" className="relative py-16 sm:py-24 lg:py-32 bg-card/40 scroll-mt-20">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>

@@ -13,7 +13,7 @@ export function FinalCTA() {
   }
 
   return (
-    <section className="relative py-20 lg:py-28 bg-background">
+    <section className="relative py-14 sm:py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="rounded-3xl bg-gradient-to-r from-[#DB4B4B]/10 via-[#8B5A7F]/10 to-[#059669]/10 clean-border px-8 py-14 text-center">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight section-title mb-4">

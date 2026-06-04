@@ -204,7 +204,7 @@ const resources = {
         location: "Sultanate of Oman",
         legalName: "Royah Advanced Technologies",
         copyright: "© 2026 Royah Advanced Technologies. All rights reserved.",
-        tagline: "Digitizing Oman's businesses, one at a time."
+        tagline: "Smart software & AI, in the service of people."
       }
     }
   },
@@ -408,7 +408,7 @@ const resources = {
         location: "سلطنة عُمان",
         legalName: "رؤية للتقنيات المتقدمة",
         copyright: "© ٢٠٢٦ رؤية للتقنيات المتقدمة. جميع الحقوق محفوظة.",
-        tagline: "نُرقمن أعمال عُمان… عملاً تلو الآخر."
+        tagline: "برمجيات وذكاء اصطناعي… في خدمة الإنسان."
       }
     }
   }
