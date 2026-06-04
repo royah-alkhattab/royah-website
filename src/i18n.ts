@@ -134,6 +134,7 @@ const resources = {
       // Vision 2040
       vision: {
         tag: "Our bigger purpose",
+        manifesto: "We build technology in the service of people — software and AI that make everyday life simpler, smarter, and full of possibility.",
         title: "Technology in the service of people.",
         body: "We build technology that lifts people up — proudly from Oman, for the world.",
         note: "Every product we make is a step toward that.",
@@ -342,6 +343,7 @@ const resources = {
       // Vision 2040
       vision: {
         tag: "غايتنا الأكبر",
+        manifesto: "نبني التقنية في خدمة الإنسان — برمجيات وذكاءً اصطناعياً تجعل الحياة اليومية أبسط وأذكى وأكثر رحابةً بالفرص.",
         title: "التقنية في خدمة الإنسان.",
         body: "نبني تقنيةً ترتقي بالإنسان — من عُمان بفخر، وإلى العالم.",
         note: "كل منتج نصنعه خطوة نحو ذلك.",
