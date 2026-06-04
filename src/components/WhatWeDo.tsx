@@ -3,75 +3,10 @@ import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
 const items = [
-  { icon: Boxes, key: 'software', color: '#DB4B4B' },
-  { icon: Sparkles, key: 'ai', color: '#8B5A7F' },
-  { icon: Compass, key: 'strategy', color: '#059669' },
+  { icon: Boxes, key: 'software', color: '#DB4B4B', video: '/card-software.mp4', poster: '/card-software.jpg' },
+  { icon: Sparkles, key: 'ai', color: '#8B5A7F', video: '/card-ai.mp4', poster: '/card-ai.jpg' },
+  { icon: Compass, key: 'strategy', color: '#059669', video: '/card-strategy.mp4', poster: '/card-strategy.jpg' },
 ]
-
-// A tiny stylized "preview" of what each service does — built in code, no media.
-function Preview({ item }: { item: (typeof items)[number] }) {
-  const c = item.color
-
-  if (item.key === 'software') {
-    // mini dashboard: header, table rows, bar chart
-    return (
-      <div className="w-full space-y-2.5">
-        <div className="flex items-center justify-between">
-          <div className="h-2.5 w-20 rounded-full" style={{ backgroundColor: c }} />
-          <div className="flex gap-1">
-            <div className="h-2 w-2 rounded-full bg-foreground/15" />
-            <div className="h-2 w-2 rounded-full bg-foreground/15" />
-          </div>
-        </div>
-        {[0.85, 0.55, 0.7].map((w, k) => (
-          <div key={k} className="flex items-center justify-between gap-3">
-            <div className="h-2 rounded-full bg-foreground/10" style={{ width: `${w * 55}%` }} />
-            <div className="h-2 w-9 rounded-full" style={{ backgroundColor: `${c}66` }} />
-          </div>
-        ))}
-        <div className="flex h-9 items-end gap-1.5 pt-1">
-          {[0.4, 0.7, 0.5, 1, 0.65].map((h, k) => (
-            <div key={k} className="flex-1 rounded-t-sm" style={{ height: `${h * 100}%`, backgroundColor: k === 3 ? c : `${c}40` }} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  if (item.key === 'ai') {
-    // mini chat with typing dots
-    return (
-      <div className="w-full space-y-2.5">
-        <div className="h-6 w-3/4 rounded-2xl rounded-bl-md bg-foreground/10" />
-        <div className="ml-auto h-6 w-3/5 rounded-2xl rounded-br-md" style={{ backgroundColor: `${c}40` }} />
-        <div className="flex h-6 w-20 items-center gap-1.5 rounded-2xl rounded-bl-md bg-foreground/10 px-3">
-          {[0, 150, 300].map((d) => (
-            <span key={d} className="h-1.5 w-1.5 animate-pulse rounded-full" style={{ backgroundColor: c, animationDelay: `${d}ms` }} />
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  // strategy: roadmap nodes + trending line
-  return (
-    <div className="w-full">
-      <div className="relative flex items-center justify-between">
-        <div className="absolute left-1 right-1 top-1/2 h-0.5 -translate-y-1/2 bg-foreground/10" />
-        <div className="absolute left-1 top-1/2 h-0.5 w-3/5 -translate-y-1/2 rounded-full" style={{ backgroundColor: c }} />
-        {[true, true, false, false].map((done, k) => (
-          <div key={k} className="relative flex h-5 w-5 items-center justify-center rounded-full border-2 bg-background"
-            style={{ borderColor: done ? c : 'rgba(120,120,120,0.25)' }}>
-            {done && <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />}
-          </div>
-        ))}
-      </div>
-      <svg viewBox="0 0 100 26" preserveAspectRatio="none" className="mt-3 h-8 w-full">
-        <polyline points="0,24 25,17 50,19 75,8 100,3" fill="none" stroke={c} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-      </svg>
-    </div>
-  )
-}
 
 export function WhatWeDo() {
   const { t } = useTranslation()
@@ -88,12 +23,20 @@ export function WhatWeDo() {
         <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
           style={{ borderColor: `${item.color}66` }} />
 
-        {/* preview header */}
-        <div className="relative z-10 p-4" style={{ background: `linear-gradient(135deg, ${item.color}16, ${item.color}05)` }}>
-          <div className="rounded-2xl border border-black/[0.06] bg-background/70 p-4 backdrop-blur-sm">
-            <Preview item={item} />
+        {/* animated preview cover */}
+        <div className="relative z-10">
+          <div className="aspect-[16/9] w-full overflow-hidden bg-[#0a0a0a]">
+            <video
+              className="h-full w-full object-cover"
+              autoPlay muted loop playsInline preload="metadata"
+              poster={item.poster}
+            >
+              <source src={item.video} type="video/mp4" />
+            </video>
           </div>
-          {/* icon badge straddling the header / content edge */}
+          {/* fade the video into the card */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-background to-transparent" />
+          {/* icon badge straddling the edge */}
           <div className="absolute -bottom-5 left-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
             style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)`, boxShadow: `0 10px 24px -8px ${item.color}cc` }}>
             <Icon className="h-6 w-6 text-white" />
