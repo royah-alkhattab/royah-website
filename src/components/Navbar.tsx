@@ -14,7 +14,8 @@ const links = [
 ]
 
 export function Navbar() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
+  const isRTL = i18n.language?.startsWith('ar')
   const { pathname } = useLocation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
@@ -79,7 +80,7 @@ export function Navbar() {
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}
           className="md:hidden fixed inset-0 z-[100] bg-black/50 backdrop-blur-sm" onClick={() => setOpen(false)} />
       )}
-      <motion.div initial={false} animate={{ x: open ? '0%' : '100%' }}
+      <motion.div initial={false} animate={{ x: open ? '0%' : (isRTL ? '-100%' : '100%') }}
         transition={{ type: 'spring', damping: 28, stiffness: 240 }}
         className="md:hidden fixed top-0 right-0 z-[105] flex h-full w-80 max-w-[86vw] flex-col bg-background border-l border-border pt-24 pb-8 px-5 rtl:right-auto rtl:left-0 rtl:border-l-0 rtl:border-r">
         <nav className="flex flex-col gap-1.5">
