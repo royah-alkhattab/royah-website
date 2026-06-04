@@ -3,55 +3,70 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import { Reveal, SectionTag } from './Reveal'
 
-// A faithful mini-mockup of the real Royah Property dashboard
-function AppMockup() {
+// The real Royah Property app shown inside a phone (it's a mobile-first PWA)
+function PhoneMockup() {
   return (
-    <div className="w-full max-w-sm mx-auto overflow-hidden rounded-2xl border border-white/10 bg-white text-[#0f0f0f] shadow-2xl">
-      {/* window bar */}
-      <div className="flex items-center gap-2 border-b border-black/5 bg-[#f7f7f8] px-4 py-2.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#ef5f5f]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#f4bf4f]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#5fce7e]" />
-        <span className="ml-2 text-xs font-semibold text-black/50">Royah Property</span>
-        <span className="ms-auto rounded-md bg-black/5 px-1.5 py-0.5 text-[10px] font-medium text-black/40">EN · ع</span>
-      </div>
-      {/* dashboard body */}
-      <div className="space-y-3 p-4">
-        <div className="grid grid-cols-3 gap-2">
-          {[
-            { label: 'Collected', value: 'OMR 3,150', tint: '#059669' },
-            { label: 'Outstanding', value: 'OMR 350', tint: '#DB4B4B' },
-            { label: 'Occupancy', value: '92%', tint: '#8B5A7F' },
-          ].map((k) => (
-            <div key={k.label} className="rounded-xl bg-[#f5f5f6] p-2.5">
-              <div className="text-[9px] font-medium uppercase tracking-wide text-black/40">{k.label}</div>
-              <div className="mt-1 text-sm font-bold" style={{ color: k.tint }}>{k.value}</div>
+    <div className="relative mx-auto w-[250px] sm:w-[264px]">
+      {/* ambient glow */}
+      <div className="pointer-events-none absolute -inset-8 rounded-[3rem] bg-[#DB4B4B]/20 blur-3xl" />
+      {/* device */}
+      <div className="relative rounded-[2.6rem] border-[7px] border-[#15161a] bg-[#15161a] shadow-2xl">
+        <div className="relative overflow-hidden rounded-[2.1rem] bg-[#f6f6f7] text-[#0f0f0f]">
+          {/* dynamic island */}
+          <div className="absolute left-1/2 top-2.5 z-20 h-5 w-20 -translate-x-1/2 rounded-full bg-black" />
+
+          {/* app header */}
+          <div className="flex items-center justify-between bg-white px-4 pb-3 pt-9">
+            <div className="flex items-center gap-2">
+              <span className="flex h-6 w-6 items-center justify-center rounded-lg bg-[#DB4B4B]">
+                <Building2 className="h-3.5 w-3.5 text-white" />
+              </span>
+              <span className="text-[13px] font-bold">Royah Property</span>
             </div>
-          ))}
-        </div>
+            <span className="rounded-md bg-black/5 px-1.5 py-0.5 text-[9px] font-semibold text-black/40">EN · ع</span>
+          </div>
 
-        {/* income chart */}
-        <div className="rounded-xl bg-[#f5f5f6] p-3">
-          <div className="mb-2 flex items-center justify-between">
-            <span className="text-[10px] font-semibold text-black/50">Income · last 6 months</span>
-            <span className="text-[10px] font-bold text-[#059669]">▲ 18%</span>
+          {/* app body */}
+          <div className="space-y-2.5 px-3 py-3">
+            {/* hero KPI */}
+            <div className="rounded-2xl bg-gradient-to-br from-[#059669] to-[#047857] p-3 text-white">
+              <div className="text-[9px] font-medium uppercase tracking-wide text-white/70">Collected this month</div>
+              <div className="mt-0.5 flex items-end justify-between">
+                <span className="text-xl font-black">OMR 3,150</span>
+                <span className="mb-0.5 text-[10px] font-bold text-white/90">▲ 18%</span>
+              </div>
+            </div>
+            {/* two KPIs */}
+            <div className="grid grid-cols-2 gap-2.5">
+              <div className="rounded-xl bg-white p-2.5 shadow-sm">
+                <div className="text-[9px] font-medium uppercase tracking-wide text-black/40">Outstanding</div>
+                <div className="mt-0.5 text-sm font-bold text-[#DB4B4B]">OMR 350</div>
+              </div>
+              <div className="rounded-xl bg-white p-2.5 shadow-sm">
+                <div className="text-[9px] font-medium uppercase tracking-wide text-black/40">Occupancy</div>
+                <div className="mt-0.5 text-sm font-bold text-[#8B5A7F]">92%</div>
+              </div>
+            </div>
+            {/* chart */}
+            <div className="rounded-xl bg-white p-2.5 shadow-sm">
+              <div className="mb-2 text-[9px] font-semibold text-black/50">Income · last 6 months</div>
+              <div className="flex h-12 items-end gap-1.5">
+                {[0.45, 0.6, 0.5, 0.75, 0.65, 1].map((h, i) => (
+                  <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h * 100}%`, backgroundColor: i === 5 ? '#DB4B4B' : '#DB4B4B33' }} />
+                ))}
+              </div>
+            </div>
+            {/* overdue + reminder */}
+            <div className="flex items-center justify-between rounded-xl border border-[#DB4B4B]/20 bg-[#DB4B4B]/[0.06] p-2.5">
+              <div>
+                <div className="text-[11px] font-bold leading-tight">Shop 4 · Al Khoud</div>
+                <div className="text-[9px] font-medium text-[#DB4B4B]">Overdue · 6 days</div>
+              </div>
+              <span className="inline-flex items-center gap-1 rounded-lg bg-[#059669] px-2 py-1.5 text-[9px] font-semibold text-white">
+                <MessageCircle className="h-3 w-3" /> Remind
+              </span>
+            </div>
           </div>
-          <div className="flex h-16 items-end gap-1.5">
-            {[0.45, 0.6, 0.5, 0.75, 0.65, 1].map((h, i) => (
-              <div key={i} className="flex-1 rounded-t-sm" style={{ height: `${h * 100}%`, backgroundColor: i === 5 ? '#DB4B4B' : '#DB4B4B40' }} />
-            ))}
-          </div>
-        </div>
-
-        {/* overdue + WhatsApp reminder */}
-        <div className="flex items-center justify-between rounded-xl border border-[#DB4B4B]/20 bg-[#DB4B4B]/[0.06] p-2.5">
-          <div>
-            <div className="text-xs font-bold">Shop 4 · Al Khoud</div>
-            <div className="text-[10px] font-medium text-[#DB4B4B]">Rent overdue · 6 days</div>
-          </div>
-          <span className="inline-flex items-center gap-1 rounded-lg bg-[#059669] px-2.5 py-1.5 text-[10px] font-semibold text-white">
-            <MessageCircle className="h-3 w-3" /> Remind
-          </span>
         </div>
       </div>
     </div>
@@ -60,17 +75,19 @@ function AppMockup() {
 
 export function ProductTeaser() {
   const { t } = useTranslation()
+  const pills = ['Payments', 'Contracts', 'WhatsApp reminders', 'Dashboard']
+
   return (
     <section className="relative pt-8 pb-16 sm:py-24 lg:py-32 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <Reveal>
-          <div className="relative overflow-hidden rounded-3xl bg-[#0f0f0f] text-white px-7 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-20">
+          <div className="relative overflow-hidden rounded-3xl bg-[#0f0f0f] text-white px-7 py-12 sm:px-8 sm:py-14 lg:px-16 lg:py-16">
             <div className="pointer-events-none absolute inset-0">
               <div className="absolute -right-20 -top-20 h-72 w-72 rounded-full bg-[#DB4B4B]/25 blur-[120px]" />
               <div className="absolute -left-10 bottom-0 h-56 w-56 rounded-full bg-[#8B5A7F]/20 blur-[110px]" />
             </div>
 
-            <div className="relative z-10 grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
+            <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2 lg:gap-14">
               {/* text */}
               <div>
                 <SectionTag>{t('productTeaser.tag')}</SectionTag>
@@ -82,9 +99,17 @@ export function ProductTeaser() {
                     {t('productTeaser.title')}
                   </h2>
                 </div>
-                <p className="text-lg text-white/70 leading-relaxed mb-8">
+                <p className="text-lg text-white/70 leading-relaxed mb-6">
                   {t('productTeaser.desc')}
                 </p>
+                {/* feature pills */}
+                <div className="mb-8 flex flex-wrap gap-2">
+                  {pills.map((p) => (
+                    <span key={p} className="rounded-full border border-white/15 bg-white/5 px-3 py-1 text-xs font-medium text-white/75">
+                      {p}
+                    </span>
+                  ))}
+                </div>
                 <Link to="/product"
                   className="group inline-flex items-center gap-2 bg-white text-[#0f0f0f] font-semibold px-7 py-3.5 rounded-lg text-lg hover:bg-white/90 gentle-animation">
                   {t('productTeaser.cta')}
@@ -92,9 +117,9 @@ export function ProductTeaser() {
                 </Link>
               </div>
 
-              {/* product mockup */}
+              {/* phone mockup */}
               <Reveal delay={0.15}>
-                <AppMockup />
+                <PhoneMockup />
               </Reveal>
             </div>
           </div>
