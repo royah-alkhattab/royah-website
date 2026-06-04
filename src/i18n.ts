@@ -28,9 +28,9 @@ const resources = {
       },
       // Home product teaser
       productTeaser: {
-        tag: "Our flagship product",
+        tag: "Coming soon · Our flagship product",
         title: "Meet Royah Property",
-        desc: "The bilingual app that runs property and rent management end to end — tenants, contracts, payments, and reminders. Already live in real businesses.",
+        desc: "A bilingual app that runs property and rent management end to end — tenants, contracts, payments, automatic WhatsApp reminders, and a clear income & occupancy dashboard. Launching soon as a subscription anyone can use.",
         cta: "Explore the product"
       },
       // Final call to action
@@ -232,9 +232,9 @@ const resources = {
       },
       // Home product teaser
       productTeaser: {
-        tag: "منتجنا الرئيسي",
+        tag: "قريباً · منتجنا الرئيسي",
         title: "تعرّف على رؤية العقار",
-        desc: "التطبيق ثنائي اللغة الذي يُدير العقارات والإيجارات من البداية إلى النهاية — المستأجرون والعقود والمدفوعات والتذكيرات. يعمل فعلاً في أعمال حقيقية.",
+        desc: "تطبيق ثنائي اللغة يُدير العقارات والإيجارات من البداية إلى النهاية — المستأجرون والعقود والمدفوعات وتذكيرات واتساب التلقائية، ولوحة واضحة للدخل ونسبة الإشغال. يُطلق قريباً كاشتراك متاح للجميع.",
         cta: "استكشف المنتج"
       },
       // Final call to action
