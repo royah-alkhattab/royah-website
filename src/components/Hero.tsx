@@ -40,9 +40,9 @@ export function Hero() {
           >
             <source src={HERO_VIDEO} type="video/mp4" />
           </video>
-          {/* Dark overlays keep the headline readable over the video */}
-          <div className="absolute inset-0 bg-black/55" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/30 to-[#0a0a0a]/70" />
+          {/* Lighter overlays: let the video show through, just enough tint for readable text */}
+          <div className="absolute inset-0 bg-black/25" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/75 via-transparent to-[#0a0a0a]/25" />
         </div>
       ) : (
         <div className="pointer-events-none absolute inset-0">
