@@ -41,10 +41,10 @@ const resources = {
       },
       // Hero Section
       hero: {
-        badge: "Smart software & AI",
+        badge: "Built in Oman, for the world",
         headline: "Smart software and AI,",
         headlineAccent: "built to serve people.",
-        subheadline: "Intelligent software and AI that make work and life simpler, smarter, and ready for what's next.",
+        subheadline: "The everyday tools people and teams rely on — made simpler, smarter, and ready for what's next.",
         ctaPrimary: "See our product",
         ctaSecondary: "Talk to us",
         trust: "Running in live production today"
@@ -245,10 +245,10 @@ const resources = {
       },
       // Hero Section
       hero: {
-        badge: "برمجيات وذكاء اصطناعي",
+        badge: "صُنع في عُمان… للعالم",
         headline: "برمجيات وذكاء اصطناعي",
         headlineAccent: "في خدمة الإنسان.",
-        subheadline: "برمجيات وذكاء اصطناعي يجعلان العمل والحياة أبسط وأذكى وأكثر جاهزية للمستقبل.",
+        subheadline: "الأدوات اليومية التي يعتمد عليها الناس والفرق — أبسط وأذكى وأكثر جاهزية للمستقبل.",
         ctaPrimary: "شاهد منتجنا",
         ctaSecondary: "تحدّث معنا",
         trust: "يعمل فعلياً في بيئة إنتاج حقيقية"

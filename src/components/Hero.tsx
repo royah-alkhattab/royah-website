@@ -93,13 +93,6 @@ export function Hero() {
                 {t('hero.ctaSecondary')}
               </button>
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.7 }}
-              className="mt-6 sm:mt-8 inline-flex items-center gap-2 text-sm text-white/50">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#059669] animate-pulse" />
-              {t('hero.trust')}
-            </motion.div>
           </div>
         </div>
       </div>
