@@ -134,12 +134,12 @@ const resources = {
       vision: {
         tag: "Our bigger purpose",
         title: "Technology in the service of people.",
-        body: "We build because we believe technology should lift people up — making work and everyday life simpler, fairer, and full of possibility. Proud to call Oman home, and building for the world.",
+        body: "We build technology that lifts people up — proudly from Oman, for the world.",
         note: "Every product we make is a step toward that.",
         principles: [
-          { title: "People first", desc: "Built around real human needs — not just features." },
-          { title: "Built to last", desc: "Production-grade, secure, and ready to grow with you." },
-          { title: "Bilingual by design", desc: "Arabic-first and English — technology for everyone." }
+          { title: "People first", desc: "Designed around real human needs." },
+          { title: "Built to last", desc: "Secure, production-grade, ready to grow." },
+          { title: "Bilingual by design", desc: "Arabic-first and English, for everyone." }
         ]
       },
       // Process
@@ -341,12 +341,12 @@ const resources = {
       vision: {
         tag: "غايتنا الأكبر",
         title: "التقنية في خدمة الإنسان.",
-        body: "نبني لأننا نؤمن أن التقنية يجب أن ترتقي بالإنسان — تجعل العمل والحياة اليومية أبسط وأعدل وأكثر رحابة بالفرص. نفخر بأن عُمان وطننا، وأن نبني للعالم.",
+        body: "نبني تقنيةً ترتقي بالإنسان — من عُمان بفخر، وإلى العالم.",
         note: "كل منتج نصنعه خطوة نحو ذلك.",
         principles: [
-          { title: "الإنسان أولاً", desc: "مبنية حول احتياجات الناس الحقيقية، لا مجرّد ميزات." },
-          { title: "مبنية لتدوم", desc: "بمستوى الإنتاج، آمنة، وجاهزة للنمو معك." },
-          { title: "ثنائية اللغة بالتصميم", desc: "عربية أولاً وإنجليزية — تقنية للجميع." }
+          { title: "الإنسان أولاً", desc: "مصمّمة حول احتياجات الناس الحقيقية." },
+          { title: "مبنية لتدوم", desc: "آمنة، بمستوى الإنتاج، وجاهزة للنمو." },
+          { title: "ثنائية اللغة", desc: "عربية أولاً وإنجليزية، للجميع." }
         ]
       },
       // Process
