@@ -7,8 +7,10 @@ import { useNavigate } from 'react-router-dom'
 // Plug-and-play hero video: drop `hero.mp4` (and optionally `hero-poster.jpg`)
 // into /public and the hero switches from the gradient to the video automatically
 // — no code change needed. Until then, the clean brand gradient shows.
-const HERO_VIDEO = '/hero.mp4'
-const HERO_POSTER = '/hero-poster.jpg'
+// ?v= cache-buster: bump this whenever hero.mp4 / hero-poster.jpg are replaced,
+// so browsers fetch the new files instead of a stale cached frame.
+const HERO_VIDEO = '/hero.mp4?v=2'
+const HERO_POSTER = '/hero-poster.jpg?v=2'
 
 export function Hero() {
   const { t } = useTranslation()
