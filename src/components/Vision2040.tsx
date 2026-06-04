@@ -1,8 +1,17 @@
+import { Users, ShieldCheck, Languages } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal } from './Reveal'
 
+const principleIcons = [
+  { icon: Users, color: '#DB4B4B' },
+  { icon: ShieldCheck, color: '#059669' },
+  { icon: Languages, color: '#8B5A7F' },
+]
+
 export function Vision2040() {
   const { t } = useTranslation()
+  const principles = t('vision.principles', { returnObjects: true }) as { title: string; desc: string }[]
+
   return (
     <section id="vision" className="relative py-16 sm:py-24 lg:py-32 bg-[#0a0a0a] text-white overflow-hidden scroll-mt-20">
       {/* Ambient glow */}
@@ -30,13 +39,28 @@ export function Vision2040() {
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-10 text-center">
-              <div className="text-6xl lg:text-7xl font-black bg-gradient-to-r from-[#DB4B4B] to-[#e89090] bg-clip-text text-transparent">
-                {t('vision.stat')}
+            <div className="rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-6 sm:p-8">
+              <div className="space-y-2">
+                {principles?.map((p, i) => {
+                  const Icon = principleIcons[i]?.icon ?? Users
+                  const color = principleIcons[i]?.color ?? '#DB4B4B'
+                  return (
+                    <div key={i}>
+                      {i > 0 && <div className="my-5 h-px bg-white/10" />}
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl"
+                          style={{ backgroundColor: `${color}1f` }}>
+                          <Icon className="h-5 w-5" style={{ color }} />
+                        </div>
+                        <div>
+                          <div className="font-bold leading-tight">{p.title}</div>
+                          <div className="mt-1 text-sm leading-relaxed text-white/60">{p.desc}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
               </div>
-              <p className="mt-5 text-white/70 leading-relaxed max-w-xs mx-auto">
-                {t('vision.statLabel')}
-              </p>
             </div>
           </Reveal>
         </div>

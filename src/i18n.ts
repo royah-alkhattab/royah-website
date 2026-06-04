@@ -135,9 +135,12 @@ const resources = {
         tag: "Our bigger purpose",
         title: "Technology in the service of people.",
         body: "We build because we believe technology should lift people up — making work and everyday life simpler, fairer, and full of possibility. Proud to call Oman home, and building for the world.",
-        stat: "People first",
-        statLabel: "the principle behind everything we design and build",
-        note: "Every product we make is a step toward that."
+        note: "Every product we make is a step toward that.",
+        principles: [
+          { title: "People first", desc: "Built around real human needs — not just features." },
+          { title: "Built to last", desc: "Production-grade, secure, and ready to grow with you." },
+          { title: "Bilingual by design", desc: "Arabic-first and English — technology for everyone." }
+        ]
       },
       // Process
       process: {
@@ -339,9 +342,12 @@ const resources = {
         tag: "غايتنا الأكبر",
         title: "التقنية في خدمة الإنسان.",
         body: "نبني لأننا نؤمن أن التقنية يجب أن ترتقي بالإنسان — تجعل العمل والحياة اليومية أبسط وأعدل وأكثر رحابة بالفرص. نفخر بأن عُمان وطننا، وأن نبني للعالم.",
-        stat: "الإنسان أولاً",
-        statLabel: "المبدأ الذي يقف خلف كل ما نصمّمه ونبنيه",
-        note: "كل منتج نصنعه خطوة نحو ذلك."
+        note: "كل منتج نصنعه خطوة نحو ذلك.",
+        principles: [
+          { title: "الإنسان أولاً", desc: "مبنية حول احتياجات الناس الحقيقية، لا مجرّد ميزات." },
+          { title: "مبنية لتدوم", desc: "بمستوى الإنتاج، آمنة، وجاهزة للنمو معك." },
+          { title: "ثنائية اللغة بالتصميم", desc: "عربية أولاً وإنجليزية — تقنية للجميع." }
+        ]
       },
       // Process
       process: {
