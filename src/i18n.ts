@@ -37,7 +37,8 @@ const resources = {
       finalCta: {
         title: "Ready to work smarter?",
         desc: "Tell us what you're building, and we'll show you how Royah's software and AI can help.",
-        button: "Talk to us"
+        button: "Talk to us",
+        secondary: "Email us"
       },
       // Hero Section
       hero: {
@@ -244,7 +245,8 @@ const resources = {
       finalCta: {
         title: "مستعد للعمل بذكاء أكبر؟",
         desc: "أخبرنا بما تبنيه، وسنُريك كيف يمكن لبرمجيات رؤية وذكائها الاصطناعي أن تساعدك.",
-        button: "تحدّث معنا"
+        button: "تحدّث معنا",
+        secondary: "راسلنا"
       },
       // Hero Section
       hero: {
