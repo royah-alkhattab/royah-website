@@ -66,7 +66,7 @@ export function WhatWeDo() {
   }
 
   return (
-    <section id="what" className="relative pt-16 pb-8 sm:py-24 lg:py-32 bg-card/40 scroll-mt-20">
+    <section id="what" className="relative pt-16 pb-12 sm:py-24 lg:py-32 bg-card/40 scroll-mt-20">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
