@@ -85,7 +85,7 @@ export function Contact() {
               {t('contact.phoneDesc')}
             </p>
             <a href="tel:+96890663136" className="flex items-center gap-2 text-sm text-accent-purple font-medium hover:underline">
-              <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'bidi-override' }}>
+              <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>
                 +968 90663136
               </span>
             </a>

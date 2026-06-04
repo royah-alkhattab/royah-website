@@ -81,7 +81,7 @@ export function Footer() {
                   <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
                     <span className="text-background/50 text-xs">{t('footer.phoneLabel')}</span>
                     <a href="tel:+96890663136" className="hover:text-[#e89090] gentle-animation">
-                      <span dir="ltr" style={{ unicodeBidi: 'bidi-override' }}>+968 90663136</span>
+                      <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>+968 90663136</span>
                     </a>
                   </div>
                 </div>

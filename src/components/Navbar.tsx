@@ -108,21 +108,21 @@ export function Navbar() {
             <span className="w-9 h-9 shrink-0 rounded-lg bg-[#DB4B4B]/10 flex items-center justify-center">
               <Phone className="w-4 h-4 text-[#DB4B4B]" />
             </span>
-            <span dir="ltr">+968 90663136</span>
+            <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>+968 90663136</span>
           </a>
           <a href="mailto:info@royah.om"
             className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground gentle-animation rtl:flex-row-reverse rtl:text-right">
             <span className="w-9 h-9 shrink-0 rounded-lg bg-[#059669]/10 flex items-center justify-center">
               <Mail className="w-4 h-4 text-[#059669]" />
             </span>
-            <span>info@royah.om</span>
+            <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>info@royah.om</span>
           </a>
           <a href="https://instagram.com/royah.om" target="_blank" rel="noopener noreferrer"
             className="flex items-center gap-3 text-sm text-muted-foreground hover:text-foreground gentle-animation rtl:flex-row-reverse rtl:text-right">
             <span className="w-9 h-9 shrink-0 rounded-lg bg-[#8B5A7F]/10 flex items-center justify-center">
               <Instagram className="w-4 h-4 text-[#8B5A7F]" />
             </span>
-            <span>@royah.om</span>
+            <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>@royah.om</span>
           </a>
         </div>
       </motion.div>
