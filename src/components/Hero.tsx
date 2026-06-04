@@ -58,11 +58,11 @@ export function Hero() {
       )}
 
       <div className="relative z-10 flex min-h-screen items-center">
-        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-32">
+        <div className="container mx-auto px-6 sm:px-8 lg:px-12 py-24 sm:py-32">
           <div className="max-w-4xl mx-auto text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 mb-8">
+              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80 mb-6 sm:mb-8">
               <span className="h-2 w-2 rounded-full bg-[#059669] animate-pulse" />
               {t('hero.badge')}
             </motion.div>
@@ -76,27 +76,27 @@ export function Hero() {
 
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.35 }}
-              className="mt-8 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+              className="mt-5 sm:mt-8 text-lg sm:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
               {t('hero.subheadline')}
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
-              className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button onClick={() => navigate('/product')}
-                className="group inline-flex items-center gap-2 bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
+                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
                 {t('hero.ctaPrimary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 gentle-animation rtl:rotate-180" />
               </button>
               <button onClick={() => navigate('/contact')}
-                className="inline-flex items-center gap-2 border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation">
                 {t('hero.ctaSecondary')}
               </button>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.7, delay: 0.7 }}
-              className="mt-8 inline-flex items-center gap-2 text-sm text-white/50">
+              className="mt-6 sm:mt-8 inline-flex items-center gap-2 text-sm text-white/50">
               <span className="h-1.5 w-1.5 rounded-full bg-[#059669] animate-pulse" />
               {t('hero.trust')}
             </motion.div>

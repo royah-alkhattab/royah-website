@@ -44,7 +44,7 @@ const resources = {
         badge: "Smart software & AI",
         headline: "Smart software and AI,",
         headlineAccent: "built to serve people.",
-        subheadline: "Royah designs intelligent, connected software and AI that make work and everyday life simpler, smarter, and ready for what's next.",
+        subheadline: "Intelligent software and AI that make work and life simpler, smarter, and ready for what's next.",
         ctaPrimary: "See our product",
         ctaSecondary: "Talk to us",
         trust: "Running in live production today"
@@ -248,7 +248,7 @@ const resources = {
         badge: "برمجيات وذكاء اصطناعي",
         headline: "برمجيات وذكاء اصطناعي",
         headlineAccent: "في خدمة الإنسان.",
-        subheadline: "تصمّم رؤية برمجياتٍ وذكاءً اصطناعياً متصلاً وذكياً يجعل العمل والحياة اليومية أبسط وأذكى وأكثر جاهزية للمستقبل.",
+        subheadline: "برمجيات وذكاء اصطناعي يجعلان العمل والحياة أبسط وأذكى وأكثر جاهزية للمستقبل.",
         ctaPrimary: "شاهد منتجنا",
         ctaSecondary: "تحدّث معنا",
         trust: "يعمل فعلياً في بيئة إنتاج حقيقية"
