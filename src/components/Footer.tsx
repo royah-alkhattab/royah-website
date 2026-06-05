@@ -65,31 +65,31 @@ export function Footer() {
             <div>
               <h3 className="font-bold text-lg mb-5">{t('footer.contactTitle')}</h3>
               <div className="space-y-4">
-                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#059669]/20 rounded-lg flex items-center justify-center">
                     <Mail className="w-5 h-5 text-[#34d399]" />
                   </div>
-                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                  <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.emailLabel')}</span>
                     <a href="mailto:info@royah.om" className="hover:text-[#34d399] gentle-animation">info@royah.om</a>
                   </div>
                 </div>
-                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#DB4B4B]/20 rounded-lg flex items-center justify-center">
                     <Phone className="w-5 h-5 text-[#e89090]" />
                   </div>
-                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                  <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.phoneLabel')}</span>
                     <a href="tel:+96890663136" className="hover:text-[#e89090] gentle-animation">
                       <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>+968 90663136</span>
                     </a>
                   </div>
                 </div>
-                <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#8B5A7F]/20 rounded-lg flex items-center justify-center">
                     <MapPin className="w-5 h-5 text-[#c79bb8]" />
                   </div>
-                  <div className={`flex flex-col ${isRTL ? 'items-end' : 'items-start'}`}>
+                  <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.locationLabel')}</span>
                     <span>{t('footer.location')}</span>
                   </div>
