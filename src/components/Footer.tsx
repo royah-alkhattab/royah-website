@@ -5,6 +5,7 @@ import { Logo } from './Logo'
 
 const navLinks = [
   { to: '/', key: 'nav.home' },
+  { to: '/work', key: 'nav.work' },
   { to: '/product', key: 'nav.product' },
   { to: '/about', key: 'nav.about' },
   { to: '/contact', key: 'nav.contact' },

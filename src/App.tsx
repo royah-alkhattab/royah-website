@@ -5,6 +5,7 @@ import { Navbar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ScrollToTop } from './components/ScrollToTop'
 import { Home } from './pages/Home'
+import { WorkPage } from './pages/WorkPage'
 import { ProductPage } from './pages/ProductPage'
 import { AboutPage } from './pages/AboutPage'
 import { ContactPage } from './pages/ContactPage'
@@ -27,6 +28,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/ar" element={<ArabicEntry />} />
+            <Route path="/work" element={<WorkPage />} />
             <Route path="/product" element={<ProductPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />

@@ -8,6 +8,7 @@ import { LanguageSwitcher } from './LanguageSwitcher'
 
 const links = [
   { to: '/', key: 'nav.home' },
+  { to: '/work', key: 'nav.work' },
   { to: '/product', key: 'nav.product' },
   { to: '/about', key: 'nav.about' },
   { to: '/contact', key: 'nav.contact' },
@@ -22,7 +23,7 @@ export function Navbar() {
 
   // Pages whose top section is the dark hero/header. Over those, the navbar is
   // transparent with white text until the user scrolls; everywhere else it's solid.
-  const darkTop = ['/', '/product', '/about'].includes(pathname)
+  const darkTop = ['/', '/work', '/product', '/about'].includes(pathname)
   const overlay = darkTop && !scrolled
 
   useEffect(() => {

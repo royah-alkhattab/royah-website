@@ -9,12 +9,18 @@ const resources = {
       // Navigation
       nav: {
         home: "Home",
+        work: "Work",
         product: "Product",
         about: "About",
         contact: "Contact"
       },
       // Inner page headers
       pages: {
+        work: {
+          eyebrow: "Selected work",
+          title: "Real products, shipped.",
+          subtitle: "A look at websites we've designed and built for real businesses in Oman — live, bilingual, and working today."
+        },
         product: {
           eyebrow: "Our flagship product",
           title: "Royah Property",
@@ -24,6 +30,30 @@ const resources = {
           eyebrow: "About Royah",
           title: "We build software that serves people.",
           subtitle: "Royah is a software company on a mission: to put intelligent, connected technology in the service of people — built by an engineer who specializes in artificial intelligence."
+        }
+      },
+      // Selected work / portfolio
+      work: {
+        tag: "Selected work",
+        intro: "Every project below is a live website we designed and built end to end — from the first pixel to production.",
+        visit: "Visit site",
+        projects: {
+          awtad: {
+            name: "Awtad Development",
+            category: "Real estate",
+            description: "A premium property developer's bilingual website — a cinematic hero, an elegant project showcase, and a clean register-interest flow for buyers.",
+            url: "https://awtad.om",
+            urlLabel: "awtad.om",
+            tags: ["Design & build", "Bilingual EN / AR", "Real estate"]
+          },
+          germangold: {
+            name: "German Gold",
+            category: "Automotive · Lubricants",
+            description: "A German engine-oil brand brought to the Omani market — with an interactive “find your oil” selector, a full product catalogue, and a distributor locator.",
+            url: "https://germangold.om",
+            urlLabel: "germangold.om",
+            tags: ["Design & build", "Interactive tool", "E-commerce ready"]
+          }
         }
       },
       // Home product teaser
@@ -218,12 +248,18 @@ const resources = {
       // Navigation
       nav: {
         home: "الرئيسية",
+        work: "أعمالنا",
         product: "المنتج",
         about: "من نحن",
         contact: "تواصل معنا"
       },
       // Inner page headers
       pages: {
+        work: {
+          eyebrow: "مختارات من أعمالنا",
+          title: "منتجات حقيقية… أُطلقت فعلاً.",
+          subtitle: "نظرة على مواقع صمّمناها وبنيناها لأعمال حقيقية في عُمان — تعمل اليوم، بلغتين، على الإنترنت."
+        },
         product: {
           eyebrow: "منتجنا الرئيسي",
           title: "رؤية العقار",
@@ -233,6 +269,30 @@ const resources = {
           eyebrow: "عن رؤية",
           title: "نبني برمجيات تخدم الإنسان.",
           subtitle: "رؤية شركة برمجيات برسالة واضحة: أن نضع تقنية ذكية ومتصلة في خدمة الإنسان — بناءً على يد مهندس متخصص في الذكاء الاصطناعي."
+        }
+      },
+      // Selected work / portfolio
+      work: {
+        tag: "مختارات من أعمالنا",
+        intro: "كل مشروع بالأسفل موقع حقيقي صمّمناه وبنيناه بالكامل — من أول بكسل حتى الإطلاق.",
+        visit: "زيارة الموقع",
+        projects: {
+          awtad: {
+            name: "أوتاد للتطوير العقاري",
+            category: "العقارات",
+            description: "موقع ثنائي اللغة لمطوّر عقاري راقٍ — واجهة بصرية آسرة، وعرض أنيق للمشاريع، ومسار واضح لتسجيل اهتمام المشترين.",
+            url: "https://awtad.om",
+            urlLabel: "awtad.om",
+            tags: ["تصميم وتطوير", "عربي / إنجليزي", "عقارات"]
+          },
+          germangold: {
+            name: "جيرمن جولد",
+            category: "السيارات · الزيوت",
+            description: "علامة زيوت محركات ألمانية في السوق العُماني — مع أداة تفاعلية لاختيار الزيت المناسب، وكتالوج كامل للمنتجات، ودليل للموزّعين.",
+            url: "https://germangold.om",
+            urlLabel: "germangold.om",
+            tags: ["تصميم وتطوير", "أداة تفاعلية", "جاهز للمتاجر"]
+          }
         }
       },
       // Home product teaser
