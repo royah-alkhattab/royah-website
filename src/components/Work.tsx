@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink, Droplets } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Droplets, Lock } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
@@ -7,12 +7,13 @@ type Project = {
   color: string
   mode: 'photo' | 'product' | 'gradient'
   bg?: string
+  private?: boolean
 }
 
 const projects: Project[] = [
   { key: 'awtad', color: '#E2B673', mode: 'photo', bg: '/work-awtad-bg.jpg' },
   { key: 'germangold', color: '#E7C24B', mode: 'product', bg: '/work-germangold-bg.png' },
-  { key: 'alsadiya', color: '#E08AA6', mode: 'gradient' },
+  { key: 'alsadiya', color: '#E08AA6', mode: 'gradient', private: true },
 ]
 
 // A language-aware cover: real background imagery (or Al Sadiya's branded gradient)
@@ -84,11 +85,14 @@ export function Work() {
             const tags = t(`${base}.tags`, { returnObjects: true }) as string[]
             const url = t(`${base}.url`)
             const reversed = i % 2 === 1
+            // Al Sadiya is a private internal system — its cover doesn't link out.
+            const Wrapper: any = p.private ? 'div' : 'a'
+            const wrapperProps = p.private ? {} : { href: url, target: '_blank', rel: 'noopener noreferrer' }
             return (
               <Reveal key={p.key}>
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
                   {/* Cover in a browser frame */}
-                  <a href={url} target="_blank" rel="noopener noreferrer"
+                  <Wrapper {...wrapperProps}
                     className={`group relative block [direction:ltr] ${reversed ? 'lg:order-2' : ''}`}>
                     <div className="pointer-events-none absolute -inset-4 rounded-[2rem] blur-2xl opacity-50 transition-opacity duration-500 group-hover:opacity-80"
                       style={{ background: `radial-gradient(60% 60% at 50% 40%, ${p.color}33, transparent)` }} />
@@ -106,7 +110,7 @@ export function Work() {
                         <ProjectCover p={p} />
                       </div>
                     </div>
-                  </a>
+                  </Wrapper>
 
                   {/* Details */}
                   <div className={reversed ? 'lg:order-1' : ''}>
@@ -128,12 +132,19 @@ export function Work() {
                         </span>
                       ))}
                     </div>
-                    <a href={url} target="_blank" rel="noopener noreferrer"
-                      className="group inline-flex items-center gap-2 font-semibold text-foreground hover:opacity-80 gentle-animation">
-                      <ExternalLink className="w-4 h-4" />
-                      {t('work.visit')}
-                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                    </a>
+                    {p.private ? (
+                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+                        <Lock className="w-4 h-4" />
+                        {t('work.privateLabel')}
+                      </span>
+                    ) : (
+                      <a href={url} target="_blank" rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 font-semibold text-foreground hover:opacity-80 gentle-animation">
+                        <ExternalLink className="w-4 h-4" />
+                        {t('work.visit')}
+                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </a>
+                    )}
                   </div>
                 </div>
               </Reveal>

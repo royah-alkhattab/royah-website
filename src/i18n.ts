@@ -37,6 +37,7 @@ const resources = {
         tag: "Selected work",
         intro: "Every project below is a live website we designed and built end to end — from the first pixel to production.",
         visit: "Visit site",
+        privateLabel: "Private internal system",
         projects: {
           awtad: {
             name: "Awtad Development",
@@ -290,6 +291,7 @@ const resources = {
         tag: "مختارات من أعمالنا",
         intro: "كل مشروع بالأسفل موقع حقيقي صمّمناه وبنيناه بالكامل — من أول بكسل حتى الإطلاق.",
         visit: "زيارة الموقع",
+        privateLabel: "نظام داخلي خاص",
         projects: {
           awtad: {
             name: "أوتاد للتطوير العقاري",
