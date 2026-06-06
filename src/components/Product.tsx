@@ -29,8 +29,8 @@ export function Product() {
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight section-title">
                 {t('product.name')}
               </h2>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#059669]/10 px-3 py-1 text-xs font-bold text-[#059669]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#059669] animate-pulse" />
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#d97706]/10 px-3 py-1 text-xs font-bold text-[#d97706]">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#d97706] animate-pulse" />
                 {t('product.live')}
               </span>
             </div>

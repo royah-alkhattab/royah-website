@@ -18,7 +18,7 @@ const resources = {
         product: {
           eyebrow: "Our flagship product",
           title: "Royah Property",
-          subtitle: "Smart property & building management software — bilingual, automated, and already running in real businesses."
+          subtitle: "Smart property & building management software — bilingual and automated. Launching soon as a subscription anyone can use."
         },
         about: {
           eyebrow: "About Royah",
@@ -99,8 +99,8 @@ const resources = {
         name: "Royah Property",
         tagline: "Property & building management, done right.",
         description: "Everything a property owner needs in one bilingual app: track units and tenants, generate rent schedules automatically, record payments, flag overdue rent, and see your income at a glance — with one-tap WhatsApp reminders.",
-        cta: "Request a demo",
-        live: "Live & in use",
+        cta: "Get early access",
+        live: "Coming soon",
         features: {
           units: { title: "Units & tenants", description: "Track every shop or apartment, its rent, and who occupies it." },
           contracts: { title: "Smart contracts", description: "Save a contract and the full payment schedule is generated for you." },
@@ -110,14 +110,14 @@ const resources = {
       },
       // Impact / metrics
       impact: {
-        tag: "Real results, not promises",
-        title: "Already working in real businesses.",
-        subtitle: "We don't just talk about digital transformation — we ship it.",
+        tag: "Why it's different",
+        title: "Built to make property management effortless.",
+        subtitle: "No spreadsheets, no paperwork, no chasing — one clear app that does the work for you.",
         stats: {
-          customers: { value: "350+", label: "customers billed in live production" },
-          production: { value: "100%", label: "bilingual — Arabic & English, by default" },
-          paper: { value: "AI", label: "built into everything we make" },
-          uptime: { value: "24/7", label: "systems running in real businesses" }
+          customers: { value: "2", label: "languages — Arabic & English, built in" },
+          production: { value: "Auto", label: "rent schedules generated for you" },
+          paper: { value: "1-tap", label: "WhatsApp rent reminders" },
+          uptime: { value: "AI", label: "intelligence built into the core" }
         }
       },
       // Why Royah
@@ -227,7 +227,7 @@ const resources = {
         product: {
           eyebrow: "منتجنا الرئيسي",
           title: "رؤية العقار",
-          subtitle: "برنامج ذكي لإدارة العقارات والمباني — بلغتين، ومؤتمت، ويعمل فعلاً في أعمال حقيقية."
+          subtitle: "برنامج ذكي لإدارة العقارات والمباني — بلغتين ومؤتمت. يُطلق قريباً كاشتراك متاح للجميع."
         },
         about: {
           eyebrow: "عن رؤية",
@@ -308,8 +308,8 @@ const resources = {
         name: "رؤية العقار",
         tagline: "إدارة العقارات والمباني… كما ينبغي.",
         description: "كل ما يحتاجه مالك العقار ضمن تطبيق واحد بلغتين: تتبّع الوحدات والمستأجرين، توليد جداول الإيجار تلقائياً، تسجيل المدفوعات، تنبيه المتأخرات، ورؤية دخلك بنظرة واحدة — مع تذكيرات واتساب بضغطة واحدة.",
-        cta: "اطلب عرضاً توضيحياً",
-        live: "يعمل وقيد الاستخدام",
+        cta: "احصل على وصول مبكر",
+        live: "قريباً",
         features: {
           units: { title: "الوحدات والمستأجرون", description: "تتبّع كل محل أو شقة، وإيجارها، ومن يشغلها." },
           contracts: { title: "عقود ذكية", description: "احفظ العقد ليُولَّد لك جدول المدفوعات كاملاً." },
@@ -319,14 +319,14 @@ const resources = {
       },
       // Impact / metrics
       impact: {
-        tag: "نتائج حقيقية، لا وعود",
-        title: "تعمل بالفعل في أعمال حقيقية.",
-        subtitle: "نحن لا نتحدّث عن التحوّل الرقمي فحسب — بل ننفّذه.",
+        tag: "ما يميّزه",
+        title: "مصمّم ليجعل إدارة العقارات بلا عناء.",
+        subtitle: "بلا جداول، بلا أوراق، بلا مطاردة — تطبيق واحد واضح يقوم بالعمل عنك.",
         stats: {
-          customers: { value: "+٣٥٠", label: "عميل تُحتسب فواتيرهم في بيئة إنتاج فعلية" },
-          production: { value: "١٠٠٪", label: "بالعربية والإنجليزية، تلقائياً" },
-          paper: { value: "ذكاء", label: "مدمج في كل ما نصنعه" },
-          uptime: { value: "٢٤/٧", label: "أنظمة تعمل في أعمال حقيقية" }
+          customers: { value: "٢", label: "لغتان — العربية والإنجليزية، أساساً" },
+          production: { value: "تلقائي", label: "جداول إيجار تُولَّد لك" },
+          paper: { value: "ضغطة", label: "تذكيرات واتساب للإيجار" },
+          uptime: { value: "ذكاء", label: "مدمج في صميم التطبيق" }
         }
       },
       // Why Royah
