@@ -41,6 +41,8 @@ const resources = {
           awtad: {
             name: "Awtad Development",
             category: "Real estate",
+            coverTitle: "Building Landmarks of Tomorrow",
+            coverSubtitle: "Premium developments across the Sultanate of Oman.",
             description: "A premium property developer's bilingual website — a cinematic hero, an elegant project showcase, and a clean register-interest flow for buyers.",
             url: "https://awtad.om",
             urlLabel: "awtad.om",
@@ -49,6 +51,8 @@ const resources = {
           germangold: {
             name: "German Gold",
             category: "Automotive · Lubricants",
+            coverTitle: "Power to Perform.",
+            coverSubtitle: "German-engineered engine oil, now in Oman.",
             description: "A German engine-oil brand brought to the Omani market — with an interactive “find your oil” selector, a full product catalogue, and a distributor locator.",
             url: "https://germangold.om",
             urlLabel: "germangold.om",
@@ -57,6 +61,8 @@ const resources = {
           alsadiya: {
             name: "Al Sadiya Water Billing",
             category: "Business software · Utility billing",
+            coverTitle: "Water Billing System",
+            coverSubtitle: "Subscribers, readings, invoices & payments — built for Oman.",
             description: "A custom billing platform for a water utility in Nakhal — monthly meter readings, automated Arabic invoices, payments and reporting for 350+ subscribers. Live and running the business every day.",
             url: "https://alsadiya.om",
             urlLabel: "alsadiya.om",
@@ -288,6 +294,8 @@ const resources = {
           awtad: {
             name: "أوتاد للتطوير العقاري",
             category: "العقارات",
+            coverTitle: "نبني معالم الغد",
+            coverSubtitle: "مشاريع سكنية راقية في ربوع سلطنة عُمان.",
             description: "موقع ثنائي اللغة لمطوّر عقاري راقٍ — واجهة بصرية آسرة، وعرض أنيق للمشاريع، ومسار واضح لتسجيل اهتمام المشترين.",
             url: "https://awtad.om",
             urlLabel: "awtad.om",
@@ -296,6 +304,8 @@ const resources = {
           germangold: {
             name: "جيرمن جولد",
             category: "السيارات · الزيوت",
+            coverTitle: "قوة الأداء.",
+            coverSubtitle: "زيت محركات بمعايير ألمانية، الآن في عُمان.",
             description: "علامة زيوت محركات ألمانية في السوق العُماني — مع أداة تفاعلية لاختيار الزيت المناسب، وكتالوج كامل للمنتجات، ودليل للموزّعين.",
             url: "https://germangold.om",
             urlLabel: "germangold.om",
@@ -304,6 +314,8 @@ const resources = {
           alsadiya: {
             name: "نظام فواتير مياه السعدية",
             category: "برمجيات أعمال · فوترة المياه",
+            coverTitle: "نظام إدارة فواتير المياه",
+            coverSubtitle: "المشتركون والقراءات والفواتير والدفعات — مصمّم لعُمان.",
             description: "منصّة فوترة مخصّصة لمزوّد مياه في نخل — قراءات شهرية للعدادات، وفواتير عربية تلقائية، ومدفوعات وتقارير لأكثر من ٣٥٠ مشتركاً. تعمل وتُدير العمل كل يوم.",
             url: "https://alsadiya.om",
             urlLabel: "alsadiya.om",

@@ -1,50 +1,63 @@
-import { ArrowUpRight, ExternalLink, ShieldCheck, BarChart3, Wallet, Droplets } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Droplets } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
-const projects = [
-  { key: 'awtad', image: '/work-awtad.jpg', color: '#C08A3E' },
-  { key: 'germangold', image: '/work-germangold.jpg', color: '#D4AF37' },
-  { key: 'alsadiya', cover: 'alsadiya', color: '#8E2547' },
-] as const
+type Project = {
+  key: string
+  color: string
+  mode: 'photo' | 'product' | 'gradient'
+  bg?: string
+}
 
-// Faithful recreation of Al Sadiya's branded login panel (the system is behind a
-// login, so we don't show real customer data — this mirrors the public marketing
-// panel of the live app).
-function AlSadiyaCover() {
+const projects: Project[] = [
+  { key: 'awtad', color: '#E2B673', mode: 'photo', bg: '/work-awtad-bg.jpg' },
+  { key: 'germangold', color: '#E7C24B', mode: 'product', bg: '/work-germangold-bg.png' },
+  { key: 'alsadiya', color: '#E08AA6', mode: 'gradient' },
+]
+
+// A language-aware cover: real background imagery (or Al Sadiya's branded gradient)
+// with the headline + sentence rendered in the current site language, so the Arabic
+// site shows Arabic and the English site shows English.
+function ProjectCover({ p }: { p: Project }) {
+  const { t, i18n } = useTranslation()
+  const base = `work.projects.${p.key}`
+  const dir = i18n.language?.startsWith('ar') ? 'rtl' : 'ltr'
+
   return (
-    <div dir="rtl" className="relative h-full w-full overflow-hidden bg-[#7a1f3d]"
-      style={{ background: 'radial-gradient(120% 120% at 85% 10%, #9c2e52 0%, #7a1f3d 45%, #5c1530 100%)' }}>
-      {/* subtle texture */}
-      <div className="absolute inset-0 opacity-[0.06]"
-        style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '26px 26px' }} />
-      {/* brand top corner */}
-      <div className="absolute top-[6%] right-[6%] flex items-center gap-2">
-        <div className="text-right leading-tight">
-          <div className="text-white font-bold text-[2.6cqw] sm:text-[2.2cqw]">مؤسسة السعدية للتجارة</div>
-          <div className="text-white/55 text-[1.7cqw]">نخل، سلطنة عُمان</div>
+    <div dir={dir} className="relative h-full w-full overflow-hidden [container-type:inline-size]"
+      style={p.mode === 'gradient'
+        ? { background: 'radial-gradient(120% 120% at 85% 12%, #9c2e52 0%, #7a1f3d 48%, #561430 100%)' }
+        : { backgroundColor: '#0a0a0a' }}>
+
+      {/* Background imagery */}
+      {p.mode === 'photo' && (
+        <img src={p.bg} alt="" className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+      )}
+      {p.mode === 'product' && (
+        <img src={p.bg} alt="" className="absolute left-1/2 top-[7%] h-[56%] w-auto max-w-[94%] -translate-x-1/2 object-contain transition-transform duration-700 group-hover:scale-[1.04]" loading="lazy" />
+      )}
+      {p.mode === 'gradient' && (
+        <>
+          <div className="absolute inset-0 opacity-[0.06]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #fff 1px, transparent 0)', backgroundSize: '26px 26px' }} />
+          <Droplets className="absolute top-[-6cqw] h-[34cqw] w-[34cqw] text-white/10" style={{ insetInlineEnd: '4cqw' }} />
+        </>
+      )}
+
+      {/* Legibility scrim */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
+
+      {/* Language-aware text */}
+      <div className="absolute inset-x-0 bottom-0 p-[6cqw] text-start">
+        <div className="font-semibold text-[2.2cqw] mb-[1.4cqw]" style={{ color: p.color }}>
+          {t(`${base}.category`)}
         </div>
-        <span className="flex h-[7cqw] w-[7cqw] items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
-          <Droplets className="h-[3.8cqw] w-[3.8cqw] text-white" />
-        </span>
-      </div>
-      {/* centered hero content */}
-      <div className="absolute inset-0 flex flex-col items-end justify-center gap-[2cqw] px-[7%] text-right">
-        <h4 className="text-white font-black leading-tight text-[5.4cqw]">نظام إدارة فواتير المياه</h4>
-        <p className="text-white/70 text-[2.3cqw] leading-relaxed max-w-[78%]">
-          نظام متكامل لإدارة المشتركين، وقراءات العدادات، والفواتير والدفعات — مصمّم خصيصاً للشركات في سلطنة عُمان.
+        <h4 className="text-white font-black leading-[1.1] text-[5.2cqw]">
+          {t(`${base}.coverTitle`)}
+        </h4>
+        <p className="text-white/75 leading-relaxed text-[2.5cqw] mt-[1.6cqw] max-w-[82%]">
+          {t(`${base}.coverSubtitle`)}
         </p>
-        <div className="flex flex-wrap-reverse justify-end gap-[1.4cqw] pt-[1cqw]">
-          {[{ icon: ShieldCheck, label: 'آمن' }, { icon: BarChart3, label: 'تقارير ذكية' }, { icon: Wallet, label: 'ريال عُماني' }].map((b) => {
-            const Icon = b.icon
-            return (
-              <span key={b.label} className="inline-flex items-center gap-[0.8cqw] rounded-full border border-white/20 bg-white/5 px-[2cqw] py-[0.9cqw] text-white/85 text-[2cqw] font-semibold">
-                <Icon className="h-[2.4cqw] w-[2.4cqw]" />
-                {b.label}
-              </span>
-            )
-          })}
-        </div>
       </div>
     </div>
   )
@@ -74,7 +87,7 @@ export function Work() {
             return (
               <Reveal key={p.key}>
                 <div className="grid lg:grid-cols-2 gap-8 lg:gap-14 items-center">
-                  {/* Screenshot in a browser frame */}
+                  {/* Cover in a browser frame */}
                   <a href={url} target="_blank" rel="noopener noreferrer"
                     className={`group relative block [direction:ltr] ${reversed ? 'lg:order-2' : ''}`}>
                     <div className="pointer-events-none absolute -inset-4 rounded-[2rem] blur-2xl opacity-50 transition-opacity duration-500 group-hover:opacity-80"
@@ -89,16 +102,8 @@ export function Work() {
                           {t(`${base}.urlLabel`)}
                         </span>
                       </div>
-                      <div className="aspect-[1200/630] w-full overflow-hidden [container-type:inline-size]">
-                        {'image' in p ? (
-                          <img src={p.image} alt={t(`${base}.name`)}
-                            className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                            loading="lazy" />
-                        ) : (
-                          <div className="h-full w-full transition-transform duration-700 group-hover:scale-[1.03]">
-                            <AlSadiyaCover />
-                          </div>
-                        )}
+                      <div className="aspect-[1200/630] w-full overflow-hidden">
+                        <ProjectCover p={p} />
                       </div>
                     </div>
                   </a>
