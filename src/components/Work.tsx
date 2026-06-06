@@ -1,4 +1,4 @@
-import { ArrowUpRight, ExternalLink, ShieldCheck, BarChart3, Wallet } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, ShieldCheck, BarChart3, Wallet, Droplets } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
@@ -24,7 +24,9 @@ function AlSadiyaCover() {
           <div className="text-white font-bold text-[2.6cqw] sm:text-[2.2cqw]">مؤسسة السعدية للتجارة</div>
           <div className="text-white/55 text-[1.7cqw]">نخل، سلطنة عُمان</div>
         </div>
-        <img src="/alsadiya-logo.png" alt="" className="h-[7cqw] w-[7cqw] object-contain drop-shadow" />
+        <span className="flex h-[7cqw] w-[7cqw] items-center justify-center rounded-full bg-white/10 ring-1 ring-white/20">
+          <Droplets className="h-[3.8cqw] w-[3.8cqw] text-white" />
+        </span>
       </div>
       {/* centered hero content */}
       <div className="absolute inset-0 flex flex-col items-end justify-center gap-[2cqw] px-[7%] text-right">
