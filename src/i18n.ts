@@ -53,6 +53,14 @@ const resources = {
             url: "https://germangold.om",
             urlLabel: "germangold.om",
             tags: ["Design & build", "Interactive tool", "E-commerce ready"]
+          },
+          alsadiya: {
+            name: "Al Sadiya Water Billing",
+            category: "Business software · Utility billing",
+            description: "A custom billing platform for a water utility in Nakhal — monthly meter readings, automated Arabic invoices, payments and reporting for 350+ subscribers. Live and running the business every day.",
+            url: "https://alsadiya.om",
+            urlLabel: "alsadiya.om",
+            tags: ["Custom web app", "Billing & invoicing", "350+ subscribers"]
           }
         }
       },
@@ -292,6 +300,14 @@ const resources = {
             url: "https://germangold.om",
             urlLabel: "germangold.om",
             tags: ["تصميم وتطوير", "أداة تفاعلية", "جاهز للمتاجر"]
+          },
+          alsadiya: {
+            name: "نظام فواتير مياه السعدية",
+            category: "برمجيات أعمال · فوترة المياه",
+            description: "منصّة فوترة مخصّصة لمزوّد مياه في نخل — قراءات شهرية للعدادات، وفواتير عربية تلقائية، ومدفوعات وتقارير لأكثر من ٣٥٠ مشتركاً. تعمل وتُدير العمل كل يوم.",
+            url: "https://alsadiya.om",
+            urlLabel: "alsadiya.om",
+            tags: ["تطبيق ويب مخصّص", "فوترة وإيصالات", "+٣٥٠ مشترك"]
           }
         }
       },
