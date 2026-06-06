@@ -15,10 +15,10 @@ export function FinalCTA() {
   return (
     <section className="relative py-14 sm:py-20 lg:py-28 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="relative overflow-hidden rounded-3xl bg-[#0f0f0f] text-white px-7 py-14 sm:px-8 sm:py-16 lg:py-20 text-center">
+        <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#DB4B4B] via-[#b23a3a] to-[#7a2a2a] text-white px-7 py-14 sm:px-8 sm:py-16 lg:py-20 text-center">
           {/* spotlight + glows */}
-          <div className="pointer-events-none absolute left-1/2 -top-24 h-[360px] w-[680px] max-w-[120vw] -translate-x-1/2 rounded-full bg-[#DB4B4B]/20 blur-[130px]" />
-          <div className="pointer-events-none absolute -bottom-20 right-1/4 h-[260px] w-[260px] rounded-full bg-[#059669]/15 blur-[120px]" />
+          <div className="pointer-events-none absolute left-1/2 -top-24 h-[360px] w-[680px] max-w-[120vw] -translate-x-1/2 rounded-full bg-[#ff9d86]/25 blur-[130px]" />
+          <div className="pointer-events-none absolute -bottom-24 right-1/4 h-[300px] w-[300px] rounded-full bg-[#5e1b22]/55 blur-[120px]" />
           {/* fine dot-grid, masked to center */}
           <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{
             backgroundImage: 'radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)',
@@ -33,7 +33,7 @@ export function FinalCTA() {
                 {t('finalCta.title')}
               </span>
             </h2>
-            <p className="text-lg text-white/60 max-w-xl mx-auto mb-9 leading-relaxed">
+            <p className="text-lg text-white/75 max-w-xl mx-auto mb-9 leading-relaxed">
               {t('finalCta.desc')}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
@@ -43,7 +43,7 @@ export function FinalCTA() {
                 {t('finalCta.button')}
               </button>
               <a href="mailto:info@royah.om"
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/20 hover:bg-white/10 text-white font-semibold px-8 py-4 rounded-xl text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
+                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-white/35 hover:bg-white/15 text-white font-semibold px-8 py-4 rounded-xl text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Mail className="w-5 h-5" />
                 {t('finalCta.secondary')}
               </a>
