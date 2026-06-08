@@ -90,7 +90,7 @@ const resources = {
         badge: "Built in Oman, for the world",
         headline: "Smart software and AI,",
         headlineAccent: "built to serve people.",
-        subheadline: "The everyday tools people and teams rely on — made simpler, smarter, and ready for what's next.",
+        subheadline: "We design and build the websites, apps, and smart systems your business needs — with real AI built in to do the work for you.",
         ctaPrimary: "See our product",
         ctaSecondary: "Talk to us",
         trust: "Running in live production today"
@@ -344,7 +344,7 @@ const resources = {
         badge: "صُنع في عُمان… للعالم",
         headline: "برمجيات وذكاء اصطناعي",
         headlineAccent: "في خدمة الإنسان.",
-        subheadline: "الأدوات اليومية التي يعتمد عليها الناس والفرق — أبسط وأذكى وأكثر جاهزية للمستقبل.",
+        subheadline: "نصمم ونبني المواقع والتطبيقات والأنظمة الذكية التي تحتاجها أعمالك — ونضع فيها الذكاء الاصطناعي ليعمل عنك.",
         ctaPrimary: "شاهد منتجنا",
         ctaSecondary: "تحدّث معنا",
         trust: "يعمل فعلياً في بيئة إنتاج حقيقية"
