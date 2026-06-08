@@ -119,21 +119,21 @@ const resources = {
       whatWeDo: {
         tag: "What we do",
         title: "Software built for the way you work.",
-        subtitle: "Custom business software, practical AI, and a clear digital strategy — the essentials to run and grow.",
+        subtitle: "Custom software, practical AI, and a clear digital strategy — everything you need to build and grow.",
         items: {
           software: {
-            title: "Business Software",
-            description: "Custom systems for the work that runs your business — billing, tenants, payments, orders and reporting.",
-            features: ["Billing & invoicing", "Tenant & customer records", "Payments & reminders", "Dashboards & reports"]
+            title: "Custom Software",
+            description: "Websites, apps, and smart systems built around your needs — from customers and billing to inventory, bookings, and reports.",
+            features: ["Customers & sales", "Billing & payments", "Inventory & orders", "Dashboards & reports"]
           },
           ai: {
             title: "AI Solutions",
-            description: "Practical AI that saves real time — Arabic chatbots, document and data automation, and smart insights.",
+            description: "Practical AI that saves you time — Arabic chatbots, document automation, and smart insights from your data.",
             features: ["Arabic & English chatbots", "Document automation", "Data insights", "Smart assistants"]
           },
           strategy: {
             title: "Digital Strategy",
-            description: "We help you plan your digital roadmap — what to build, in what order, and how it pays off.",
+            description: "We map the path with you — what to build, in what order, and how it pays off, whether you're a company, an organization, or someone with an idea.",
             features: ["Digital roadmap", "Process review", "System design", "Vision 2040 alignment"]
           }
         }
@@ -373,21 +373,21 @@ const resources = {
       whatWeDo: {
         tag: "ماذا نقدّم",
         title: "برمجيات مصمّمة لطريقة عملك.",
-        subtitle: "برمجيات أعمال مخصّصة، وذكاء اصطناعي عملي، واستراتيجية رقمية واضحة — كل ما تحتاجه لإدارة عملك ونموّه.",
+        subtitle: "برمجيات مخصّصة، وذكاء اصطناعي عملي، واستراتيجية رقمية واضحة — كل ما تحتاجه لتبني وتنمو.",
         items: {
           software: {
-            title: "برمجيات الأعمال",
-            description: "أنظمة مخصصة للعمل الذي يُدير نشاطك — الفوترة والمستأجرون والمدفوعات والطلبات والتقارير.",
-            features: ["الفوترة والإيصالات", "سجلات المستأجرين والعملاء", "المدفوعات والتذكيرات", "لوحات ومعلومات وتقارير"]
+            title: "البرمجيات المخصّصة",
+            description: "مواقع، وتطبيقات، وأنظمة ذكية مصمّمة خصيصاً لاحتياجك — من إدارة العملاء والفوترة إلى المخزون والحجوزات والتقارير.",
+            features: ["العملاء والمبيعات", "الفوترة والمدفوعات", "المخزون والطلبات", "لوحات وتقارير"]
           },
           ai: {
             title: "حلول الذكاء الاصطناعي",
-            description: "ذكاء اصطناعي عملي يوفّر وقتاً حقيقياً — روبوتات محادثة عربية، وأتمتة المستندات والبيانات، ورؤى ذكية.",
+            description: "ذكاء اصطناعي عملي يوفّر وقتك — روبوتات محادثة عربية، وأتمتة المستندات، ورؤى ذكية من بياناتك.",
             features: ["روبوتات محادثة عربية وإنجليزية", "أتمتة المستندات", "رؤى من البيانات", "مساعدون أذكياء"]
           },
           strategy: {
             title: "الاستراتيجية الرقمية",
-            description: "نساعدك في رسم خارطة طريقك الرقمية — ماذا تبني، وبأي ترتيب، وكيف يعود عليك بالنفع.",
+            description: "نرسم معك خارطة الطريق — ماذا تبني، وبأي ترتيب، وكيف يعود عليك بالنفع، سواء كنت شركة، أو مؤسسة، أو صاحب فكرة.",
             features: ["خارطة طريق رقمية", "مراجعة العمليات", "تصميم الأنظمة", "الانسجام مع رؤية ٢٠٤٠"]
           }
         }

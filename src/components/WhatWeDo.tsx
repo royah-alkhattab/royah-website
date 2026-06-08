@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next'
 import { Reveal, SectionTag } from './Reveal'
 
 const items = [
+  { icon: Compass, key: 'strategy', color: '#059669', video: '/card-strategy.mp4', poster: '/card-strategy.jpg' },
   { icon: Boxes, key: 'software', color: '#DB4B4B', video: '/card-software.mp4', poster: '/card-software.jpg' },
   { icon: Sparkles, key: 'ai', color: '#8B5A7F', video: '/card-ai.mp4', poster: '/card-ai.jpg' },
-  { icon: Compass, key: 'strategy', color: '#059669', video: '/card-strategy.mp4', poster: '/card-strategy.jpg' },
 ]
 
 export function WhatWeDo() {
