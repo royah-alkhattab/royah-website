@@ -9,8 +9,8 @@ import { useNavigate } from 'react-router-dom'
 // — no code change needed. Until then, the clean brand gradient shows.
 // ?v= cache-buster: bump this whenever hero.mp4 / hero-poster.jpg are replaced,
 // so browsers fetch the new files instead of a stale cached frame.
-const HERO_VIDEO = '/hero.mp4?v=2'
-const HERO_POSTER = '/hero-poster.jpg?v=2'
+const HERO_VIDEO = '/hero.mp4?v=3'
+const HERO_POSTER = '/hero-poster.jpg?v=3'
 
 export function Hero() {
   const { t } = useTranslation()
