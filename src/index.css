@@ -720,3 +720,31 @@ html {
     object-position: center center;
   }
 }
+/* ===== Future Light theme (2026 redesign) ===== */
+body {
+  font-family: 'Space Grotesk', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+}
+html[dir='rtl'] body {
+  font-family: 'IBM Plex Sans Arabic', 'Space Grotesk', system-ui, -apple-system, sans-serif;
+}
+.mono-tech {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+@keyframes floaty {
+  0%, 100% { transform: translateY(0) }
+  50% { transform: translateY(-12px) }
+}
+.floaty { animation: floaty 6s ease-in-out infinite }
+.floaty-2 { animation: floaty 7.5s ease-in-out infinite; animation-delay: -2s }
+.floaty-3 { animation: floaty 8.5s ease-in-out infinite; animation-delay: -4s }
+@keyframes bloom-drift {
+  0%, 100% { opacity: .85; transform: scale(1) }
+  50% { opacity: 1; transform: scale(1.06) }
+}
+.bloom-drift { animation: bloom-drift 9s ease-in-out infinite }
+.bloom-drift-2 { animation: bloom-drift 12s ease-in-out infinite; animation-delay: -5s }
+@keyframes grid-flow {
+  from { background-position: 0 0, 0 0 }
+  to { background-position: 0 84px, 0 84px }
+}
+.grid-flow { animation: grid-flow 4.5s linear infinite }

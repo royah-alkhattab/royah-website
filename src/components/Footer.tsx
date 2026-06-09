@@ -24,15 +24,15 @@ export function Footer() {
   }
 
   return (
-    <footer className="relative bg-foreground text-background">
+    <footer className="relative border-t border-[#101418]/10 bg-[#eef3f6] text-[#101418]">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="py-14">
           <div className={`grid grid-cols-1 lg:grid-cols-4 gap-10 ${isRTL ? 'text-right' : ''}`}>
 
             {/* Company */}
             <div className="lg:col-span-2">
-              <Logo onDark className="h-11 mb-5" />
-              <p className="text-background/70 leading-relaxed mb-6 max-w-md">
+              <Logo onDark={false} className="h-11 mb-5" />
+              <p className="text-[#5d6b78] leading-relaxed mb-6 max-w-md">
                 {t('footer.description')}
               </p>
               <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -42,9 +42,9 @@ export function Footer() {
                   <span>{t('footer.getInTouch')}</span>
                 </button>
                 <a href="https://instagram.com/royah.om" target="_blank" rel="noopener noreferrer"
-                  className="w-11 h-11 bg-background/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center gentle-animation group"
+                  className="w-11 h-11 bg-[#101418]/[0.07] hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center gentle-animation group"
                   aria-label="Instagram">
-                  <Instagram className="w-5 h-5 text-background/70 group-hover:text-white" />
+                  <Instagram className="w-5 h-5 text-[#5d6b78] group-hover:text-white" />
                 </a>
               </div>
             </div>
@@ -55,7 +55,7 @@ export function Footer() {
               <div className="space-y-3">
                 {navLinks.map((l) => (
                   <Link key={l.to} to={l.to}
-                    className="block text-background/70 hover:text-background gentle-animation">
+                    className="block text-[#5d6b78] hover:text-[#101418] gentle-animation">
                     {t(l.key)}
                   </Link>
                 ))}
@@ -68,30 +68,30 @@ export function Footer() {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#059669]/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-[#34d399]" />
+                    <Mail className="w-5 h-5 text-[#059669]" />
                   </div>
                   <div className="flex flex-col items-start">
-                    <span className="text-background/50 text-xs">{t('footer.emailLabel')}</span>
-                    <a href="mailto:info@royah.om" className="hover:text-[#34d399] gentle-animation">info@royah.om</a>
+                    <span className="text-[#7b8794] text-xs">{t('footer.emailLabel')}</span>
+                    <a href="mailto:info@royah.om" className="hover:text-[#059669] gentle-animation">info@royah.om</a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#DB4B4B]/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#e89090]" />
+                    <Phone className="w-5 h-5 text-[#DB4B4B]" />
                   </div>
                   <div className="flex flex-col items-start">
-                    <span className="text-background/50 text-xs">{t('footer.phoneLabel')}</span>
-                    <a href="tel:+96890663136" className="hover:text-[#e89090] gentle-animation">
+                    <span className="text-[#7b8794] text-xs">{t('footer.phoneLabel')}</span>
+                    <a href="tel:+96890663136" className="hover:text-[#DB4B4B] gentle-animation">
                       <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>+968 90663136</span>
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 shrink-0 bg-[#8B5A7F]/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[#c79bb8]" />
+                    <MapPin className="w-5 h-5 text-[#8B5A7F]" />
                   </div>
                   <div className="flex flex-col items-start">
-                    <span className="text-background/50 text-xs">{t('footer.locationLabel')}</span>
+                    <span className="text-[#7b8794] text-xs">{t('footer.locationLabel')}</span>
                     <span>{t('footer.location')}</span>
                   </div>
                 </div>
@@ -101,10 +101,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-background/15 py-6">
+        <div className="border-t border-[#101418]/10 py-6">
           <div className={`flex flex-col md:flex-row justify-between items-center gap-3 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="text-background/60 text-sm">{t('footer.copyright')}</div>
-            <div className="text-background/60 text-sm">{t('footer.tagline')}</div>
+            <div className="text-[#5d6b78] text-sm">{t('footer.copyright')}</div>
+            <div className="text-[#5d6b78] text-sm">{t('footer.tagline')}</div>
           </div>
         </div>
       </div>

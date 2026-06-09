@@ -88,10 +88,10 @@ const resources = {
       // Hero Section
       hero: {
         badge: "Built in Oman, for the world",
-        headline: "Smart software and AI,",
-        headlineAccent: "built to serve people.",
+        headline: "The future,",
+        headlineAccent: "built for you.",
         subheadline: "We design and build the websites, apps, and smart systems your business needs — with real AI built in to do the work for you.",
-        ctaPrimary: "See our product",
+        ctaPrimary: "See our work",
         ctaSecondary: "Talk to us",
         trust: "Running in live production today"
       },
@@ -118,7 +118,7 @@ const resources = {
       // What We Do
       whatWeDo: {
         tag: "What we do",
-        title: "Software built for the way you work.",
+        title: "Three crafts. One vision.",
         subtitle: "Custom software, practical AI, and a clear digital strategy — everything you need to build and grow.",
         items: {
           software: {
@@ -137,6 +137,11 @@ const resources = {
             features: ["Digital roadmap", "Process review", "System design", "Vision 2040 alignment"]
           }
         }
+      },
+      // Homepage work teaser
+      workTeaser: {
+        title: "Real products, shipped.",
+        view: "All projects"
       },
       // Flagship Product
       product: {
@@ -342,10 +347,10 @@ const resources = {
       // Hero Section
       hero: {
         badge: "صُنع في عُمان… للعالم",
-        headline: "برمجيات وذكاء اصطناعي",
-        headlineAccent: "في خدمة الإنسان.",
+        headline: "المستقبل،",
+        headlineAccent: "نبنيه من أجلك.",
         subheadline: "نصمم ونبني المواقع والتطبيقات والأنظمة الذكية التي تحتاجها أعمالك — ونضع فيها الذكاء الاصطناعي ليعمل عنك.",
-        ctaPrimary: "شاهد منتجنا",
+        ctaPrimary: "شاهد أعمالنا",
         ctaSecondary: "تحدّث معنا",
         trust: "يعمل فعلياً في بيئة إنتاج حقيقية"
       },
@@ -372,7 +377,7 @@ const resources = {
       // What We Do
       whatWeDo: {
         tag: "ماذا نقدّم",
-        title: "برمجيات مصمّمة لطريقة عملك.",
+        title: "ثلاث خدمات، هدف واحد.",
         subtitle: "برمجيات مخصّصة، وذكاء اصطناعي عملي، واستراتيجية رقمية واضحة — كل ما تحتاجه لتبني وتنمو.",
         items: {
           software: {
@@ -391,6 +396,11 @@ const resources = {
             features: ["خارطة طريق رقمية", "مراجعة العمليات", "تصميم الأنظمة", "الانسجام مع رؤية ٢٠٤٠"]
           }
         }
+      },
+      // Homepage work teaser
+      workTeaser: {
+        title: "منتجات حقيقية، تعمل اليوم.",
+        view: "كل الأعمال"
       },
       // Flagship Product
       product: {
