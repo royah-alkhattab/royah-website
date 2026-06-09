@@ -1,73 +1,101 @@
-import { Check } from 'lucide-react'
+import { Boxes, Sparkles, Compass, Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Reveal } from './Reveal'
+import { Reveal, SectionTag } from './Reveal'
 
-// "Future Light" services — frosted-glass panels with glossy orbs.
 const items = [
-  { key: 'strategy', id: '01 — STRATEGY', orb: 'red' },
-  { key: 'software', id: '02 — SOFTWARE', orb: 'teal' },
-  { key: 'ai', id: '03 — INTELLIGENCE', orb: 'red' },
+  { icon: Compass, key: 'strategy', color: '#059669', video: '/card-strategy.mp4', poster: '/card-strategy.jpg' },
+  { icon: Boxes, key: 'software', color: '#DB4B4B', video: '/card-software.mp4', poster: '/card-software.jpg' },
+  { icon: Sparkles, key: 'ai', color: '#8B5A7F', video: '/card-ai.mp4', poster: '/card-ai.jpg' },
 ]
-
-const orbStyle: Record<string, React.CSSProperties> = {
-  teal: {
-    background: 'radial-gradient(circle at 32% 30%, #fff, #bdf3fb 45%, #22d3ee)',
-    boxShadow: '0 14px 30px -8px rgba(34,211,238,.55), inset 0 -6px 14px rgba(14,138,160,.35)',
-  },
-  red: {
-    background: 'radial-gradient(circle at 32% 30%, #fff, #ffc9c4 45%, #DB4B4B)',
-    boxShadow: '0 14px 30px -8px rgba(219,75,75,.5), inset 0 -6px 14px rgba(150,40,40,.3)',
-  },
-}
 
 export function WhatWeDo() {
   const { t } = useTranslation()
 
   const card = (item: (typeof items)[number]) => {
+    const Icon = item.icon
     const features = t(`whatWeDo.items.${item.key}.features`, { returnObjects: true }) as string[]
     return (
-      <div className="gentle-animation group relative h-full overflow-hidden rounded-3xl border border-white/95 bg-white/70 p-8 shadow-[0_30px_70px_-28px_rgba(30,60,80,.3)] backdrop-blur-xl hover:-translate-y-1.5 sm:p-10">
-        <div className="mono-tech text-xs tracking-[.2em] text-[#9aa8b5]" dir="ltr">{item.id}</div>
-        <div className="mt-7 mb-6 h-14 w-14 rounded-full" style={orbStyle[item.orb]} />
-        <h3 className="mb-2 text-2xl font-bold text-[#101418] sm:text-[1.7rem]">
-          {t(`whatWeDo.items.${item.key}.title`)}
-        </h3>
-        <p className="mb-6 leading-relaxed text-[#5d6b78]">
-          {t(`whatWeDo.items.${item.key}.description`)}
-        </p>
-        <ul className="space-y-3">
-          {features.map((f, fi) => (
-            <li key={fi} className="flex items-center gap-3 text-sm font-medium text-[#46535f]">
-              <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#22d3ee]/15">
-                <Check className="h-3 w-3 text-[#0e8aa0]" />
-              </span>
-              <span>{f}</span>
-            </li>
-          ))}
-        </ul>
+      <div className="group relative h-full overflow-hidden rounded-3xl bg-background clean-border elevated-shadow transition-all duration-300 hover:-translate-y-1.5">
+        {/* soft color glow that blooms on hover */}
+        <div className="pointer-events-none absolute -right-12 -top-12 z-0 h-44 w-44 rounded-full opacity-0 blur-3xl transition-opacity duration-500 group-hover:opacity-100"
+          style={{ backgroundColor: `${item.color}30` }} />
+        {/* accent ring on hover */}
+        <div className="pointer-events-none absolute inset-0 z-20 rounded-3xl border-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+          style={{ borderColor: `${item.color}66` }} />
+
+        {/* animated preview cover */}
+        <div className="relative z-10">
+          <div className="aspect-[16/9] w-full overflow-hidden bg-[#0a0a0a]">
+            <video
+              className="h-full w-full object-cover"
+              autoPlay muted loop playsInline preload="metadata"
+              poster={item.poster}
+            >
+              <source src={item.video} type="video/mp4" />
+            </video>
+          </div>
+          {/* fade the video into the card */}
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-14 bg-gradient-to-t from-background to-transparent" />
+          {/* icon badge straddling the edge (flips to the right in RTL) */}
+          <div className="absolute -bottom-5 left-6 rtl:left-auto rtl:right-6 flex h-12 w-12 items-center justify-center rounded-2xl transition-transform duration-300 group-hover:scale-105"
+            style={{ background: `linear-gradient(135deg, ${item.color}, ${item.color}cc)`, boxShadow: `0 10px 24px -8px ${item.color}cc` }}>
+            <Icon className="h-6 w-6 text-white" />
+          </div>
+        </div>
+
+        {/* content */}
+        <div className="relative z-10 px-6 pb-6 pt-9 sm:px-8 sm:pb-8">
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 card-title">{t(`whatWeDo.items.${item.key}.title`)}</h3>
+          <p className="text-muted-foreground leading-relaxed mb-6 card-description">
+            {t(`whatWeDo.items.${item.key}.description`)}
+          </p>
+          <ul className="space-y-3">
+            {features.map((f, fi) => (
+              <li key={fi} className="flex items-center gap-3 text-sm font-medium">
+                <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full"
+                  style={{ backgroundColor: `${item.color}1a` }}>
+                  <Check className="h-3 w-3" style={{ color: item.color }} />
+                </span>
+                <span>{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     )
   }
 
   return (
-    <section id="what" className="scroll-mt-20 bg-gradient-to-b from-[#f6f8fa] to-[#eef3f6] pt-16 pb-12 sm:py-24 lg:py-28">
+    <section id="what" className="relative pt-16 pb-12 sm:py-24 lg:py-32 bg-card/40 scroll-mt-20">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="max-w-3xl mx-auto text-center">
           <Reveal>
-            <div className="mono-tech text-xs tracking-[.32em] text-[#0e8aa0]" dir="ltr">// {t('whatWeDo.tag').toUpperCase()}</div>
-            <h2 className="mt-4 text-3xl font-black leading-tight sm:text-4xl lg:text-5xl">
+            <SectionTag>{t('whatWeDo.tag')}</SectionTag>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight section-title">
               {t('whatWeDo.title')}
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-[#5d6b78] sm:text-xl">
+            <p className="mt-5 text-lg sm:text-xl text-muted-foreground leading-relaxed section-subtitle">
               {t('whatWeDo.subtitle')}
             </p>
           </Reveal>
         </div>
 
-        <div className="mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-6 md:grid-cols-3">
+        {/* Tablet & desktop: 3-column grid */}
+        <div className="hidden md:grid md:grid-cols-3 gap-6 max-w-6xl mx-auto mt-14">
           {items.map((item, i) => (
             <Reveal key={item.key} delay={i * 0.1}>{card(item)}</Reveal>
           ))}
+        </div>
+
+        {/* Phone: stacking deck — cards pile up as you scroll */}
+        <div className="md:hidden mt-10 max-w-md mx-auto">
+          {items.map((item, i) => (
+            <div key={item.key} className="sticky pb-5" style={{ top: `calc(5rem + ${i}rem)` }}>
+              {card(item)}
+            </div>
+          ))}
+          {/* minimal tail so the last card settles, then flows into the next section */}
+          <div className="h-4" />
         </div>
       </div>
     </section>

@@ -23,7 +23,7 @@ export function Navbar() {
 
   // Pages whose top section is the dark hero/header. Over those, the navbar is
   // transparent with white text until the user scrolls; everywhere else it's solid.
-  const darkTop = ['/work', '/product', '/about'].includes(pathname)
+  const darkTop = ['/', '/work', '/product', '/about'].includes(pathname)
   const overlay = darkTop && !scrolled
 
   useEffect(() => {

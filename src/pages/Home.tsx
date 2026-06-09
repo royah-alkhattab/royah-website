@@ -1,6 +1,5 @@
 import { Hero } from '../components/Hero'
 import { WhatWeDo } from '../components/WhatWeDo'
-import { WorkShowcase } from '../components/WorkShowcase'
 import { Vision2040 } from '../components/Vision2040'
 import { FinalCTA } from '../components/FinalCTA'
 
@@ -13,7 +12,6 @@ export function Home() {
     <>
       <Hero />
       <WhatWeDo />
-      <WorkShowcase />
       <Vision2040 />
       <FinalCTA />
     </>
