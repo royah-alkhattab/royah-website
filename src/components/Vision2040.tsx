@@ -22,23 +22,24 @@ export function Vision2040() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start 0.82', 'end 0.62'] })
 
   return (
-    <section id="vision" className="relative py-28 sm:py-36 lg:py-48 bg-[#070708] text-white overflow-hidden scroll-mt-20">
+    <section id="vision" className="relative py-28 sm:py-36 lg:py-48 bg-[linear-gradient(180deg,#0d4a5c,#0b3b49,#08303c)] text-white overflow-hidden scroll-mt-20">
       {/* ambient + texture */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[900px] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#DB4B4B]/10 blur-[140px]" />
-      <div className="pointer-events-none absolute bottom-10 right-1/5 h-[280px] w-[280px] rounded-full bg-[#059669]/10 blur-[120px]" />
-      <div className="pointer-events-none absolute inset-0 opacity-[0.05]" style={{
-        backgroundImage: 'radial-gradient(circle at 1px 1px, #ffffff 1px, transparent 0)',
+      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[560px] w-[1000px] max-w-[130vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#22d3ee]/30 blur-[150px]" />
+      <div className="pointer-events-none absolute bottom-0 right-1/5 h-[320px] w-[320px] rounded-full bg-[#67e8f9]/22 blur-[120px]" />
+      <div className="pointer-events-none absolute top-0 left-1/4 h-[300px] w-[300px] rounded-full bg-[#0ea5e9]/20 blur-[120px]" />
+      <div className="pointer-events-none absolute inset-0 opacity-[0.14]" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, #7dd3fc 1px, transparent 0)',
         backgroundSize: '36px 36px',
         maskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, #000 35%, transparent 100%)',
         WebkitMaskImage: 'radial-gradient(ellipse 75% 65% at 50% 50%, #000 35%, transparent 100%)',
       }} />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-background to-transparent" />
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#062028] to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#062028] to-transparent" />
 
       <div ref={ref} className="container mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
         <div className="mx-auto max-w-5xl text-center">
           <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-sm font-semibold text-white/80 backdrop-blur-sm">
-            <span className="h-2 w-2 rounded-full bg-[#059669] animate-pulse" />
+            <span className="h-2 w-2 rounded-full bg-[#22d3ee] animate-pulse" />
             {t('vision.tag')}
           </div>
 
