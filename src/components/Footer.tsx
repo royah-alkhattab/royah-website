@@ -37,12 +37,12 @@ export function Footer() {
               </p>
               <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <button onClick={handleWhatsAppClick}
-                  className={`bg-[#059669] hover:bg-[#047857] text-white font-semibold px-5 py-2.5 rounded-lg gentle-animation inline-flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
+                  className={`rounded-full bg-gradient-to-b from-[#0aa372] to-[#047857] text-white font-semibold px-6 py-2.5 shadow-[0_10px_26px_-10px_rgba(5,150,105,0.7)] hover:shadow-[0_14px_32px_-10px_rgba(5,150,105,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation inline-flex items-center gap-2 ${isRTL ? 'flex-row-reverse' : ''}`}>
                   <MessageCircle className="w-5 h-5" />
                   <span>{t('footer.getInTouch')}</span>
                 </button>
                 <a href="https://instagram.com/royah.om" target="_blank" rel="noopener noreferrer"
-                  className="w-11 h-11 bg-background/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-lg flex items-center justify-center gentle-animation group"
+                  className="w-11 h-11 bg-background/10 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 rounded-full flex items-center justify-center gentle-animation group"
                   aria-label="Instagram">
                   <Instagram className="w-5 h-5 text-background/70 group-hover:text-white" />
                 </a>

@@ -60,7 +60,7 @@ export function Navbar() {
               ))}
               <LanguageSwitcher light={overlay} />
               <Link to="/contact"
-                className="bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-5 py-2.5 rounded-lg gentle-animation">
+                className="rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-6 py-2.5 shadow-[0_10px_26px_-10px_rgba(219,75,75,0.7)] hover:shadow-[0_14px_32px_-10px_rgba(219,75,75,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
                 {t('nav.contact')}
               </Link>
             </nav>
@@ -99,7 +99,7 @@ export function Navbar() {
         </nav>
 
         <Link to="/contact" onClick={() => setOpen(false)}
-          className="mt-5 text-center bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-6 py-3.5 rounded-xl gentle-animation">
+          className="mt-5 text-center rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-6 py-3.5 shadow-[0_14px_34px_-12px_rgba(219,75,75,0.7)] active:scale-[0.98] gentle-animation">
           {t('nav.contact')}
         </Link>
 

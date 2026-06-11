@@ -36,12 +36,12 @@ export function FinalCTA() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button onClick={handleWhatsAppClick}
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#DB4B4B] hover:bg-[#c43e3e] text-white font-semibold px-8 py-4 rounded-xl text-lg shadow-[0_12px_28px_-10px_rgba(219,75,75,0.6)] gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
+                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-9 py-4 text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.7)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <MessageCircle className="w-5 h-5" />
                 {t('finalCta.button')}
               </button>
               <a href="mailto:info@royah.om"
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 border border-black/15 hover:bg-black/[0.04] text-[#16161a] font-semibold px-8 py-4 rounded-xl text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
+                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-black/10 bg-black/[0.03] hover:bg-black/[0.06] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] text-[#16161a] font-semibold px-9 py-4 text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Mail className="w-5 h-5" />
                 {t('finalCta.secondary')}
               </a>
