@@ -26,13 +26,13 @@ export function Footer() {
   return (
     <footer className="relative bg-foreground text-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="py-14">
-          <div className={`grid grid-cols-1 lg:grid-cols-4 gap-10 ${isRTL ? 'text-right' : ''}`}>
+        <div className="py-10 sm:py-14">
+          <div className={`grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 ${isRTL ? 'text-right' : ''}`}>
 
             {/* Company */}
-            <div className="lg:col-span-2">
-              <Logo onDark className="h-11 mb-5" />
-              <p className="text-background/70 leading-relaxed mb-6 max-w-md">
+            <div className="col-span-2">
+              <Logo onDark className="h-9 sm:h-11 mb-4 sm:mb-5" />
+              <p className="text-sm sm:text-base text-background/70 leading-relaxed mb-5 sm:mb-6 max-w-md">
                 {t('footer.description')}
               </p>
               <div className={`flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}>
@@ -51,11 +51,11 @@ export function Footer() {
 
             {/* Explore */}
             <div>
-              <h3 className="font-bold text-lg mb-5">{t('footer.nav.title')}</h3>
-              <div className="space-y-3">
+              <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-5">{t('footer.nav.title')}</h3>
+              <div className="space-y-2.5 sm:space-y-3">
                 {navLinks.map((l) => (
                   <Link key={l.to} to={l.to}
-                    className="block text-background/70 hover:text-background gentle-animation">
+                    className="block text-sm sm:text-base text-background/70 hover:text-background gentle-animation">
                     {t(l.key)}
                   </Link>
                 ))}
@@ -64,35 +64,35 @@ export function Footer() {
 
             {/* Contact */}
             <div>
-              <h3 className="font-bold text-lg mb-5">{t('footer.contactTitle')}</h3>
-              <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 shrink-0 bg-[#059669]/20 rounded-lg flex items-center justify-center">
-                    <Mail className="w-5 h-5 text-[#34d399]" />
+              <h3 className="font-bold text-base sm:text-lg mb-3 sm:mb-5">{t('footer.contactTitle')}</h3>
+              <div className="space-y-3 sm:space-y-4">
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[#059669]/20 rounded-lg flex items-center justify-center">
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[#34d399]" />
                   </div>
                   <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.emailLabel')}</span>
-                    <a href="mailto:info@royah.om" className="hover:text-[#34d399] gentle-animation">info@royah.om</a>
+                    <a href="mailto:info@royah.om" className="text-sm sm:text-base hover:text-[#34d399] gentle-animation">info@royah.om</a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 shrink-0 bg-[#DB4B4B]/20 rounded-lg flex items-center justify-center">
-                    <Phone className="w-5 h-5 text-[#e89090]" />
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[#DB4B4B]/20 rounded-lg flex items-center justify-center">
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[#e89090]" />
                   </div>
                   <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.phoneLabel')}</span>
-                    <a href="tel:+96890663136" className="hover:text-[#e89090] gentle-animation">
+                    <a href="tel:+96890663136" className="text-sm sm:text-base hover:text-[#e89090] gentle-animation">
                       <span dir="ltr" style={{ direction: 'ltr', unicodeBidi: 'isolate' }}>+968 90663136</span>
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 shrink-0 bg-[#8B5A7F]/20 rounded-lg flex items-center justify-center">
-                    <MapPin className="w-5 h-5 text-[#c79bb8]" />
+                <div className="flex items-center gap-2.5 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 shrink-0 bg-[#8B5A7F]/20 rounded-lg flex items-center justify-center">
+                    <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[#c79bb8]" />
                   </div>
                   <div className="flex flex-col items-start">
                     <span className="text-background/50 text-xs">{t('footer.locationLabel')}</span>
-                    <span>{t('footer.location')}</span>
+                    <span className="text-sm sm:text-base">{t('footer.location')}</span>
                   </div>
                 </div>
               </div>
@@ -101,10 +101,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-background/15 py-6">
-          <div className={`flex flex-col md:flex-row justify-between items-center gap-3 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
-            <div className="text-background/60 text-sm">{t('footer.copyright')}</div>
-            <div className="text-background/60 text-sm">{t('footer.tagline')}</div>
+        <div className="border-t border-background/15 py-5 sm:py-6">
+          <div className={`flex flex-col md:flex-row justify-between items-center gap-2 sm:gap-3 ${isRTL ? 'md:flex-row-reverse' : ''}`}>
+            <div className="text-background/60 text-xs sm:text-sm">{t('footer.copyright')}</div>
+            <div className="text-background/60 text-xs sm:text-sm">{t('footer.tagline')}</div>
           </div>
         </div>
       </div>
