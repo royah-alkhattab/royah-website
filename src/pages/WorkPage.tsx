@@ -11,9 +11,10 @@ export function WorkPage() {
         eyebrow={t('pages.work.eyebrow')}
         title={t('pages.work.title')}
         subtitle={t('pages.work.subtitle')}
+        image="/work-header-bg.webp"
       />
       <Work />
-      <FinalCTA />
+      <FinalCTA variant="work" />
     </>
   )
 }

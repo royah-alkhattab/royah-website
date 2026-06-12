@@ -39,32 +39,22 @@ const resources = {
         visit: "Visit site",
         privateLabel: "Private internal system",
         projects: {
-          awtad: {
-            name: "Awtad Development",
-            category: "Real estate",
-            coverTitle: "Building Landmarks of Tomorrow",
-            coverSubtitle: "Premium developments across the Sultanate of Oman.",
-            description: "A premium property developer's bilingual website — a cinematic hero, an elegant project showcase, and a clean register-interest flow for buyers.",
-            url: "https://awtad.om",
-            urlLabel: "awtad.om",
-            tags: ["Design & build", "Bilingual EN / AR", "Real estate"]
-          },
           germangold: {
             name: "German Gold",
-            category: "Automotive · Lubricants",
+            category: "Automotive · Digital ecosystem",
             coverTitle: "Power to Perform.",
             coverSubtitle: "German-engineered engine oil, now in Oman.",
-            description: "A German engine-oil brand brought to the Omani market — with an interactive “find your oil” selector, a full product catalogue, and a distributor locator.",
+            description: "A complete digital ecosystem for a German engine-oil brand in Oman — a bilingual brand website with an interactive “find your oil” wizard, plus a full business system that runs the company every day: invoicing, inventory, VAT and receivables. An online store is coming next.",
             url: "https://germangold.om",
             urlLabel: "germangold.om",
-            tags: ["Design & build", "Interactive tool", "E-commerce ready"]
+            tags: ["Brand website", "Sales & inventory system", "E-commerce — coming soon"]
           },
           alsadiya: {
             name: "Al Sadiya Water Billing",
             category: "Business software · Utility billing",
             coverTitle: "Water Billing System",
             coverSubtitle: "Subscribers, readings, invoices & payments — built for Oman.",
-            description: "A custom billing platform for a water utility in Nakhal — monthly meter readings, automated Arabic invoices, payments and reporting for 350+ subscribers. Live and running the business every day.",
+            description: "A custom billing platform for a water utility in Oman — monthly meter readings, automated Arabic invoices, payments and reporting for 350+ subscribers. Live and running the business every day.",
             url: "https://alsadiya.om",
             urlLabel: "alsadiya.om",
             tags: ["Custom web app", "Billing & invoicing", "350+ subscribers"]
@@ -84,6 +74,20 @@ const resources = {
         desc: "Tell us what you're building, and we'll show you how Royah's software and AI can help.",
         button: "Talk to us",
         secondary: "Email us"
+      },
+      finalCtaDemo: {
+        title: "See Royah Property in action.",
+        desc: "Book a free demo — we'll walk you through the app and reserve your early access.",
+        button: "Request a demo",
+        secondary: "Email us",
+        whatsapp: "Hi! I'd like to request a demo of Royah Property."
+      },
+      finalCtaWork: {
+        title: "Want something like this for your business?",
+        desc: "Tell us what your business does — we'll show you exactly what we'd build for it.",
+        button: "Start your project",
+        secondary: "Email us",
+        whatsapp: "Hi! I saw your work on royah.om and I'd like something similar for my business."
       },
       // Hero Section
       hero: {
@@ -293,32 +297,22 @@ const resources = {
         visit: "زيارة الموقع",
         privateLabel: "نظام داخلي خاص",
         projects: {
-          awtad: {
-            name: "أوتاد للتطوير العقاري",
-            category: "العقارات",
-            coverTitle: "نبني معالم الغد",
-            coverSubtitle: "مشاريع سكنية راقية في ربوع سلطنة عُمان.",
-            description: "موقع ثنائي اللغة لمطوّر عقاري راقٍ — واجهة بصرية آسرة، وعرض أنيق للمشاريع، ومسار واضح لتسجيل اهتمام المشترين.",
-            url: "https://awtad.om",
-            urlLabel: "awtad.om",
-            tags: ["تصميم وتطوير", "عربي / إنجليزي", "عقارات"]
-          },
           germangold: {
             name: "جيرمن جولد",
-            category: "السيارات · الزيوت",
+            category: "السيارات · منظومة رقمية",
             coverTitle: "قوة الأداء.",
             coverSubtitle: "زيت محركات بمعايير ألمانية، الآن في عُمان.",
-            description: "علامة زيوت محركات ألمانية في السوق العُماني — مع أداة تفاعلية لاختيار الزيت المناسب، وكتالوج كامل للمنتجات، ودليل للموزّعين.",
+            description: "منظومة رقمية متكاملة لعلامة زيوت محركات ألمانية في عُمان — موقع ثنائي اللغة مع أداة تفاعلية لاختيار الزيت المناسب، إضافة إلى نظام أعمال متكامل يُدير الشركة يومياً: الفواتير والمخزون والضريبة والمستحقات. والمتجر الإلكتروني قادم قريباً.",
             url: "https://germangold.om",
             urlLabel: "germangold.om",
-            tags: ["تصميم وتطوير", "أداة تفاعلية", "جاهز للمتاجر"]
+            tags: ["موقع العلامة", "نظام مبيعات ومخزون", "متجر إلكتروني — قريباً"]
           },
           alsadiya: {
             name: "نظام فواتير مياه السعدية",
             category: "برمجيات أعمال · فوترة المياه",
             coverTitle: "نظام إدارة فواتير المياه",
             coverSubtitle: "المشتركون والقراءات والفواتير والدفعات — مصمّم لعُمان.",
-            description: "منصّة فوترة مخصّصة لمزوّد مياه في نخل — قراءات شهرية للعدادات، وفواتير عربية تلقائية، ومدفوعات وتقارير لأكثر من ٣٥٠ مشتركاً. تعمل وتُدير العمل كل يوم.",
+            description: "منصّة فوترة مخصّصة لمزوّد مياه في عُمان — قراءات شهرية للعدادات، وفواتير عربية تلقائية، ومدفوعات وتقارير لأكثر من ٣٥٠ مشتركاً. تعمل وتُدير العمل كل يوم.",
             url: "https://alsadiya.om",
             urlLabel: "alsadiya.om",
             tags: ["تطبيق ويب مخصّص", "فوترة وإيصالات", "+٣٥٠ مشترك"]
@@ -338,6 +332,20 @@ const resources = {
         desc: "أخبرنا بما تبنيه، وسنُريك كيف يمكن لبرمجيات رؤية وذكائها الاصطناعي أن تساعدك.",
         button: "تحدّث معنا",
         secondary: "راسلنا"
+      },
+      finalCtaDemo: {
+        title: "شاهد رؤية العقار أثناء العمل.",
+        desc: "احجز عرضاً تجريبياً مجانياً — نأخذك في جولة داخل التطبيق ونحجز لك وصولاً مبكراً.",
+        button: "اطلب عرضاً تجريبياً",
+        secondary: "راسلنا",
+        whatsapp: "مرحباً! أودّ طلب عرض تجريبي لتطبيق رؤية العقار."
+      },
+      finalCtaWork: {
+        title: "تريد شيئاً مثل هذا لعملك؟",
+        desc: "أخبرنا بما يقوم به عملك — وسنُريك بالضبط ما الذي سنبنيه له.",
+        button: "ابدأ مشروعك",
+        secondary: "راسلنا",
+        whatsapp: "مرحباً! شاهدت أعمالكم على royah.om وأودّ شيئاً مماثلاً لعملي."
       },
       // Hero Section
       hero: {

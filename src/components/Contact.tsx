@@ -19,40 +19,38 @@ export function Contact() {
   }
 
   return (
-    <section className="relative py-32 bg-card/30">
+    <section className="relative py-16 sm:py-24 lg:py-32 bg-card/30">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-3 mb-6">
-            <div className="w-3 h-3 bg-accent-emerald rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-muted-foreground">
-              {t('contact.tagline')}
-            </span>
-            <div className="w-3 h-3 bg-accent-blue rounded-full animate-pulse" />
+        <div className="text-center mb-10 sm:mb-16">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background px-4 py-1.5 text-sm font-semibold text-muted-foreground mb-5">
+            <span className="h-2 w-2 rounded-full bg-accent-emerald animate-pulse" />
+            {t('contact.tagline')}
           </div>
-          
-          <h2 className="text-5xl sm:text-6xl lg:text-7xl font-black leading-tight mb-8 section-title">
+
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight tracking-tight mb-4 sm:mb-6 section-title">
             {t('contact.title')}
           </h2>
 
-          <p className="text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed section-subtitle">
+          <p className="text-lg sm:text-xl lg:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed section-subtitle">
             {t('contact.subtitle')}
           </p>
         </div>
 
         {/* Contact Options */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto mb-10 sm:mb-16">
 
           {/* WhatsApp Contact */}
           <div
             onClick={handleWhatsAppClick}
-            className="bg-background clean-border rounded-3xl p-8 elevated-shadow hover:scale-105 gentle-animation cursor-pointer group"
+            role="button" tabIndex={0}
+            className="bg-background clean-border rounded-3xl p-6 sm:p-7 elevated-shadow hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] gentle-animation cursor-pointer group"
           >
-            <div className="w-12 h-12 bg-green-500/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-green-500/20 gentle-animation">
-              <MessageCircle className="w-6 h-6 text-green-500" />
+            <div className="w-11 h-11 sm:w-12 sm:h-12 bg-green-500/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-green-500/20 gentle-animation">
+              <MessageCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-500" />
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{t('contact.whatsapp')}</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{t('contact.whatsapp')}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
               {t('contact.whatsappDesc')}
             </p>
             <div className="flex items-center gap-2 text-sm text-green-500 font-medium">
@@ -62,12 +60,12 @@ export function Contact() {
           </div>
 
           {/* Email Contact */}
-          <div className="bg-background clean-border rounded-3xl p-8 elevated-shadow hover:scale-105 gentle-animation group">
-            <div className="w-12 h-12 bg-accent-blue/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-blue/20 gentle-animation">
-              <Mail className="w-6 h-6 text-accent-blue" />
+          <div className="bg-background clean-border rounded-3xl p-6 sm:p-7 elevated-shadow hover:-translate-y-1 gentle-animation group">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 bg-accent-blue/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-accent-blue/20 gentle-animation">
+              <Mail className="w-5 h-5 sm:w-6 sm:h-6 text-accent-blue" />
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{t('contact.email')}</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{t('contact.email')}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
               {t('contact.emailDesc')}
             </p>
             <a href="mailto:info@royah.om" className="flex items-center gap-2 text-sm text-accent-blue font-medium hover:underline">
@@ -76,12 +74,12 @@ export function Contact() {
           </div>
 
           {/* Phone Contact */}
-          <div className="bg-background clean-border rounded-3xl p-8 elevated-shadow hover:scale-105 gentle-animation group">
-            <div className="w-12 h-12 bg-accent-purple/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-purple/20 gentle-animation">
-              <Phone className="w-6 h-6 text-accent-purple" />
+          <div className="bg-background clean-border rounded-3xl p-6 sm:p-7 elevated-shadow hover:-translate-y-1 gentle-animation group">
+            <div className="w-11 h-11 sm:w-12 sm:h-12 bg-accent-purple/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-accent-purple/20 gentle-animation">
+              <Phone className="w-5 h-5 sm:w-6 sm:h-6 text-accent-purple" />
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{t('contact.phone')}</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{t('contact.phone')}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
               {t('contact.phoneDesc')}
             </p>
             <a href="tel:+96890663136" className="flex items-center gap-2 text-sm text-accent-purple font-medium hover:underline">
@@ -94,13 +92,14 @@ export function Contact() {
           {/* Book a Call */}
           <div
             onClick={handleBookCall}
-            className="bg-background clean-border rounded-3xl p-8 elevated-shadow hover:scale-105 gentle-animation cursor-pointer group"
+            role="button" tabIndex={0}
+            className="bg-background clean-border rounded-3xl p-6 sm:p-7 elevated-shadow hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] gentle-animation cursor-pointer group"
           >
-            <div className="w-12 h-12 bg-accent-emerald/10 rounded-xl flex items-center justify-center mb-6 group-hover:bg-accent-emerald/20 gentle-animation">
-              <Calendar className="w-6 h-6 text-accent-emerald" />
+            <div className="w-11 h-11 sm:w-12 sm:h-12 bg-accent-emerald/10 rounded-2xl flex items-center justify-center mb-4 sm:mb-5 group-hover:bg-accent-emerald/20 gentle-animation">
+              <Calendar className="w-5 h-5 sm:w-6 sm:h-6 text-accent-emerald" />
             </div>
-            <h3 className="text-xl font-bold text-foreground mb-3">{t('contact.bookCall')}</h3>
-            <p className="text-muted-foreground mb-4">
+            <h3 className="text-lg sm:text-xl font-bold text-foreground mb-2">{t('contact.bookCall')}</h3>
+            <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4 leading-relaxed">
               {t('contact.bookCallDesc')}
             </p>
             <div className="flex items-center gap-2 text-sm text-accent-emerald font-medium">
@@ -112,7 +111,7 @@ export function Contact() {
         </div>
 
         {/* Business Hours & Location */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
 
           {/* Business Hours */}
           <div className="bg-background clean-border rounded-2xl p-6 subtle-shadow">
@@ -151,18 +150,18 @@ export function Contact() {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16">
-          <div className={`bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-3xl p-8 max-w-4xl mx-auto ${isRTL ? 'text-center' : ''}`}>
-            <h3 className={`text-2xl font-bold text-foreground mb-4 section-title ${isRTL ? 'text-center' : ''}`}>
+        <div className="text-center mt-10 sm:mt-16">
+          <div className={`bg-gradient-to-r from-accent-blue/10 to-accent-purple/10 rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto ${isRTL ? 'text-center' : ''}`}>
+            <h3 className={`text-xl sm:text-2xl font-bold text-foreground mb-3 sm:mb-4 section-title ${isRTL ? 'text-center' : ''}`}>
               {t('contact.cta.title')}
             </h3>
-            <p className={`text-lg text-muted-foreground mb-6 max-w-2xl mx-auto section-subtitle ${isRTL ? 'text-center' : ''}`}>
+            <p className={`text-base sm:text-lg text-muted-foreground mb-6 max-w-2xl mx-auto section-subtitle ${isRTL ? 'text-center' : ''}`}>
               {t('contact.cta.description')}
             </p>
             <div className="flex justify-center">
               <button
                 onClick={handleWhatsAppClick}
-                className={`bg-green-500 hover:bg-green-600 text-white font-semibold px-8 py-4 rounded-lg text-lg gentle-animation inline-flex items-center gap-3 ${isRTL ? 'flex-row-reverse' : ''}`}
+                className={`w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-b from-[#0aa372] to-[#047857] text-white font-semibold px-8 py-3.5 sm:py-4 text-base sm:text-lg shadow-[0_18px_44px_-14px_rgba(5,150,105,0.7)] hover:shadow-[0_22px_52px_-14px_rgba(5,150,105,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}
               >
                 <MessageCircle className="w-5 h-5" />
                 {t('contact.cta.button')}

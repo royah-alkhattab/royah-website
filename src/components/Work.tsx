@@ -1,6 +1,6 @@
 import { ArrowUpRight, ExternalLink, Droplets, Lock } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Reveal, SectionTag } from './Reveal'
+import { Reveal } from './Reveal'
 
 type Project = {
   key: string
@@ -11,7 +11,6 @@ type Project = {
 }
 
 const projects: Project[] = [
-  { key: 'awtad', color: '#E2B673', mode: 'photo', bg: '/work-awtad-bg.jpg' },
   { key: 'germangold', color: '#E7C24B', mode: 'product', bg: '/work-germangold-bg.png' },
   { key: 'alsadiya', color: '#E08AA6', mode: 'gradient', private: true },
 ]
@@ -72,7 +71,6 @@ export function Work() {
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-3xl mx-auto text-center">
           <Reveal>
-            <SectionTag>{t('work.tag')}</SectionTag>
             <p className="text-lg sm:text-xl text-muted-foreground leading-relaxed section-subtitle">
               {t('work.intro')}
             </p>
@@ -139,7 +137,7 @@ export function Work() {
                       </span>
                     ) : (
                       <a href={url} target="_blank" rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 font-semibold text-foreground hover:opacity-80 gentle-animation">
+                        className="group inline-flex min-h-[44px] items-center gap-2 rounded-full border border-border bg-card px-5 py-2.5 font-semibold text-foreground hover:bg-secondary hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
                         <ExternalLink className="w-4 h-4" />
                         {t('work.visit')}
                         <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

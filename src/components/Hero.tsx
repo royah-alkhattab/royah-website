@@ -71,7 +71,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
               className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.05] tracking-tight">
               {t('hero.headline')}{' '}
-              <span className="text-[#DB4B4B]">{t('hero.headlineAccent')}</span>
+              <span className="bg-gradient-to-r from-[#e25555] via-[#DB4B4B] to-[#c43a3a] bg-clip-text text-transparent">{t('hero.headlineAccent')}</span>
             </motion.h1>
 
             <motion.p
@@ -84,12 +84,12 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.5 }}
               className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button onClick={() => navigate('/product')}
-                className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-9 py-4 text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.75)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.9)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
+                className="group w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.75)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.9)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
                 {t('hero.ctaPrimary')}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 gentle-animation rtl:rotate-180" />
               </button>
               <button onClick={() => navigate('/contact')}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md text-white font-semibold px-9 py-4 text-lg hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
+                className="w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2 rounded-full border border-white/25 bg-white/10 backdrop-blur-md text-white font-semibold px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg hover:bg-white/15 hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
                 {t('hero.ctaSecondary')}
               </button>
             </motion.div>

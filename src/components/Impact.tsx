@@ -1,7 +1,12 @@
 import { useTranslation } from 'react-i18next'
 import { Reveal } from './Reveal'
 
-const keys = ['customers', 'production', 'paper', 'uptime'] as const
+const stats = [
+  { key: 'customers', color: '#059669' },
+  { key: 'production', color: '#DB4B4B' },
+  { key: 'paper', color: '#d97706' },
+  { key: 'uptime', color: '#8B5A7F' },
+] as const
 
 export function Impact() {
   const { t } = useTranslation()
@@ -23,15 +28,17 @@ export function Impact() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 max-w-5xl mx-auto mt-14">
-          {keys.map((k, i) => (
-            <Reveal key={k} delay={i * 0.08}>
-              <div className="h-full bg-background clean-border rounded-2xl p-6 text-center elevated-shadow">
-                <div className="text-4xl lg:text-5xl font-black text-[#DB4B4B]">
-                  {t(`impact.stats.${k}.value`)}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 max-w-5xl mx-auto mt-10 sm:mt-14">
+          {stats.map((s, i) => (
+            <Reveal key={s.key} delay={i * 0.08}>
+              <div className="group relative h-full overflow-hidden bg-background clean-border rounded-2xl p-4 sm:p-6 text-center elevated-shadow transition-all duration-300 hover:-translate-y-1">
+                <div className="absolute inset-x-0 top-0 h-[3px]"
+                  style={{ background: `linear-gradient(90deg, ${s.color}, ${s.color}33)` }} />
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-black" style={{ color: s.color }}>
+                  {t(`impact.stats.${s.key}.value`)}
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground leading-snug">
-                  {t(`impact.stats.${k}.label`)}
+                <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-muted-foreground leading-snug">
+                  {t(`impact.stats.${s.key}.label`)}
                 </p>
               </div>
             </Reveal>

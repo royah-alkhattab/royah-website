@@ -12,10 +12,11 @@ export function ProductPage() {
         eyebrow={t('pages.product.eyebrow')}
         title={t('pages.product.title')}
         subtitle={t('pages.product.subtitle')}
+        image="/product-header-bg.webp"
       />
       <Product />
       <Impact />
-      <FinalCTA />
+      <FinalCTA variant="demo" />
     </>
   )
 }

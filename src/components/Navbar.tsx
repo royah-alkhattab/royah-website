@@ -23,7 +23,9 @@ export function Navbar() {
 
   // Pages whose top section is the dark hero/header. Over those, the navbar is
   // transparent with white text until the user scrolls; everywhere else it's solid.
-  const darkTop = ['/', '/work', '/product', '/about'].includes(pathname)
+  // Inner pages open with bright photographic headers, so they get the solid navbar;
+  // only the homepage still has a dark hero under a transparent navbar.
+  const darkTop = pathname === '/'
   const overlay = darkTop && !scrolled
 
   useEffect(() => {
@@ -68,7 +70,7 @@ export function Navbar() {
             <div className="flex items-center gap-2 md:hidden">
               <LanguageSwitcher light={overlay} />
               <button onClick={() => setOpen(!open)} aria-label={open ? 'Close menu' : 'Open menu'} aria-expanded={open}
-                className={`p-2.5 rounded-full gentle-animation ${overlay && !open ? 'glass-effect text-white' : 'border border-border bg-background text-foreground'}`}>
+                className={`flex h-11 w-11 items-center justify-center rounded-full gentle-animation active:scale-95 ${overlay && !open ? 'glass-effect text-white' : 'border border-border bg-background text-foreground'}`}>
                 {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
               </button>
             </div>

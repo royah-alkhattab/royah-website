@@ -1,13 +1,13 @@
 import { Building2, FileSignature, BellRing, LayoutDashboard, ArrowRight, Check } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
-import { Reveal, SectionTag } from './Reveal'
+import { Reveal } from './Reveal'
 
 const features = [
-  { icon: Building2, key: 'units' },
-  { icon: FileSignature, key: 'contracts' },
-  { icon: BellRing, key: 'payments' },
-  { icon: LayoutDashboard, key: 'dashboard' },
+  { icon: Building2, key: 'units', color: '#DB4B4B' },
+  { icon: FileSignature, key: 'contracts', color: '#059669' },
+  { icon: BellRing, key: 'payments', color: '#d97706' },
+  { icon: LayoutDashboard, key: 'dashboard', color: '#8B5A7F' },
 ]
 
 export function Product() {
@@ -24,38 +24,34 @@ export function Product() {
 
           {/* Copy + features */}
           <Reveal>
-            <SectionTag>{t('product.tag')}</SectionTag>
-            <div className="flex items-center gap-3 flex-wrap mb-4">
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight section-title">
-                {t('product.name')}
-              </h2>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#d97706]/10 px-3 py-1 text-xs font-bold text-[#d97706]">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#d97706] animate-pulse" />
-                {t('product.live')}
-              </span>
-            </div>
-            <p className="text-xl font-semibold text-[#DB4B4B] mb-4">{t('product.tagline')}</p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-8">{t('product.description')}</p>
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#d97706]/10 px-3.5 py-1.5 text-xs font-bold text-[#d97706] mb-4">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#d97706] animate-pulse" />
+              {t('product.live')}
+            </span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight tracking-tight section-title mb-4">
+              {t('product.tagline')}
+            </h2>
+            <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-7 sm:mb-9">{t('product.description')}</p>
 
-            <div className="grid sm:grid-cols-2 gap-5 mb-10">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-8 sm:mb-10">
               {features.map((f) => {
                 const Icon = f.icon
                 return (
-                  <div key={f.key} className="flex gap-3">
-                    <div className="w-10 h-10 shrink-0 rounded-xl bg-[#DB4B4B]/10 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#DB4B4B]" />
+                  <div key={f.key}
+                    className="group h-full rounded-2xl bg-card clean-border p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_14px_34px_-18px_rgba(20,20,30,0.35)]">
+                    <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl transition-transform duration-300 group-hover:scale-105"
+                      style={{ backgroundColor: `${f.color}14` }}>
+                      <Icon className="h-5 w-5" style={{ color: f.color }} />
                     </div>
-                    <div>
-                      <h4 className="font-bold mb-0.5">{t(`product.features.${f.key}.title`)}</h4>
-                      <p className="text-sm text-muted-foreground leading-snug">{t(`product.features.${f.key}.description`)}</p>
-                    </div>
+                    <h4 className="mb-1 text-sm sm:text-base font-bold card-title">{t(`product.features.${f.key}.title`)}</h4>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-snug card-description">{t(`product.features.${f.key}.description`)}</p>
                   </div>
                 )
               })}
             </div>
 
             <button onClick={scrollToContact}
-              className="group inline-flex items-center gap-2 bg-foreground text-background font-semibold px-8 py-4 rounded-lg text-lg hover:opacity-90 gentle-animation">
+              className="group w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-8 py-3.5 sm:py-4 text-base sm:text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.7)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation">
               {t('product.cta')}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 gentle-animation rtl:rotate-180" />
             </button>

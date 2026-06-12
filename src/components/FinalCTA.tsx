@@ -1,14 +1,21 @@
 import { MessageCircle, Mail } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 
-export function FinalCTA() {
+// Page-aware closing CTA: "demo" pitches a Royah Property demo (Product page),
+// "work" invites starting a project (Work page); default is the general ask.
+const VARIANT_KEYS = { default: 'finalCta', demo: 'finalCtaDemo', work: 'finalCtaWork' } as const
+
+export function FinalCTA({ variant = 'default' }: { variant?: keyof typeof VARIANT_KEYS }) {
   const { t, i18n } = useTranslation()
   const isRTL = i18n.language === 'ar'
+  const k = VARIANT_KEYS[variant]
 
   const handleWhatsAppClick = () => {
-    const message = isRTL
-      ? 'مرحباً! زرت موقعكم للتو وأنا مهتم بخدماتكم. هل يمكنكم مساعدتي؟'
-      : "Hi! I just visited your website and I'm interested in your services. Can you help me?"
+    const message = variant === 'default'
+      ? (isRTL
+          ? 'مرحباً! زرت موقعكم للتو وأنا مهتم بخدماتكم. هل يمكنكم مساعدتي؟'
+          : "Hi! I just visited your website and I'm interested in your services. Can you help me?")
+      : t(`${k}.whatsapp`)
     window.open(`https://api.whatsapp.com/send?phone=96890663136&text=${encodeURIComponent(message)}`, '_blank')
   }
 
@@ -29,21 +36,21 @@ export function FinalCTA() {
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black leading-tight tracking-tight mb-4 text-[#16161a]">
-              {t('finalCta.title')}
+              {t(`${k}.title`)}
             </h2>
             <p className="text-lg text-[#5b5f66] max-w-xl mx-auto mb-9 leading-relaxed">
-              {t('finalCta.desc')}
+              {t(`${k}.desc`)}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
               <button onClick={handleWhatsAppClick}
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-9 py-4 text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.7)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
+                className={`w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2.5 rounded-full bg-gradient-to-b from-[#e25555] to-[#c43a3a] text-white font-semibold px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg shadow-[0_18px_44px_-14px_rgba(219,75,75,0.7)] hover:shadow-[0_22px_52px_-14px_rgba(219,75,75,0.85)] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <MessageCircle className="w-5 h-5" />
-                {t('finalCta.button')}
+                {t(`${k}.button`)}
               </button>
               <a href="mailto:info@royah.om"
-                className={`w-full sm:w-auto inline-flex items-center justify-center gap-2.5 rounded-full border border-black/10 bg-black/[0.03] hover:bg-black/[0.06] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] text-[#16161a] font-semibold px-9 py-4 text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
+                className={`w-full sm:w-auto min-h-[52px] inline-flex items-center justify-center gap-2.5 rounded-full border border-black/10 bg-black/[0.03] hover:bg-black/[0.06] hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.98] text-[#16161a] font-semibold px-8 sm:px-9 py-3.5 sm:py-4 text-base sm:text-lg gentle-animation ${isRTL ? 'flex-row-reverse' : ''}`}>
                 <Mail className="w-5 h-5" />
-                {t('finalCta.secondary')}
+                {t(`${k}.secondary`)}
               </a>
             </div>
           </div>

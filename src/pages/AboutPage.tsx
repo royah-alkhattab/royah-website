@@ -13,6 +13,7 @@ export function AboutPage() {
         eyebrow={t('pages.about.eyebrow')}
         title={t('pages.about.title')}
         subtitle={t('pages.about.subtitle')}
+        image="/about-header-bg.webp"
       />
       <Problem />
       <WhyRoyah />
