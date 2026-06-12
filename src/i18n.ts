@@ -155,6 +155,14 @@ const resources = {
           contracts: { title: "Smart contracts", description: "Save a contract and the full payment schedule is generated for you." },
           payments: { title: "Payments & reminders", description: "Record payments, auto-flag overdue rent, send WhatsApp reminders in one tap." },
           dashboard: { title: "Owner dashboard", description: "Expected income, collected, outstanding, occupancy — all in one view." }
+        },
+        mockup: {
+          occupancy: "Occupancy",
+          units: "Units",
+          overdue: "Overdue",
+          income: "Monthly income",
+          paid: "Paid",
+          due: "Due"
         }
       },
       // Impact / metrics
@@ -413,6 +421,14 @@ const resources = {
           contracts: { title: "عقود ذكية", description: "احفظ العقد ليُولَّد لك جدول المدفوعات كاملاً." },
           payments: { title: "المدفوعات والتذكيرات", description: "سجّل المدفوعات، ونبّه المتأخرات تلقائياً، وأرسل تذكير واتساب بضغطة." },
           dashboard: { title: "لوحة المالك", description: "الدخل المتوقع، والمحصّل، والمتبقّي، ونسبة الإشغال — في شاشة واحدة." }
+        },
+        mockup: {
+          occupancy: "الإشغال",
+          units: "الوحدات",
+          overdue: "متأخرات",
+          income: "الدخل الشهري",
+          paid: "مدفوع",
+          due: "مستحق"
         }
       },
       // Impact / metrics

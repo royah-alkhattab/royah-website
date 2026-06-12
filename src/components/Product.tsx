@@ -59,72 +59,96 @@ export function Product() {
 
           {/* App preview mockup */}
           <Reveal delay={0.15}>
-            <div className="relative">
+            <div className="relative max-w-sm mx-auto lg:max-w-none">
               <div className="absolute -inset-6 bg-gradient-to-tr from-[#DB4B4B]/15 via-[#8B5A7F]/10 to-transparent blur-2xl rounded-[2rem]" />
-              <div className="relative rounded-3xl bg-[#0f0f0f] p-3 shadow-2xl ring-1 ring-white/10">
-                <div className="rounded-2xl bg-background overflow-hidden">
-                  {/* App top bar */}
-                  <div className="flex items-center justify-between px-5 py-4 border-b border-border">
-                    <div className="flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-[#DB4B4B] flex items-center justify-center">
+              <div className="relative rounded-[2.2rem] bg-[#0f0f0f] p-2.5 shadow-2xl ring-1 ring-white/10">
+                <div className="rounded-[1.8rem] bg-background overflow-hidden">
+
+                  {/* App bar */}
+                  <div className="flex items-center justify-between px-5 pt-5 pb-4">
+                    <div className="flex items-center gap-2.5">
+                      <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-b from-[#e25555] to-[#c43a3a] shadow-[0_6px_14px_-6px_rgba(219,75,75,0.8)]">
                         <Building2 className="w-4 h-4 text-white" />
                       </div>
                       <span className="font-bold text-sm">{t('product.name')}</span>
                     </div>
-                    <div className="flex gap-1.5">
-                      <span className="h-2 w-2 rounded-full bg-border" />
-                      <span className="h-2 w-2 rounded-full bg-border" />
-                      <span className="h-2 w-2 rounded-full bg-border" />
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#8B5A7F] to-[#6d4663] text-[10px] font-bold text-white">
+                      {isRTL ? 'س' : 'S'}
                     </div>
                   </div>
+
                   {/* Stat tiles */}
-                  <div className="grid grid-cols-3 gap-3 p-5">
+                  <div className="grid grid-cols-3 gap-2.5 px-4">
                     {[
-                      { v: isRTL ? '٪٩٢' : '92%', c: '#059669' },
-                      { v: isRTL ? '٢٤' : '24', c: '#DB4B4B' },
-                      { v: isRTL ? '٣' : '3', c: '#8B5A7F' },
+                      { v: isRTL ? '٪٩٢' : '92%', l: t('product.mockup.occupancy'), c: '#059669', trend: isRTL ? '+٢٪' : '+2%' },
+                      { v: isRTL ? '٢٤' : '24', l: t('product.mockup.units'), c: '#DB4B4B', trend: null },
+                      { v: isRTL ? '٣' : '3', l: t('product.mockup.overdue'), c: '#d97706', trend: null },
                     ].map((s, i) => (
-                      <div key={i} className="rounded-xl bg-card clean-border p-3">
-                        <div className="h-1.5 w-8 rounded-full mb-2" style={{ backgroundColor: s.c }} />
-                        <div className="text-xl font-black" style={{ color: s.c }}>{s.v}</div>
-                        <div className="mt-1 h-1.5 w-12 rounded-full bg-border" />
+                      <div key={i} className="rounded-2xl bg-card clean-border p-3">
+                        <div className="text-[10px] font-semibold text-muted-foreground mb-1 truncate">{s.l}</div>
+                        <div className="flex items-baseline gap-1">
+                          <span className="text-lg font-black leading-none" style={{ color: s.c }}>{s.v}</span>
+                          {s.trend && (
+                            <span className="rounded-full px-1 py-px text-[8px] font-bold" style={{ color: s.c, backgroundColor: `${s.c}14` }}>{s.trend}</span>
+                          )}
+                        </div>
                       </div>
                     ))}
                   </div>
-                  {/* Income bars */}
-                  <div className="px-5">
-                    <div className="rounded-xl bg-card clean-border p-4">
-                      <div className="flex items-end gap-2 h-24">
-                        {[40, 65, 50, 80, 70, 95].map((h, i) => (
-                          <div key={i} className="flex-1 rounded-t-md bg-gradient-to-t from-[#DB4B4B]/40 to-[#DB4B4B]"
+
+                  {/* Income chart card */}
+                  <div className="px-4 mt-2.5">
+                    <div className="rounded-2xl bg-card clean-border p-4">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-[11px] font-bold">{t('product.mockup.income')}</span>
+                        <span className="rounded-full bg-[#059669]/10 px-1.5 py-0.5 text-[9px] font-bold text-[#059669]">{isRTL ? '+١٨٪' : '+18%'}</span>
+                      </div>
+                      <div className="flex items-end gap-1.5 h-20">
+                        {[42, 58, 46, 72, 60, 95].map((h, i) => (
+                          <div key={i}
+                            className={`flex-1 rounded-md ${i === 5 ? 'bg-gradient-to-t from-[#c43a3a] to-[#e25555] shadow-[0_6px_14px_-6px_rgba(219,75,75,0.7)]' : 'bg-[#DB4B4B]/15'}`}
                             style={{ height: `${h}%` }} />
                         ))}
                       </div>
                     </div>
                   </div>
+
                   {/* Tenant rows */}
-                  <div className="p-5 space-y-2.5">
-                    {[true, true, false].map((paid, i) => (
-                      <div key={i} className="flex items-center justify-between rounded-xl bg-card clean-border px-4 py-3">
-                        <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-full bg-border" />
+                  <div className="px-4 py-2.5 space-y-2">
+                    {[
+                      { paid: true, av: 'from-[#059669] to-[#047857]' },
+                      { paid: false, av: 'from-[#d97706] to-[#b45309]' },
+                    ].map((r, i) => (
+                      <div key={i} className="flex items-center justify-between rounded-2xl bg-card clean-border px-3.5 py-2.5">
+                        <div className="flex items-center gap-2.5">
+                          <div className={`h-8 w-8 rounded-full bg-gradient-to-br ${r.av} opacity-80`} />
                           <div className="space-y-1.5">
-                            <div className="h-2 w-20 rounded-full bg-border" />
-                            <div className="h-2 w-14 rounded-full bg-border/60" />
+                            <div className="h-1.5 w-20 rounded-full bg-foreground/15" />
+                            <div className="h-1.5 w-12 rounded-full bg-border" />
                           </div>
                         </div>
-                        {paid ? (
-                          <span className="inline-flex items-center gap-1 rounded-full bg-[#059669]/10 px-2.5 py-1 text-[10px] font-bold text-[#059669]">
-                            <Check className="w-3 h-3" />
+                        {r.paid ? (
+                          <span className="inline-flex items-center gap-1 rounded-full bg-[#059669]/10 px-2 py-1 text-[9px] font-bold text-[#059669]">
+                            <Check className="w-2.5 h-2.5" />
+                            {t('product.mockup.paid')}
                           </span>
                         ) : (
-                          <span className="rounded-full bg-[#DB4B4B]/10 px-2.5 py-1 text-[10px] font-bold text-[#DB4B4B]">
-                            !
+                          <span className="rounded-full bg-[#d97706]/10 px-2 py-1 text-[9px] font-bold text-[#d97706]">
+                            {t('product.mockup.due')}
                           </span>
                         )}
                       </div>
                     ))}
                   </div>
+
+                  {/* Bottom tab bar */}
+                  <div className="flex items-center justify-around border-t border-border px-6 py-3">
+                    <LayoutDashboard className="w-[18px] h-[18px] text-[#DB4B4B]" />
+                    <Building2 className="w-[18px] h-[18px] text-muted-foreground/50" />
+                    <FileSignature className="w-[18px] h-[18px] text-muted-foreground/50" />
+                    <BellRing className="w-[18px] h-[18px] text-muted-foreground/50" />
+                  </div>
+
                 </div>
               </div>
             </div>
